@@ -1,0 +1,3197 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.36 build -262312587 
+                                                                                               Sun Nov 13 22:55:12 2022
+
+Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150325
+     1                           	processor	16F628A
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	idataBANK0,global,class=CODE,delta=2
+     5                           	psect	nvBANK0,global,class=BANK0,space=1,delta=1
+     6                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     7                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1
+    10                           	psect	clrtext,global,class=CODE,delta=2
+    11                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    12                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    13                           	psect	maintext,global,class=CODE,split=1,delta=2
+    14                           	psect	swtext1,local,class=CONST,delta=2
+    15                           	psect	text1,local,class=CODE,merge=1,delta=2
+    16                           	psect	text2,local,class=CODE,merge=1,delta=2
+    17                           	psect	text3,local,class=CODE,merge=1,delta=2
+    18                           	psect	text4,local,class=CODE,merge=1,delta=2
+    19                           	psect	text5,local,class=CODE,merge=1,delta=2
+    20                           	psect	text6,local,class=CODE,merge=1,delta=2
+    21                           	psect	text7,local,class=CODE,merge=1,delta=2
+    22                           	psect	text8,local,class=CODE,merge=1,delta=2
+    23                           	psect	text9,local,class=CODE,merge=1,delta=2
+    24                           	psect	text10,local,class=CODE,merge=1,delta=2
+    25                           	psect	text11,local,class=CODE,merge=1,delta=2
+    26                           	psect	text12,local,class=CODE,merge=1,delta=2
+    27                           	psect	text13,local,class=CODE,merge=1,delta=2
+    28                           	psect	text14,local,class=CODE,merge=1,delta=2
+    29                           	psect	intentry,global,class=CODE,delta=2
+    30                           	psect	text15,local,class=CODE,merge=1,delta=2
+    31                           	psect	text16,local,class=CODE,merge=1,delta=2
+    32                           	psect	text17,local,class=CODE,merge=1,delta=2
+    33                           	psect	text18,local,class=CODE,merge=1,delta=2
+    34                           	psect	text19,local,class=CODE,merge=1,delta=2
+    35                           	psect	text20,local,class=CODE,merge=1,delta=2
+    36                           	psect	text21,local,class=CODE,merge=1,delta=2
+    37                           	dabs	1,0x7E,2
+    38  0000                     	;# 
+    39  0001                     	;# 
+    40  0002                     	;# 
+    41  0003                     	;# 
+    42  0004                     	;# 
+    43  0005                     	;# 
+    44  0006                     	;# 
+    45  000A                     	;# 
+    46  000B                     	;# 
+    47  000C                     	;# 
+    48  000E                     	;# 
+    49  000E                     	;# 
+    50  000F                     	;# 
+    51  0010                     	;# 
+    52  0011                     	;# 
+    53  0012                     	;# 
+    54  0015                     	;# 
+    55  0015                     	;# 
+    56  0016                     	;# 
+    57  0017                     	;# 
+    58  0018                     	;# 
+    59  0019                     	;# 
+    60  001A                     	;# 
+    61  001F                     	;# 
+    62  0081                     	;# 
+    63  0085                     	;# 
+    64  0086                     	;# 
+    65  008C                     	;# 
+    66  008E                     	;# 
+    67  0092                     	;# 
+    68  0098                     	;# 
+    69  0099                     	;# 
+    70  009A                     	;# 
+    71  009B                     	;# 
+    72  009C                     	;# 
+    73  009D                     	;# 
+    74  009F                     	;# 
+    75  0000                     	;# 
+    76  0001                     	;# 
+    77  0002                     	;# 
+    78  0003                     	;# 
+    79  0004                     	;# 
+    80  0005                     	;# 
+    81  0006                     	;# 
+    82  000A                     	;# 
+    83  000B                     	;# 
+    84  000C                     	;# 
+    85  000E                     	;# 
+    86  000E                     	;# 
+    87  000F                     	;# 
+    88  0010                     	;# 
+    89  0011                     	;# 
+    90  0012                     	;# 
+    91  0015                     	;# 
+    92  0015                     	;# 
+    93  0016                     	;# 
+    94  0017                     	;# 
+    95  0018                     	;# 
+    96  0019                     	;# 
+    97  001A                     	;# 
+    98  001F                     	;# 
+    99  0081                     	;# 
+   100  0085                     	;# 
+   101  0086                     	;# 
+   102  008C                     	;# 
+   103  008E                     	;# 
+   104  0092                     	;# 
+   105  0098                     	;# 
+   106  0099                     	;# 
+   107  009A                     	;# 
+   108  009B                     	;# 
+   109  009C                     	;# 
+   110  009D                     	;# 
+   111  009F                     	;# 
+   112  0000                     	;# 
+   113  0001                     	;# 
+   114  0002                     	;# 
+   115  0003                     	;# 
+   116  0004                     	;# 
+   117  0005                     	;# 
+   118  0006                     	;# 
+   119  000A                     	;# 
+   120  000B                     	;# 
+   121  000C                     	;# 
+   122  000E                     	;# 
+   123  000E                     	;# 
+   124  000F                     	;# 
+   125  0010                     	;# 
+   126  0011                     	;# 
+   127  0012                     	;# 
+   128  0015                     	;# 
+   129  0015                     	;# 
+   130  0016                     	;# 
+   131  0017                     	;# 
+   132  0018                     	;# 
+   133  0019                     	;# 
+   134  001A                     	;# 
+   135  001F                     	;# 
+   136  0081                     	;# 
+   137  0085                     	;# 
+   138  0086                     	;# 
+   139  008C                     	;# 
+   140  008E                     	;# 
+   141  0092                     	;# 
+   142  0098                     	;# 
+   143  0099                     	;# 
+   144  009A                     	;# 
+   145  009B                     	;# 
+   146  009C                     	;# 
+   147  009D                     	;# 
+   148  009F                     	;# 
+   149  0000                     	;# 
+   150  0001                     	;# 
+   151  0002                     	;# 
+   152  0003                     	;# 
+   153  0004                     	;# 
+   154  0005                     	;# 
+   155  0006                     	;# 
+   156  000A                     	;# 
+   157  000B                     	;# 
+   158  000C                     	;# 
+   159  000E                     	;# 
+   160  000E                     	;# 
+   161  000F                     	;# 
+   162  0010                     	;# 
+   163  0011                     	;# 
+   164  0012                     	;# 
+   165  0015                     	;# 
+   166  0015                     	;# 
+   167  0016                     	;# 
+   168  0017                     	;# 
+   169  0018                     	;# 
+   170  0019                     	;# 
+   171  001A                     	;# 
+   172  001F                     	;# 
+   173  0081                     	;# 
+   174  0085                     	;# 
+   175  0086                     	;# 
+   176  008C                     	;# 
+   177  008E                     	;# 
+   178  0092                     	;# 
+   179  0098                     	;# 
+   180  0099                     	;# 
+   181  009A                     	;# 
+   182  009B                     	;# 
+   183  009C                     	;# 
+   184  009D                     	;# 
+   185  009F                     	;# 
+   186                           
+   187                           	psect	idataBANK0
+   188  0353                     __pidataBANK0:	
+   189                           
+   190                           ;initializer for _LEDDisplay
+   191  0353  3408               	retlw	8
+   192  0354  345E               	retlw	94
+   193  0355  3441               	retlw	65
+   194  0356  3442               	retlw	66
+   195  0357  3416               	retlw	22
+   196  0358  3422               	retlw	34
+   197  0359  3420               	retlw	32
+   198  035A  344E               	retlw	78
+   199  035B  3400               	retlw	0
+   200  035C  3402               	retlw	2
+   201  035D  3477               	retlw	119
+   202                           
+   203                           ;initializer for _buttonBuffer
+   204  035E  3401               	retlw	1
+   205  035F  3401               	retlw	1
+   206  0360  3401               	retlw	1
+   207                           
+   208                           ;initializer for _buttonInputMask
+   209  0361  3410               	retlw	16
+   210  0362  3420               	retlw	32
+   211  0363  3404               	retlw	4
+   212                           
+   213                           ;initializer for _LEDBuffer
+   214  0364  3401               	retlw	1
+   215  0365  3402               	retlw	2
+   216                           
+   217                           ;initializer for _time1_MUL
+   218  0366  3401               	retlw	1
+   219  0367  3400               	retlw	0
+   220                           
+   221                           	psect	nvBANK0
+   222  005A                     __pnvBANK0:	
+   223  005A                     _cleaning_counter:	
+   224  005A                     	ds	1
+   225  000E                     _TMR1	set	14
+   226  001F                     _CMCON	set	31
+   227  000B                     _INTCONbits	set	11
+   228  000C                     _PIR1bits	set	12
+   229  0005                     _PORTA	set	5
+   230  0005                     _PORTAbits	set	5
+   231  0006                     _PORTB	set	6
+   232  0010                     _T1CONbits	set	16
+   233  005F                     _GIE	set	95
+   234  005E                     _PEIE	set	94
+   235  0060                     _TMR1IF	set	96
+   236  009B                     _EEADR	set	155
+   237  009C                     _EECON1bits	set	156
+   238  009D                     _EECON2	set	157
+   239  009A                     _EEDATA	set	154
+   240  0085                     _TRISA	set	133
+   241  0086                     _TRISB	set	134
+   242  0460                     _TMR1IE	set	1120
+   243                           
+   244                           ; #config settings
+   245  0000                     
+   246                           	psect	cinit
+   247  0011                     start_initialization:	
+   248  0011                     __initialization:	
+   249                           
+   250                           ; Clear objects allocated to COMMON
+   251  0011  3079               	movlw	low __pbssCOMMON
+   252  0012  0084               	movwf	4
+   253  0013  307E               	movlw	low (__pbssCOMMON+5)
+   254  0014  23DE               	fcall	clear_ram0
+   255                           
+   256                           ; Clear objects allocated to BANK0
+   257  0015  1383               	bcf	3,7	;select IRP bank0
+   258  0016  3020               	movlw	low __pbssBANK0
+   259  0017  0084               	movwf	4
+   260  0018  3035               	movlw	low (__pbssBANK0+21)
+   261  0019  23DE               	fcall	clear_ram0
+   262                           
+   263                           ; Initialize objects allocated to BANK0
+   264  001A  2353               	fcall	__pidataBANK0	;fetch initializer
+   265  001B  00B5               	movwf	__pdataBANK0& (0+127)
+   266  001C  2354               	fcall	__pidataBANK0+1	;fetch initializer
+   267  001D  00B6               	movwf	(__pdataBANK0+1)& (0+127)
+   268  001E  2355               	fcall	__pidataBANK0+2	;fetch initializer
+   269  001F  00B7               	movwf	(__pdataBANK0+2)& (0+127)
+   270  0020  2356               	fcall	__pidataBANK0+3	;fetch initializer
+   271  0021  00B8               	movwf	(__pdataBANK0+3)& (0+127)
+   272  0022  2357               	fcall	__pidataBANK0+4	;fetch initializer
+   273  0023  00B9               	movwf	(__pdataBANK0+4)& (0+127)
+   274  0024  2358               	fcall	__pidataBANK0+5	;fetch initializer
+   275  0025  00BA               	movwf	(__pdataBANK0+5)& (0+127)
+   276  0026  2359               	fcall	__pidataBANK0+6	;fetch initializer
+   277  0027  00BB               	movwf	(__pdataBANK0+6)& (0+127)
+   278  0028  235A               	fcall	__pidataBANK0+7	;fetch initializer
+   279  0029  00BC               	movwf	(__pdataBANK0+7)& (0+127)
+   280  002A  235B               	fcall	__pidataBANK0+8	;fetch initializer
+   281  002B  00BD               	movwf	(__pdataBANK0+8)& (0+127)
+   282  002C  235C               	fcall	__pidataBANK0+9	;fetch initializer
+   283  002D  00BE               	movwf	(__pdataBANK0+9)& (0+127)
+   284  002E  235D               	fcall	__pidataBANK0+10	;fetch initializer
+   285  002F  00BF               	movwf	(__pdataBANK0+10)& (0+127)
+   286  0030  235E               	fcall	__pidataBANK0+11	;fetch initializer
+   287  0031  00C0               	movwf	(__pdataBANK0+11)& (0+127)
+   288  0032  235F               	fcall	__pidataBANK0+12	;fetch initializer
+   289  0033  00C1               	movwf	(__pdataBANK0+12)& (0+127)
+   290  0034  2360               	fcall	__pidataBANK0+13	;fetch initializer
+   291  0035  00C2               	movwf	(__pdataBANK0+13)& (0+127)
+   292  0036  2361               	fcall	__pidataBANK0+14	;fetch initializer
+   293  0037  00C3               	movwf	(__pdataBANK0+14)& (0+127)
+   294  0038  2362               	fcall	__pidataBANK0+15	;fetch initializer
+   295  0039  00C4               	movwf	(__pdataBANK0+15)& (0+127)
+   296  003A  2363               	fcall	__pidataBANK0+16	;fetch initializer
+   297  003B  00C5               	movwf	(__pdataBANK0+16)& (0+127)
+   298  003C  2364               	fcall	__pidataBANK0+17	;fetch initializer
+   299  003D  00C6               	movwf	(__pdataBANK0+17)& (0+127)
+   300  003E  2365               	fcall	__pidataBANK0+18	;fetch initializer
+   301  003F  00C7               	movwf	(__pdataBANK0+18)& (0+127)
+   302  0040  2366               	fcall	__pidataBANK0+19	;fetch initializer
+   303  0041  00C8               	movwf	(__pdataBANK0+19)& (0+127)
+   304  0042  2367               	fcall	__pidataBANK0+20	;fetch initializer
+   305  0043  00C9               	movwf	(__pdataBANK0+20)& (0+127)
+   306  0044                     end_of_initialization:	
+   307                           ;End of C runtime variable initialization code
+   308                           
+   309  0044                     __end_of__initialization:	
+   310  0044  0183               	clrf	3
+   311  0045  2846               	ljmp	_main	;jump to C main() function
+   312                           
+   313                           	psect	bssCOMMON
+   314  0079                     __pbssCOMMON:	
+   315  0079                     _debounceButtonBuffer1:	
+   316  0079                     	ds	3
+   317  007C                     _RUN_button_counter:	
+   318  007C                     	ds	1
+   319  007D                     _index:	
+   320  007D                     	ds	1
+   321                           
+   322                           	psect	bssBANK0
+   323  0020                     __pbssBANK0:	
+   324  0020                     _counterForButtonPress:	
+   325  0020                     	ds	6
+   326  0026                     _debounceButtonBuffer2:	
+   327  0026                     	ds	3
+   328  0029                     _flagForButtonPress_s:	
+   329  0029                     	ds	3
+   330  002C                     _timer1_cnt:	
+   331  002C                     	ds	2
+   332  002E                     _timer1_value:	
+   333  002E                     	ds	2
+   334  0030                     _TIME:	
+   335  0030                     	ds	1
+   336  0031                     _addressEEPROMused:	
+   337  0031                     	ds	1
+   338  0032                     _flag_timer1:	
+   339  0032                     	ds	1
+   340  0033                     _mode:	
+   341  0033                     	ds	1
+   342  0034                     _pumpState:	
+   343  0034                     	ds	1
+   344                           
+   345                           	psect	dataBANK0
+   346  0035                     __pdataBANK0:	
+   347  0035                     _LEDDisplay:	
+   348  0035                     	ds	11
+   349  0040                     _buttonBuffer:	
+   350  0040                     	ds	3
+   351  0043                     _buttonInputMask:	
+   352  0043                     	ds	3
+   353  0046                     _LEDBuffer:	
+   354  0046                     	ds	2
+   355  0048                     _time1_MUL:	
+   356  0048                     	ds	2
+   357                           
+   358                           	psect	clrtext
+   359  03DE                     clear_ram0:	
+   360                           ;	Called with FSR containing the base address, and
+   361                           ;	W with the last address+1
+   362                           
+   363  03DE  0064               	clrwdt	;clear the watchdog before getting into this loop
+   364  03DF                     clrloop0:	
+   365  03DF  0180               	clrf	0	;clear RAM location pointed to by FSR
+   366  03E0  0A84               	incf	4,f	;increment pointer
+   367  03E1  0604               	xorwf	4,w	;XOR with final address
+   368  03E2  1903               	btfsc	3,2	;have we reached the end yet?
+   369  03E3  3400               	retlw	0	;all done for this memory range, return
+   370  03E4  0604               	xorwf	4,w	;XOR again to restore value
+   371  03E5  2BDF               	goto	clrloop0	;do the next byte
+   372                           
+   373                           	psect	cstackCOMMON
+   374  0070                     __pcstackCOMMON:	
+   375  0070                     ?_stop_timer1:	
+   376  0070                     ??_stop_timer1:	
+   377                           ; 1 bytes @ 0x0
+   378                           
+   379  0070                     ?_start_timer1:	
+   380                           ; 1 bytes @ 0x0
+   381                           
+   382  0070                     ??_start_timer1:	
+   383                           ; 1 bytes @ 0x0
+   384                           
+   385  0070                     ?_timer1_isr:	
+   386                           ; 1 bytes @ 0x0
+   387                           
+   388  0070                     ??_timer1_isr:	
+   389                           ; 1 bytes @ 0x0
+   390                           
+   391  0070                     ?_button_reading:	
+   392                           ; 1 bytes @ 0x0
+   393                           
+   394  0070                     ??_button_reading:	
+   395                           ; 1 bytes @ 0x0
+   396                           
+   397  0070                     ?_UpdateLed:	
+   398                           ; 1 bytes @ 0x0
+   399                           
+   400  0070                     ?_InitSystem:	
+   401                           ; 1 bytes @ 0x0
+   402                           
+   403  0070                     ?_is_button_pressed:	
+   404                           ; 1 bytes @ 0x0
+   405                           
+   406  0070                     ?_UpdateLedBuffer:	
+   407                           ; 1 bytes @ 0x0
+   408                           
+   409  0070                     ?_RelayOn:	
+   410                           ; 1 bytes @ 0x0
+   411                           
+   412  0070                     ?_is_button_held:	
+   413                           ; 1 bytes @ 0x0
+   414                           
+   415  0070                     ?_is_button_pressed_s:	
+   416                           ; 1 bytes @ 0x0
+   417                           
+   418  0070                     ?_ReadEEPROM:	
+   419                           ; 1 bytes @ 0x0
+   420                           
+   421  0070                     ?_timer1:	
+   422                           ; 1 bytes @ 0x0
+   423                           
+   424  0070                     ?_main:	
+   425                           ; 1 bytes @ 0x0
+   426                           
+   427  0070                     ?_Display:	
+   428                           ; 1 bytes @ 0x0
+   429                           
+   430  0070                     ??_Display:	
+   431                           ; 1 bytes @ 0x0
+   432                           
+   433  0070                     ?_LedEnable:	
+   434                           ; 1 bytes @ 0x0
+   435                           
+   436  0070                     ??_LedEnable:	
+   437                           ; 1 bytes @ 0x0
+   438                           
+   439  0070                     Display@number:	
+   440                           ; 1 bytes @ 0x0
+   441                           
+   442  0070                     LedEnable@index:	
+   443                           ; 1 bytes @ 0x0
+   444                           
+   445                           
+   446                           ; 1 bytes @ 0x0
+   447  0070                     	ds	1
+   448  0071                     ??_UpdateLed:	
+   449  0071                     UpdateLed@index:	
+   450                           ; 1 bytes @ 0x1
+   451                           
+   452                           
+   453                           ; 1 bytes @ 0x1
+   454  0071                     	ds	2
+   455  0073                     button_reading@i:	
+   456                           
+   457                           ; 1 bytes @ 0x3
+   458  0073                     	ds	1
+   459  0074                     ??_timer1:	
+   460                           
+   461                           ; 1 bytes @ 0x4
+   462  0074                     	ds	5
+   463                           
+   464                           	psect	cstackBANK0
+   465  004A                     __pcstackBANK0:	
+   466  004A                     ??_is_button_pressed:	
+   467  004A                     ??_RelayOn:	
+   468                           ; 1 bytes @ 0x0
+   469                           
+   470  004A                     ??_is_button_held:	
+   471                           ; 1 bytes @ 0x0
+   472                           
+   473  004A                     ?_WriteEEPROM:	
+   474                           ; 1 bytes @ 0x0
+   475                           
+   476  004A                     ?_Delay_ms:	
+   477                           ; 1 bytes @ 0x0
+   478                           
+   479  004A                     ??_is_button_pressed_s:	
+   480                           ; 1 bytes @ 0x0
+   481                           
+   482  004A                     ?_init_timer1:	
+   483                           ; 1 bytes @ 0x0
+   484                           
+   485  004A                     ??_ReadEEPROM:	
+   486                           ; 1 bytes @ 0x0
+   487                           
+   488  004A                     ?___awdiv:	
+   489                           ; 1 bytes @ 0x0
+   490                           
+   491  004A                     ?___awmod:	
+   492                           ; 2 bytes @ 0x0
+   493                           
+   494  004A                     RelayOn@flag:	
+   495                           ; 2 bytes @ 0x0
+   496                           
+   497  004A                     ReadEEPROM@address:	
+   498                           ; 1 bytes @ 0x0
+   499                           
+   500  004A                     WriteEEPROM@data:	
+   501                           ; 1 bytes @ 0x0
+   502                           
+   503  004A                     is_button_pressed_s@index:	
+   504                           ; 1 bytes @ 0x0
+   505                           
+   506  004A                     Delay_ms@delay:	
+   507                           ; 1 bytes @ 0x0
+   508                           
+   509  004A                     init_timer1@count:	
+   510                           ; 2 bytes @ 0x0
+   511                           
+   512  004A                     ___awdiv@divisor:	
+   513                           ; 2 bytes @ 0x0
+   514                           
+   515  004A                     ___awmod@divisor:	
+   516                           ; 2 bytes @ 0x0
+   517                           
+   518                           
+   519                           ; 2 bytes @ 0x0
+   520  004A                     	ds	1
+   521  004B                     ??_WriteEEPROM:	
+   522  004B                     WriteEEPROM@address:	
+   523                           ; 1 bytes @ 0x1
+   524                           
+   525                           
+   526                           ; 1 bytes @ 0x1
+   527  004B                     	ds	1
+   528  004C                     ??_Delay_ms:	
+   529  004C                     ??_init_timer1:	
+   530                           ; 1 bytes @ 0x2
+   531                           
+   532  004C                     Delay_ms@i:	
+   533                           ; 1 bytes @ 0x2
+   534                           
+   535  004C                     ___awdiv@dividend:	
+   536                           ; 2 bytes @ 0x2
+   537                           
+   538  004C                     ___awmod@dividend:	
+   539                           ; 2 bytes @ 0x2
+   540                           
+   541                           
+   542                           ; 2 bytes @ 0x2
+   543  004C                     	ds	1
+   544  004D                     is_button_held@index:	
+   545  004D                     is_button_pressed@index:	
+   546                           ; 1 bytes @ 0x3
+   547                           
+   548                           
+   549                           ; 1 bytes @ 0x3
+   550  004D                     	ds	1
+   551  004E                     ??___awdiv:	
+   552  004E                     ??___awmod:	
+   553                           ; 1 bytes @ 0x4
+   554                           
+   555  004E                     Delay_ms@j:	
+   556                           ; 1 bytes @ 0x4
+   557                           
+   558                           
+   559                           ; 2 bytes @ 0x4
+   560  004E                     	ds	1
+   561  004F                     ___awdiv@counter:	
+   562  004F                     ___awmod@counter:	
+   563                           ; 1 bytes @ 0x5
+   564                           
+   565                           
+   566                           ; 1 bytes @ 0x5
+   567  004F                     	ds	1
+   568  0050                     ___awdiv@sign:	
+   569  0050                     ___awmod@sign:	
+   570                           ; 1 bytes @ 0x6
+   571                           
+   572                           
+   573                           ; 1 bytes @ 0x6
+   574  0050                     	ds	1
+   575  0051                     ___awdiv@quotient:	
+   576                           
+   577                           ; 2 bytes @ 0x7
+   578  0051                     	ds	2
+   579  0053                     ??_UpdateLedBuffer:	
+   580  0053                     ?_SetTimer1_ms:	
+   581                           ; 1 bytes @ 0x9
+   582                           
+   583  0053                     SetTimer1_ms@time:	
+   584                           ; 1 bytes @ 0x9
+   585                           
+   586                           
+   587                           ; 2 bytes @ 0x9
+   588  0053                     	ds	2
+   589  0055                     ??_SetTimer1_ms:	
+   590                           
+   591                           ; 1 bytes @ 0xB
+   592  0055                     	ds	1
+   593  0056                     UpdateLedBuffer@time:	
+   594                           
+   595                           ; 1 bytes @ 0xC
+   596  0056                     	ds	1
+   597  0057                     ??_InitSystem:	
+   598                           
+   599                           ; 1 bytes @ 0xD
+   600  0057                     	ds	1
+   601  0058                     ??_main:	
+   602                           
+   603                           ; 1 bytes @ 0xE
+   604  0058                     	ds	1
+   605  0059                     main@counter:	
+   606                           
+   607                           ; 1 bytes @ 0xF
+   608  0059                     	ds	1
+   609                           
+   610                           	psect	maintext
+   611  0046                     __pmaintext:	
+   612 ;;
+   613 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   614 ;;
+   615 ;; *************** function _main *****************
+   616 ;; Defined at:
+   617 ;;		line 40 in file "main.c"
+   618 ;; Parameters:    Size  Location     Type
+   619 ;;		None
+   620 ;; Auto vars:     Size  Location     Type
+   621 ;;  counter         1   15[BANK0 ] unsigned char 
+   622 ;; Return value:  Size  Location     Type
+   623 ;;                  1    wreg      void 
+   624 ;; Registers used:
+   625 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   626 ;; Tracked objects:
+   627 ;;		On entry : B00/0
+   628 ;;		On exit  : 0/0
+   629 ;;		Unchanged: 0/0
+   630 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   631 ;;      Params:         0       0       0       0
+   632 ;;      Locals:         0       1       0       0
+   633 ;;      Temps:          0       1       0       0
+   634 ;;      Totals:         0       2       0       0
+   635 ;;Total ram usage:        2 bytes
+   636 ;; Hardware stack levels required when called:    6
+   637 ;; This function calls:
+   638 ;;		_Delay_ms
+   639 ;;		_InitSystem
+   640 ;;		_RelayOn
+   641 ;;		_SetTimer1_ms
+   642 ;;		_UpdateLedBuffer
+   643 ;;		_WriteEEPROM
+   644 ;;		_is_button_held
+   645 ;;		_is_button_pressed
+   646 ;;		_is_button_pressed_s
+   647 ;; This function is called by:
+   648 ;;		Startup code after reset
+   649 ;; This function uses a non-reentrant model
+   650 ;;
+   651                           
+   652                           
+   653                           ;psect for function _main
+   654  0046                     _main:	
+   655                           
+   656                           ;main.c: 41: InitSystem();
+   657                           
+   658                           ;incstack = 0
+   659                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   660  0046  2231               	fcall	_InitSystem
+   661                           
+   662                           ;main.c: 42: unsigned char counter = 0;
+   663  0047  1283               	bcf	3,5	;RP0=0, select bank0
+   664  0048  1303               	bcf	3,6	;RP1=0, select bank0
+   665  0049  01D9               	clrf	main@counter
+   666                           
+   667                           ;main.c: 46: switch(mode){
+   668                           
+   669                           ;main.c: 44: while(1){
+   670  004A  290F               	goto	l1476
+   671  004B                     l1376:	
+   672                           ;main.c: 47: case INIT:
+   673                           
+   674                           
+   675                           ;main.c: 48: if(!is_button_pressed(2)) mode = ADJUSTING;
+   676  004B  3002               	movlw	2
+   677  004C  2301               	fcall	_is_button_pressed
+   678  004D  3A00               	xorlw	0
+   679  004E  1D03               	skipz
+   680  004F  2908               	goto	l1478
+   681  0050  1283               	bcf	3,5	;RP0=0, select bank0
+   682  0051  1303               	bcf	3,6	;RP1=0, select bank0
+   683  0052  01B3               	clrf	_mode
+   684  0053  0AB3               	incf	_mode,f
+   685                           
+   686                           ;main.c: 49: break;
+   687  0054  2908               	goto	l1478
+   688  0055                     l1380:	
+   689                           ;main.c: 50: case ADJUSTING:
+   690                           
+   691                           
+   692                           ;main.c: 52: UpdateLedBuffer(TIME);
+   693  0055  0830               	movf	_TIME,w
+   694  0056  2265               	fcall	_UpdateLedBuffer
+   695                           
+   696                           ;main.c: 53: RelayOn(0);
+   697  0057  3000               	movlw	0
+   698  0058  23C0               	fcall	_RelayOn
+   699                           
+   700                           ;main.c: 54: if(is_button_held(0)){
+   701  0059  3000               	movlw	0
+   702  005A  231D               	fcall	_is_button_held
+   703  005B  3A00               	xorlw	0
+   704  005C  1903               	skipnz
+   705  005D  287A               	goto	l1396
+   706                           
+   707                           ;main.c: 55: TIME++;
+   708  005E  3001               	movlw	1
+   709  005F  1283               	bcf	3,5	;RP0=0, select bank0
+   710  0060  1303               	bcf	3,6	;RP1=0, select bank0
+   711  0061  00D8               	movwf	??_main
+   712  0062  0858               	movf	??_main,w
+   713  0063  07B0               	addwf	_TIME,f
+   714                           
+   715                           ;main.c: 56: if(TIME < 0 || TIME > 99) TIME = 0;
+   716  0064  3064               	movlw	100
+   717  0065  0230               	subwf	_TIME,w
+   718  0066  1803               	btfsc	3,0
+   719  0067  01B0               	clrf	_TIME
+   720                           
+   721                           ;main.c: 58: UpdateLedBuffer(TIME);
+   722  0068  0830               	movf	_TIME,w
+   723  0069  2265               	fcall	_UpdateLedBuffer
+   724                           
+   725                           ;main.c: 59: WriteEEPROM(addressEEPROMused, TIME);
+   726  006A  1283               	bcf	3,5	;RP0=0, select bank0
+   727  006B  1303               	bcf	3,6	;RP1=0, select bank0
+   728  006C  0830               	movf	_TIME,w
+   729  006D  00D8               	movwf	??_main
+   730  006E  0858               	movf	??_main,w
+   731  006F  00CA               	movwf	WriteEEPROM@data
+   732  0070  0831               	movf	_addressEEPROMused,w
+   733  0071  2339               	fcall	_WriteEEPROM
+   734                           
+   735                           ;main.c: 60: Delay_ms(100);
+   736  0072  3064               	movlw	100
+   737  0073  1283               	bcf	3,5	;RP0=0, select bank0
+   738  0074  1303               	bcf	3,6	;RP1=0, select bank0
+   739  0075  00CA               	movwf	Delay_ms@delay
+   740  0076  3000               	movlw	0
+   741  0077  00CB               	movwf	Delay_ms@delay+1
+   742  0078  2291               	fcall	_Delay_ms
+   743                           
+   744                           ;main.c: 61: }
+   745  0079  2908               	goto	l1478
+   746  007A                     l1396:	
+   747                           
+   748                           ;main.c: 62: else if(is_button_held(1)){
+   749  007A  3001               	movlw	1
+   750  007B  231D               	fcall	_is_button_held
+   751  007C  3A00               	xorlw	0
+   752  007D  1903               	skipnz
+   753  007E  2899               	goto	l1410
+   754                           
+   755                           ;main.c: 63: TIME--;
+   756  007F  3001               	movlw	1
+   757  0080  1283               	bcf	3,5	;RP0=0, select bank0
+   758  0081  1303               	bcf	3,6	;RP1=0, select bank0
+   759  0082  02B0               	subwf	_TIME,f
+   760                           
+   761                           ;main.c: 64: if(TIME < 0 || TIME > 99) TIME = 0;
+   762  0083  3064               	movlw	100
+   763  0084  0230               	subwf	_TIME,w
+   764  0085  1803               	btfsc	3,0
+   765  0086  01B0               	clrf	_TIME
+   766                           
+   767                           ;main.c: 66: UpdateLedBuffer(TIME);
+   768  0087  0830               	movf	_TIME,w
+   769  0088  2265               	fcall	_UpdateLedBuffer
+   770                           
+   771                           ;main.c: 67: WriteEEPROM(addressEEPROMused, TIME);
+   772  0089  1283               	bcf	3,5	;RP0=0, select bank0
+   773  008A  1303               	bcf	3,6	;RP1=0, select bank0
+   774  008B  0830               	movf	_TIME,w
+   775  008C  00D8               	movwf	??_main
+   776  008D  0858               	movf	??_main,w
+   777  008E  00CA               	movwf	WriteEEPROM@data
+   778  008F  0831               	movf	_addressEEPROMused,w
+   779  0090  2339               	fcall	_WriteEEPROM
+   780                           
+   781                           ;main.c: 68: Delay_ms(100);
+   782  0091  3064               	movlw	100
+   783  0092  1283               	bcf	3,5	;RP0=0, select bank0
+   784  0093  1303               	bcf	3,6	;RP1=0, select bank0
+   785  0094  00CA               	movwf	Delay_ms@delay
+   786  0095  3000               	movlw	0
+   787  0096  00CB               	movwf	Delay_ms@delay+1
+   788  0097  2291               	fcall	_Delay_ms
+   789                           
+   790                           ;main.c: 69: }
+   791  0098  2908               	goto	l1478
+   792  0099                     l1410:	
+   793                           
+   794                           ;main.c: 70: else if(is_button_pressed(2)){
+   795  0099  3002               	movlw	2
+   796  009A  2301               	fcall	_is_button_pressed
+   797  009B  3A00               	xorlw	0
+   798  009C  1D03               	btfss	3,2
+   799  009D  28BE               	goto	l1430
+   800  009E  2908               	goto	l1478
+   801  009F                     l1414:	
+   802                           ;main.c: 72: while(is_button_held(2)){
+   803                           
+   804                           
+   805                           ;main.c: 73: if(is_button_pressed_s(2)){
+   806  009F  3002               	movlw	2
+   807  00A0  23A3               	fcall	_is_button_pressed_s
+   808  00A1  3A00               	xorlw	0
+   809  00A2  1903               	skipnz
+   810  00A3  28B0               	goto	l1424
+   811                           
+   812                           ;main.c: 74: pumpState = 0;
+   813  00A4  1283               	bcf	3,5	;RP0=0, select bank0
+   814  00A5  1303               	bcf	3,6	;RP1=0, select bank0
+   815  00A6  01B4               	clrf	_pumpState
+   816                           
+   817                           ;main.c: 75: cleaning_counter = 10;
+   818  00A7  300A               	movlw	10
+   819  00A8  00D8               	movwf	??_main
+   820  00A9  0858               	movf	??_main,w
+   821  00AA  00DA               	movwf	_cleaning_counter
+   822                           
+   823                           ;main.c: 76: mode = AUTO_CLEANING;
+   824  00AB  3003               	movlw	3
+   825  00AC  00D8               	movwf	??_main
+   826  00AD  0858               	movf	??_main,w
+   827  00AE  00B3               	movwf	_mode
+   828                           
+   829                           ;main.c: 77: break;
+   830  00AF  2908               	goto	l1478
+   831  00B0                     l1424:	
+   832                           ;main.c: 78: }
+   833                           
+   834                           
+   835                           ;main.c: 79: else {
+   836                           ;main.c: 80: SetTimer1_ms(1000);
+   837  00B0  30E8               	movlw	232
+   838  00B1  1283               	bcf	3,5	;RP0=0, select bank0
+   839  00B2  1303               	bcf	3,6	;RP1=0, select bank0
+   840  00B3  00D3               	movwf	SetTimer1_ms@time
+   841  00B4  3003               	movlw	3
+   842  00B5  00D4               	movwf	SetTimer1_ms@time+1
+   843  00B6  2368               	fcall	_SetTimer1_ms
+   844                           
+   845                           ;main.c: 81: counter = 0;
+   846  00B7  1283               	bcf	3,5	;RP0=0, select bank0
+   847  00B8  1303               	bcf	3,6	;RP1=0, select bank0
+   848  00B9  01D9               	clrf	main@counter
+   849                           
+   850                           ;main.c: 82: mode = AUTO_BREWING;
+   851  00BA  3002               	movlw	2
+   852  00BB  00D8               	movwf	??_main
+   853  00BC  0858               	movf	??_main,w
+   854  00BD  00B3               	movwf	_mode
+   855  00BE                     l1430:	
+   856  00BE  3002               	movlw	2
+   857  00BF  231D               	fcall	_is_button_held
+   858  00C0  3A00               	xorlw	0
+   859  00C1  1903               	btfsc	3,2
+   860  00C2  2908               	goto	l1478
+   861  00C3  289F               	goto	l1414
+   862  00C4                     l1432:	
+   863                           ;main.c: 87: case AUTO_BREWING:
+   864                           
+   865                           ;main.c: 83: }
+   866                           ;main.c: 84: }
+   867                           ;main.c: 85: }
+   868                           ;main.c: 86: break;
+   869                           
+   870                           
+   871                           ;main.c: 88: RelayOn(1);
+   872  00C4  3001               	movlw	1
+   873  00C5  23C0               	fcall	_RelayOn
+   874                           
+   875                           ;main.c: 89: UpdateLedBuffer(counter);
+   876  00C6  1283               	bcf	3,5	;RP0=0, select bank0
+   877  00C7  1303               	bcf	3,6	;RP1=0, select bank0
+   878  00C8  0859               	movf	main@counter,w
+   879  00C9  2265               	fcall	_UpdateLedBuffer
+   880                           
+   881                           ;main.c: 91: if(flag_timer1){
+   882  00CA  1283               	bcf	3,5	;RP0=0, select bank0
+   883  00CB  1303               	bcf	3,6	;RP1=0, select bank0
+   884  00CC  0832               	movf	_flag_timer1,w
+   885  00CD  1903               	btfsc	3,2
+   886  00CE  28D4               	goto	l1440
+   887                           
+   888                           ;main.c: 92: counter++;
+   889  00CF  3001               	movlw	1
+   890  00D0  00D8               	movwf	??_main
+   891  00D1  0858               	movf	??_main,w
+   892  00D2  07D9               	addwf	main@counter,f
+   893                           
+   894                           ;main.c: 93: flag_timer1 = 0;
+   895  00D3  01B2               	clrf	_flag_timer1
+   896  00D4                     l1440:	
+   897                           
+   898                           ;main.c: 94: }
+   899                           ;main.c: 95: if(counter >= TIME) mode = INIT;
+   900  00D4  0830               	movf	_TIME,w
+   901  00D5  0259               	subwf	main@counter,w
+   902  00D6  1803               	btfsc	3,0
+   903  00D7  01B3               	clrf	_mode
+   904  00D8  2900               	goto	l1470
+   905  00D9                     l1448:	
+   906                           ;main.c: 98: case AUTO_CLEANING:
+   907                           
+   908                           ;main.c: 97: break;
+   909                           
+   910                           ;main.c: 96: if(is_button_pressed(2)) mode = INIT;
+   911                           
+   912                           
+   913                           ;main.c: 99: UpdateLedBuffer(cleaning_counter);
+   914  00D9  085A               	movf	_cleaning_counter,w
+   915  00DA  2265               	fcall	_UpdateLedBuffer
+   916                           
+   917                           ;main.c: 100: if(flag_timer1){
+   918  00DB  1283               	bcf	3,5	;RP0=0, select bank0
+   919  00DC  1303               	bcf	3,6	;RP1=0, select bank0
+   920  00DD  0832               	movf	_flag_timer1,w
+   921  00DE  1903               	btfsc	3,2
+   922  00DF  28FB               	goto	l1466
+   923                           
+   924                           ;main.c: 102: if(pumpState == 0){
+   925  00E0  0834               	movf	_pumpState,w
+   926  00E1  1D03               	btfss	3,2
+   927  00E2  28ED               	goto	l1458
+   928                           
+   929                           ;main.c: 104: pumpState = 1;
+   930  00E3  01B4               	clrf	_pumpState
+   931  00E4  0AB4               	incf	_pumpState,f
+   932                           
+   933                           ;main.c: 106: RelayOn(1);
+   934  00E5  3001               	movlw	1
+   935  00E6  23C0               	fcall	_RelayOn
+   936                           
+   937                           ;main.c: 107: SetTimer1_ms(10000);
+   938  00E7  3010               	movlw	16
+   939  00E8  1283               	bcf	3,5	;RP0=0, select bank0
+   940  00E9  1303               	bcf	3,6	;RP1=0, select bank0
+   941  00EA  00D3               	movwf	SetTimer1_ms@time
+   942  00EB  3027               	movlw	39
+   943  00EC  28F9               	goto	L1
+   944  00ED                     l1458:	
+   945                           ;main.c: 108: }
+   946                           
+   947                           
+   948                           ;main.c: 109: else {
+   949                           ;main.c: 111: pumpState = 0;
+   950  00ED  1283               	bcf	3,5	;RP0=0, select bank0
+   951  00EE  1303               	bcf	3,6	;RP1=0, select bank0
+   952  00EF  01B4               	clrf	_pumpState
+   953                           
+   954                           ;main.c: 112: cleaning_counter--;
+   955  00F0  3001               	movlw	1
+   956  00F1  02DA               	subwf	_cleaning_counter,f
+   957                           
+   958                           ;main.c: 113: RelayOn(0);
+   959  00F2  3000               	movlw	0
+   960  00F3  23C0               	fcall	_RelayOn
+   961                           
+   962                           ;main.c: 114: SetTimer1_ms(2000);
+   963  00F4  30D0               	movlw	208
+   964  00F5  1283               	bcf	3,5	;RP0=0, select bank0
+   965  00F6  1303               	bcf	3,6	;RP1=0, select bank0
+   966  00F7  00D3               	movwf	SetTimer1_ms@time
+   967  00F8  3007               	movlw	7
+   968  00F9                     L1:	
+   969  00F9  00D4               	movwf	SetTimer1_ms@time+1
+   970  00FA  2368               	fcall	_SetTimer1_ms
+   971  00FB                     l1466:	
+   972                           
+   973                           ;main.c: 115: }
+   974                           ;main.c: 116: }
+   975                           ;main.c: 117: if(cleaning_counter == 0) mode = INIT;
+   976  00FB  1283               	bcf	3,5	;RP0=0, select bank0
+   977  00FC  1303               	bcf	3,6	;RP1=0, select bank0
+   978  00FD  085A               	movf	_cleaning_counter,w
+   979  00FE  1903               	btfsc	3,2
+   980  00FF  01B3               	clrf	_mode
+   981  0100                     l1470:	
+   982                           
+   983                           ;main.c: 118: if(is_button_pressed(2)) mode = INIT;
+   984  0100  3002               	movlw	2
+   985  0101  2301               	fcall	_is_button_pressed
+   986  0102  3A00               	xorlw	0
+   987  0103  1903               	skipnz
+   988  0104  2908               	goto	l1478
+   989  0105  1283               	bcf	3,5	;RP0=0, select bank0
+   990  0106  1303               	bcf	3,6	;RP1=0, select bank0
+   991  0107  01B3               	clrf	_mode
+   992  0108                     l1478:	
+   993                           ;main.c: 122: }
+   994                           
+   995                           ;main.c: 121: break;
+   996                           
+   997                           ;main.c: 120: default:
+   998                           
+   999                           ;main.c: 119: break;
+  1000                           
+  1001                           
+  1002                           ;main.c: 124: Delay_ms(3);
+  1003  0108  3003               	movlw	3
+  1004  0109  1283               	bcf	3,5	;RP0=0, select bank0
+  1005  010A  1303               	bcf	3,6	;RP1=0, select bank0
+  1006  010B  00CA               	movwf	Delay_ms@delay
+  1007  010C  3000               	movlw	0
+  1008  010D  00CB               	movwf	Delay_ms@delay+1
+  1009  010E  2291               	fcall	_Delay_ms
+  1010  010F                     l1476:	
+  1011  010F  1283               	bcf	3,5	;RP0=0, select bank0
+  1012  0110  1303               	bcf	3,6	;RP1=0, select bank0
+  1013  0111  0833               	movf	_mode,w
+  1014                           
+  1015                           ; Switch size 1, requested type "space"
+  1016                           ; Number of cases is 4, Range of values is 0 to 3
+  1017                           ; switch strategies available:
+  1018                           ; Name         Instructions Cycles
+  1019                           ; direct_byte           10     6 (fixed)
+  1020                           ; simple_byte           13     7 (average)
+  1021                           ; jumptable            260     6 (fixed)
+  1022                           ;	Chosen strategy is direct_byte
+  1023  0112  0084               	movwf	4
+  1024  0113  3004               	movlw	4
+  1025  0114  0204               	subwf	4,w
+  1026  0115  1803               	skipnc
+  1027  0116  2908               	goto	l1478
+  1028  0117  3003               	movlw	high S1504
+  1029  0118  008A               	movwf	10
+  1030  0119  30EE               	movlw	low S1504
+  1031  011A  0704               	addwf	4,w
+  1032  011B  0082               	movwf	2
+  1033  011C  2908               	goto	l1478
+  1034  011D                     __end_of_main:	
+  1035                           ;main.c: 125: }
+  1036                           ;main.c: 126: return;
+  1037                           
+  1038                           
+  1039                           	psect	swtext1
+  1040  03EE                     __pswtext1:	
+  1041  03EE                     S1504:	
+  1042  03EE  284B               	ljmp	l1376
+  1043  03EF  2855               	ljmp	l1380
+  1044  03F0  28C4               	ljmp	l1432
+  1045  03F1  28D9               	ljmp	l1448
+  1046                           
+  1047                           	psect	text1
+  1048  03A3                     __ptext1:	
+  1049 ;; *************** function _is_button_pressed_s *****************
+  1050 ;; Defined at:
+  1051 ;;		line 49 in file "button.c"
+  1052 ;; Parameters:    Size  Location     Type
+  1053 ;;  index           1    wreg     unsigned char 
+  1054 ;; Auto vars:     Size  Location     Type
+  1055 ;;  index           1    0[BANK0 ] unsigned char 
+  1056 ;; Return value:  Size  Location     Type
+  1057 ;;                  1    wreg      unsigned char 
+  1058 ;; Registers used:
+  1059 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1060 ;; Tracked objects:
+  1061 ;;		On entry : 0/0
+  1062 ;;		On exit  : 0/0
+  1063 ;;		Unchanged: 0/0
+  1064 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1065 ;;      Params:         0       0       0       0
+  1066 ;;      Locals:         0       1       0       0
+  1067 ;;      Temps:          0       0       0       0
+  1068 ;;      Totals:         0       1       0       0
+  1069 ;;Total ram usage:        1 bytes
+  1070 ;; Hardware stack levels used:    1
+  1071 ;; Hardware stack levels required when called:    3
+  1072 ;; This function calls:
+  1073 ;;		Nothing
+  1074 ;; This function is called by:
+  1075 ;;		_main
+  1076 ;; This function uses a non-reentrant model
+  1077 ;;
+  1078                           
+  1079                           
+  1080                           ;psect for function _is_button_pressed_s
+  1081  03A3                     _is_button_pressed_s:	
+  1082                           
+  1083                           ;incstack = 0
+  1084                           ; Regs used in _is_button_pressed_s: [wreg-fsr0h+status,2+status,0]
+  1085                           ;is_button_pressed_s@index stored from wreg
+  1086  03A3  1283               	bcf	3,5	;RP0=0, select bank0
+  1087  03A4  1303               	bcf	3,6	;RP1=0, select bank0
+  1088  03A5  00CA               	movwf	is_button_pressed_s@index
+  1089                           
+  1090                           ;button.c: 50: if(index >= 3) return 0xFF;
+  1091  03A6  3003               	movlw	3
+  1092  03A7  024A               	subwf	is_button_pressed_s@index,w
+  1093  03A8  1C03               	skipc
+  1094  03A9  2BAC               	goto	l1346
+  1095  03AA  30FF               	movlw	255
+  1096  03AB  0008               	return
+  1097  03AC                     l1346:	
+  1098                           
+  1099                           ;button.c: 51: return flagForButtonPress_s[index];
+  1100  03AC  084A               	movf	is_button_pressed_s@index,w
+  1101  03AD  3E29               	addlw	(low (_flagForButtonPress_s| 0))& (0+255)
+  1102  03AE  0084               	movwf	4
+  1103  03AF  1383               	bcf	3,7	;select IRP bank0
+  1104  03B0  0800               	movf	0,w
+  1105  03B1  0008               	return
+  1106  03B2                     __end_of_is_button_pressed_s:	
+  1107                           
+  1108                           	psect	text2
+  1109  0301                     __ptext2:	
+  1110 ;; *************** function _is_button_pressed *****************
+  1111 ;; Defined at:
+  1112 ;;		line 44 in file "button.c"
+  1113 ;; Parameters:    Size  Location     Type
+  1114 ;;  index           1    wreg     unsigned char 
+  1115 ;; Auto vars:     Size  Location     Type
+  1116 ;;  index           1    3[BANK0 ] unsigned char 
+  1117 ;; Return value:  Size  Location     Type
+  1118 ;;                  1    wreg      unsigned char 
+  1119 ;; Registers used:
+  1120 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1121 ;; Tracked objects:
+  1122 ;;		On entry : 0/0
+  1123 ;;		On exit  : 0/0
+  1124 ;;		Unchanged: 0/0
+  1125 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1126 ;;      Params:         0       0       0       0
+  1127 ;;      Locals:         0       1       0       0
+  1128 ;;      Temps:          0       3       0       0
+  1129 ;;      Totals:         0       4       0       0
+  1130 ;;Total ram usage:        4 bytes
+  1131 ;; Hardware stack levels used:    1
+  1132 ;; Hardware stack levels required when called:    3
+  1133 ;; This function calls:
+  1134 ;;		Nothing
+  1135 ;; This function is called by:
+  1136 ;;		_main
+  1137 ;; This function uses a non-reentrant model
+  1138 ;;
+  1139                           
+  1140                           
+  1141                           ;psect for function _is_button_pressed
+  1142  0301                     _is_button_pressed:	
+  1143                           
+  1144                           ;incstack = 0
+  1145                           ; Regs used in _is_button_pressed: [wreg-fsr0h+status,2+status,0]
+  1146                           ;is_button_pressed@index stored from wreg
+  1147  0301  1283               	bcf	3,5	;RP0=0, select bank0
+  1148  0302  1303               	bcf	3,6	;RP1=0, select bank0
+  1149  0303  00CD               	movwf	is_button_pressed@index
+  1150                           
+  1151                           ;button.c: 45: if(index >= 3) return 0;
+  1152  0304  3003               	movlw	3
+  1153  0305  024D               	subwf	is_button_pressed@index,w
+  1154  0306  1C03               	skipc
+  1155  0307  2B0A               	goto	l1304
+  1156  0308  3000               	movlw	0
+  1157  0309  0008               	return
+  1158  030A                     l1304:	
+  1159                           
+  1160                           ;button.c: 47: return counterForButtonPress[index] == 1;
+  1161  030A  084D               	movf	is_button_pressed@index,w
+  1162  030B  00CA               	movwf	??_is_button_pressed
+  1163  030C  074A               	addwf	??_is_button_pressed,w
+  1164  030D  3E20               	addlw	(low (_counterForButtonPress| 0))& (0+255)
+  1165  030E  0084               	movwf	4
+  1166  030F  1383               	bcf	3,7	;select IRP bank0
+  1167  0310  0800               	movf	0,w
+  1168  0311  00CB               	movwf	??_is_button_pressed+1
+  1169  0312  0A84               	incf	4,f
+  1170  0313  0800               	movf	0,w
+  1171  0314  00CC               	movwf	??_is_button_pressed+2
+  1172  0315  034B               	decf	??_is_button_pressed+1,w
+  1173  0316  044C               	iorwf	??_is_button_pressed+2,w
+  1174  0317  1D03               	btfss	3,2
+  1175  0318  2B1B               	goto	u930
+  1176  0319  3001               	movlw	1
+  1177  031A  0008               	return
+  1178  031B                     u930:	
+  1179  031B  3000               	movlw	0
+  1180  031C  0008               	return
+  1181  031D                     __end_of_is_button_pressed:	
+  1182                           
+  1183                           	psect	text3
+  1184  031D                     __ptext3:	
+  1185 ;; *************** function _is_button_held *****************
+  1186 ;; Defined at:
+  1187 ;;		line 38 in file "button.c"
+  1188 ;; Parameters:    Size  Location     Type
+  1189 ;;  index           1    wreg     unsigned char 
+  1190 ;; Auto vars:     Size  Location     Type
+  1191 ;;  index           1    3[BANK0 ] unsigned char 
+  1192 ;; Return value:  Size  Location     Type
+  1193 ;;                  1    wreg      unsigned char 
+  1194 ;; Registers used:
+  1195 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1196 ;; Tracked objects:
+  1197 ;;		On entry : 0/0
+  1198 ;;		On exit  : 0/0
+  1199 ;;		Unchanged: 0/0
+  1200 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1201 ;;      Params:         0       0       0       0
+  1202 ;;      Locals:         0       1       0       0
+  1203 ;;      Temps:          0       3       0       0
+  1204 ;;      Totals:         0       4       0       0
+  1205 ;;Total ram usage:        4 bytes
+  1206 ;; Hardware stack levels used:    1
+  1207 ;; Hardware stack levels required when called:    3
+  1208 ;; This function calls:
+  1209 ;;		Nothing
+  1210 ;; This function is called by:
+  1211 ;;		_main
+  1212 ;; This function uses a non-reentrant model
+  1213 ;;
+  1214                           
+  1215                           
+  1216                           ;psect for function _is_button_held
+  1217  031D                     _is_button_held:	
+  1218                           
+  1219                           ;incstack = 0
+  1220                           ; Regs used in _is_button_held: [wreg-fsr0h+status,2+status,0]
+  1221                           ;is_button_held@index stored from wreg
+  1222  031D  1283               	bcf	3,5	;RP0=0, select bank0
+  1223  031E  1303               	bcf	3,6	;RP1=0, select bank0
+  1224  031F  00CD               	movwf	is_button_held@index
+  1225                           
+  1226                           ;button.c: 39: if(index >= 3) return 0;
+  1227  0320  3003               	movlw	3
+  1228  0321  024D               	subwf	is_button_held@index,w
+  1229  0322  1C03               	skipc
+  1230  0323  2B26               	goto	l1314
+  1231  0324  3000               	movlw	0
+  1232  0325  0008               	return
+  1233  0326                     l1314:	
+  1234                           
+  1235                           ;button.c: 41: return counterForButtonPress[index] > 0;
+  1236  0326  084D               	movf	is_button_held@index,w
+  1237  0327  00CA               	movwf	??_is_button_held
+  1238  0328  074A               	addwf	??_is_button_held,w
+  1239  0329  3E20               	addlw	(low (_counterForButtonPress| 0))& (0+255)
+  1240  032A  0084               	movwf	4
+  1241  032B  1383               	bcf	3,7	;select IRP bank0
+  1242  032C  0800               	movf	0,w
+  1243  032D  00CB               	movwf	??_is_button_held+1
+  1244  032E  0A84               	incf	4,f
+  1245  032F  0800               	movf	0,w
+  1246  0330  00CC               	movwf	??_is_button_held+2
+  1247  0331  084B               	movf	??_is_button_held+1,w
+  1248  0332  044C               	iorwf	??_is_button_held+2,w
+  1249  0333  1903               	btfsc	3,2
+  1250  0334  2B37               	goto	u960
+  1251  0335  3001               	movlw	1
+  1252  0336  0008               	return
+  1253  0337                     u960:	
+  1254  0337  3000               	movlw	0
+  1255  0338  0008               	return
+  1256  0339                     __end_of_is_button_held:	
+  1257                           
+  1258                           	psect	text4
+  1259  0339                     __ptext4:	
+  1260 ;; *************** function _WriteEEPROM *****************
+  1261 ;; Defined at:
+  1262 ;;		line 169 in file "main.c"
+  1263 ;; Parameters:    Size  Location     Type
+  1264 ;;  address         1    wreg     unsigned char 
+  1265 ;;  data            1    0[BANK0 ] unsigned char 
+  1266 ;; Auto vars:     Size  Location     Type
+  1267 ;;  address         1    1[BANK0 ] unsigned char 
+  1268 ;; Return value:  Size  Location     Type
+  1269 ;;                  1    wreg      void 
+  1270 ;; Registers used:
+  1271 ;;		wreg
+  1272 ;; Tracked objects:
+  1273 ;;		On entry : 0/0
+  1274 ;;		On exit  : 0/0
+  1275 ;;		Unchanged: 0/0
+  1276 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1277 ;;      Params:         0       1       0       0
+  1278 ;;      Locals:         0       1       0       0
+  1279 ;;      Temps:          0       0       0       0
+  1280 ;;      Totals:         0       2       0       0
+  1281 ;;Total ram usage:        2 bytes
+  1282 ;; Hardware stack levels used:    1
+  1283 ;; Hardware stack levels required when called:    3
+  1284 ;; This function calls:
+  1285 ;;		Nothing
+  1286 ;; This function is called by:
+  1287 ;;		_main
+  1288 ;; This function uses a non-reentrant model
+  1289 ;;
+  1290                           
+  1291                           
+  1292                           ;psect for function _WriteEEPROM
+  1293  0339                     _WriteEEPROM:	
+  1294                           
+  1295                           ;incstack = 0
+  1296                           ; Regs used in _WriteEEPROM: [wreg]
+  1297                           ;WriteEEPROM@address stored from wreg
+  1298  0339  1283               	bcf	3,5	;RP0=0, select bank0
+  1299  033A  1303               	bcf	3,6	;RP1=0, select bank0
+  1300  033B  00CB               	movwf	WriteEEPROM@address
+  1301                           
+  1302                           ;main.c: 170: EEADR = address;
+  1303  033C  084B               	movf	WriteEEPROM@address,w
+  1304  033D  1683               	bsf	3,5	;RP0=1, select bank1
+  1305  033E  1303               	bcf	3,6	;RP1=0, select bank1
+  1306  033F  009B               	movwf	27	;volatile
+  1307                           
+  1308                           ;main.c: 171: EEDATA = data;
+  1309  0340  1283               	bcf	3,5	;RP0=0, select bank0
+  1310  0341  1303               	bcf	3,6	;RP1=0, select bank0
+  1311  0342  084A               	movf	WriteEEPROM@data,w
+  1312  0343  1683               	bsf	3,5	;RP0=1, select bank1
+  1313  0344  1303               	bcf	3,6	;RP1=0, select bank1
+  1314  0345  009A               	movwf	26	;volatile
+  1315                           
+  1316                           ;main.c: 172: EECON1bits.WREN = 1;
+  1317  0346  151C               	bsf	28,2	;volsfr
+  1318                           
+  1319                           ;main.c: 173: INTCONbits.GIE = 0;
+  1320  0347  138B               	bcf	11,7	;volatile
+  1321                           
+  1322                           ;main.c: 174: EECON2=0x55;
+  1323  0348  3055               	movlw	85
+  1324  0349  009D               	movwf	29	;volsfr
+  1325                           
+  1326                           ;main.c: 175: EECON2=0xAA;
+  1327  034A  30AA               	movlw	170
+  1328  034B  009D               	movwf	29	;volsfr
+  1329                           
+  1330                           ;main.c: 176: EECON1bits.WR = 1;
+  1331  034C  149C               	bsf	28,1	;volsfr
+  1332                           
+  1333                           ;main.c: 177: INTCONbits.GIE = 1;
+  1334  034D  178B               	bsf	11,7	;volatile
+  1335  034E                     l138:	
+  1336                           ;main.c: 179: while(PIR1bits.EEIF == 0);
+  1337                           
+  1338  034E  1283               	bcf	3,5	;RP0=0, select bank0
+  1339  034F  1F8C               	btfss	12,7	;volatile
+  1340  0350  2B4E               	goto	l138
+  1341                           
+  1342                           ;main.c: 180: PIR1bits.EEIF = 0;
+  1343  0351  138C               	bcf	12,7	;volatile
+  1344  0352  0008               	return
+  1345  0353                     __end_of_WriteEEPROM:	
+  1346                           
+  1347                           	psect	text5
+  1348  0231                     __ptext5:	
+  1349 ;; *************** function _InitSystem *****************
+  1350 ;; Defined at:
+  1351 ;;		line 129 in file "main.c"
+  1352 ;; Parameters:    Size  Location     Type
+  1353 ;;		None
+  1354 ;; Auto vars:     Size  Location     Type
+  1355 ;;		None
+  1356 ;; Return value:  Size  Location     Type
+  1357 ;;                  1    wreg      void 
+  1358 ;; Registers used:
+  1359 ;;		wreg, status,2, status,0, pclath, cstack
+  1360 ;; Tracked objects:
+  1361 ;;		On entry : 0/0
+  1362 ;;		On exit  : 0/0
+  1363 ;;		Unchanged: 0/0
+  1364 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1365 ;;      Params:         0       0       0       0
+  1366 ;;      Locals:         0       0       0       0
+  1367 ;;      Temps:          0       1       0       0
+  1368 ;;      Totals:         0       1       0       0
+  1369 ;;Total ram usage:        1 bytes
+  1370 ;; Hardware stack levels used:    1
+  1371 ;; Hardware stack levels required when called:    5
+  1372 ;; This function calls:
+  1373 ;;		_ReadEEPROM
+  1374 ;;		_RelayOn
+  1375 ;;		_SetTimer1_ms
+  1376 ;;		_UpdateLedBuffer
+  1377 ;;		_init_timer1
+  1378 ;; This function is called by:
+  1379 ;;		_main
+  1380 ;; This function uses a non-reentrant model
+  1381 ;;
+  1382                           
+  1383                           
+  1384                           ;psect for function _InitSystem
+  1385  0231                     _InitSystem:	
+  1386                           
+  1387                           ;main.c: 130: CMCON = 0x07;
+  1388                           
+  1389                           ;incstack = 0
+  1390                           ; Regs used in _InitSystem: [wreg+status,2+status,0+pclath+cstack]
+  1391  0231  3007               	movlw	7
+  1392  0232  1283               	bcf	3,5	;RP0=0, select bank0
+  1393  0233  1303               	bcf	3,6	;RP1=0, select bank0
+  1394  0234  009F               	movwf	31	;volatile
+  1395                           
+  1396                           ;main.c: 132: TRISA = 0b00110100;
+  1397  0235  3034               	movlw	52
+  1398  0236  1683               	bsf	3,5	;RP0=1, select bank1
+  1399  0237  1303               	bcf	3,6	;RP1=0, select bank1
+  1400  0238  0085               	movwf	5	;volatile
+  1401                           
+  1402                           ;main.c: 133: TRISB = 0b00000000;
+  1403  0239  0186               	clrf	6	;volatile
+  1404                           
+  1405                           ;main.c: 135: PORTA = 0xFF;
+  1406  023A  30FF               	movlw	255
+  1407  023B  1283               	bcf	3,5	;RP0=0, select bank0
+  1408  023C  1303               	bcf	3,6	;RP1=0, select bank0
+  1409  023D  0085               	movwf	5	;volatile
+  1410                           
+  1411                           ;main.c: 136: PORTB = 0xFF;
+  1412  023E  30FF               	movlw	255
+  1413  023F  0086               	movwf	6	;volatile
+  1414                           
+  1415                           ;main.c: 138: cleaning_counter = 10;
+  1416  0240  300A               	movlw	10
+  1417  0241  00D7               	movwf	??_InitSystem
+  1418  0242  0857               	movf	??_InitSystem,w
+  1419  0243  00DA               	movwf	_cleaning_counter
+  1420                           
+  1421                           ;main.c: 139: mode = INIT;
+  1422  0244  01B3               	clrf	_mode
+  1423                           
+  1424                           ;main.c: 140: RelayOn(0);
+  1425  0245  3000               	movlw	0
+  1426  0246  23C0               	fcall	_RelayOn
+  1427                           
+  1428                           ;main.c: 142: init_timer1(10000);
+  1429  0247  3010               	movlw	16
+  1430  0248  1283               	bcf	3,5	;RP0=0, select bank0
+  1431  0249  1303               	bcf	3,6	;RP1=0, select bank0
+  1432  024A  00CA               	movwf	init_timer1@count
+  1433  024B  3027               	movlw	39
+  1434  024C  00CB               	movwf	init_timer1@count+1
+  1435  024D  22DE               	fcall	_init_timer1
+  1436                           
+  1437                           ;main.c: 143: SetTimer1_ms(1000);
+  1438  024E  30E8               	movlw	232
+  1439  024F  1283               	bcf	3,5	;RP0=0, select bank0
+  1440  0250  1303               	bcf	3,6	;RP1=0, select bank0
+  1441  0251  00D3               	movwf	SetTimer1_ms@time
+  1442  0252  3003               	movlw	3
+  1443  0253  00D4               	movwf	SetTimer1_ms@time+1
+  1444  0254  2368               	fcall	_SetTimer1_ms
+  1445                           
+  1446                           ;main.c: 145: TIME = ReadEEPROM(addressEEPROMused);
+  1447  0255  1283               	bcf	3,5	;RP0=0, select bank0
+  1448  0256  1303               	bcf	3,6	;RP1=0, select bank0
+  1449  0257  0831               	movf	_addressEEPROMused,w
+  1450  0258  23CA               	fcall	_ReadEEPROM
+  1451  0259  1283               	bcf	3,5	;RP0=0, select bank0
+  1452  025A  1303               	bcf	3,6	;RP1=0, select bank0
+  1453  025B  00D7               	movwf	??_InitSystem
+  1454  025C  0857               	movf	??_InitSystem,w
+  1455  025D  00B0               	movwf	_TIME
+  1456                           
+  1457                           ;main.c: 146: if(TIME < 0 || TIME > 99) TIME = 0;
+  1458  025E  3064               	movlw	100
+  1459  025F  0230               	subwf	_TIME,w
+  1460  0260  1803               	btfsc	3,0
+  1461  0261  01B0               	clrf	_TIME
+  1462                           
+  1463                           ;main.c: 148: UpdateLedBuffer(TIME);
+  1464  0262  0830               	movf	_TIME,w
+  1465  0263  2265               	fcall	_UpdateLedBuffer
+  1466  0264  0008               	return
+  1467  0265                     __end_of_InitSystem:	
+  1468                           
+  1469                           	psect	text6
+  1470  02DE                     __ptext6:	
+  1471 ;; *************** function _init_timer1 *****************
+  1472 ;; Defined at:
+  1473 ;;		line 8 in file "timer.c"
+  1474 ;; Parameters:    Size  Location     Type
+  1475 ;;  count           2    0[BANK0 ] unsigned int 
+  1476 ;; Auto vars:     Size  Location     Type
+  1477 ;;		None
+  1478 ;; Return value:  Size  Location     Type
+  1479 ;;                  1    wreg      void 
+  1480 ;; Registers used:
+  1481 ;;		wreg, status,2, status,0
+  1482 ;; Tracked objects:
+  1483 ;;		On entry : 0/0
+  1484 ;;		On exit  : 0/0
+  1485 ;;		Unchanged: 0/0
+  1486 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1487 ;;      Params:         0       2       0       0
+  1488 ;;      Locals:         0       0       0       0
+  1489 ;;      Temps:          0       2       0       0
+  1490 ;;      Totals:         0       4       0       0
+  1491 ;;Total ram usage:        4 bytes
+  1492 ;; Hardware stack levels used:    1
+  1493 ;; Hardware stack levels required when called:    3
+  1494 ;; This function calls:
+  1495 ;;		Nothing
+  1496 ;; This function is called by:
+  1497 ;;		_InitSystem
+  1498 ;; This function uses a non-reentrant model
+  1499 ;;
+  1500                           
+  1501                           
+  1502                           ;psect for function _init_timer1
+  1503  02DE                     _init_timer1:	
+  1504                           
+  1505                           ;timer.c: 10: T1CONbits.TMR1ON = 0;
+  1506                           
+  1507                           ;incstack = 0
+  1508                           ; Regs used in _init_timer1: [wreg+status,2+status,0]
+  1509  02DE  1283               	bcf	3,5	;RP0=0, select bank0
+  1510  02DF  1303               	bcf	3,6	;RP1=0, select bank0
+  1511  02E0  1010               	bcf	16,0	;volatile
+  1512                           
+  1513                           ;timer.c: 11: timer1_value = 65535 - count;
+  1514  02E1  094A               	comf	init_timer1@count,w
+  1515  02E2  00CC               	movwf	??_init_timer1
+  1516  02E3  094B               	comf	init_timer1@count+1,w
+  1517  02E4  00CD               	movwf	??_init_timer1+1
+  1518  02E5  0ACC               	incf	??_init_timer1,f
+  1519  02E6  1903               	skipnz
+  1520  02E7  0ACD               	incf	??_init_timer1+1,f
+  1521  02E8  084C               	movf	??_init_timer1,w
+  1522  02E9  3EFF               	addlw	255
+  1523  02EA  00AE               	movwf	_timer1_value
+  1524  02EB  084D               	movf	??_init_timer1+1,w
+  1525  02EC  1803               	skipnc
+  1526  02ED  3E01               	addlw	1
+  1527  02EE  3EFF               	addlw	255
+  1528  02EF  00AF               	movwf	_timer1_value+1
+  1529                           
+  1530                           ;timer.c: 12: TMR1 = timer1_value;
+  1531  02F0  082F               	movf	_timer1_value+1,w
+  1532  02F1  008F               	movwf	15	;volatile
+  1533  02F2  082E               	movf	_timer1_value,w
+  1534  02F3  008E               	movwf	14	;volatile
+  1535                           
+  1536                           ;timer.c: 14: T1CONbits.TMR1CS = 0;
+  1537  02F4  1090               	bcf	16,1	;volatile
+  1538                           
+  1539                           ;timer.c: 16: T1CONbits.T1CKPS0 = 0;
+  1540  02F5  1210               	bcf	16,4	;volatile
+  1541                           
+  1542                           ;timer.c: 17: T1CONbits.T1CKPS1 = 0;
+  1543  02F6  1290               	bcf	16,5	;volatile
+  1544                           
+  1545                           ;timer.c: 19: TMR1IF = 0;
+  1546  02F7  100C               	bcf	12,0	;volatile
+  1547                           
+  1548                           ;timer.c: 20: TMR1IE = 1;
+  1549  02F8  1683               	bsf	3,5	;RP0=1, select bank1
+  1550  02F9  1303               	bcf	3,6	;RP1=0, select bank1
+  1551  02FA  140C               	bsf	12,0	;volatile
+  1552                           
+  1553                           ;timer.c: 21: GIE = 1;
+  1554  02FB  178B               	bsf	11,7	;volatile
+  1555                           
+  1556                           ;timer.c: 22: PEIE = 1;
+  1557  02FC  170B               	bsf	11,6	;volatile
+  1558                           
+  1559                           ;timer.c: 23: T1CONbits.TMR1ON = 1;
+  1560  02FD  1283               	bcf	3,5	;RP0=0, select bank0
+  1561  02FE  1303               	bcf	3,6	;RP1=0, select bank0
+  1562  02FF  1410               	bsf	16,0	;volatile
+  1563  0300  0008               	return
+  1564  0301                     __end_of_init_timer1:	
+  1565                           
+  1566                           	psect	text7
+  1567  0265                     __ptext7:	
+  1568 ;; *************** function _UpdateLedBuffer *****************
+  1569 ;; Defined at:
+  1570 ;;		line 33 in file "led7seg.c"
+  1571 ;; Parameters:    Size  Location     Type
+  1572 ;;  time            1    wreg     unsigned char 
+  1573 ;; Auto vars:     Size  Location     Type
+  1574 ;;  time            1   12[BANK0 ] unsigned char 
+  1575 ;; Return value:  Size  Location     Type
+  1576 ;;                  1    wreg      void 
+  1577 ;; Registers used:
+  1578 ;;		wreg, status,2, status,0, pclath, cstack
+  1579 ;; Tracked objects:
+  1580 ;;		On entry : 0/0
+  1581 ;;		On exit  : 0/0
+  1582 ;;		Unchanged: 0/0
+  1583 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1584 ;;      Params:         0       0       0       0
+  1585 ;;      Locals:         0       1       0       0
+  1586 ;;      Temps:          0       3       0       0
+  1587 ;;      Totals:         0       4       0       0
+  1588 ;;Total ram usage:        4 bytes
+  1589 ;; Hardware stack levels used:    1
+  1590 ;; Hardware stack levels required when called:    4
+  1591 ;; This function calls:
+  1592 ;;		___awdiv
+  1593 ;;		___awmod
+  1594 ;; This function is called by:
+  1595 ;;		_main
+  1596 ;;		_InitSystem
+  1597 ;; This function uses a non-reentrant model
+  1598 ;;
+  1599                           
+  1600                           
+  1601                           ;psect for function _UpdateLedBuffer
+  1602  0265                     _UpdateLedBuffer:	
+  1603                           
+  1604                           ;incstack = 0
+  1605                           ; Regs used in _UpdateLedBuffer: [wreg+status,2+status,0+pclath+cstack]
+  1606                           ;UpdateLedBuffer@time stored from wreg
+  1607  0265  1283               	bcf	3,5	;RP0=0, select bank0
+  1608  0266  1303               	bcf	3,6	;RP1=0, select bank0
+  1609  0267  00D6               	movwf	UpdateLedBuffer@time
+  1610                           
+  1611                           ;led7seg.c: 34: if(time >= 0 && time <= 99){
+  1612  0268  3064               	movlw	100
+  1613  0269  0256               	subwf	UpdateLedBuffer@time,w
+  1614  026A  1803               	skipnc
+  1615  026B  0008               	return
+  1616                           
+  1617                           ;led7seg.c: 35: LEDBuffer[0] = time / 10;
+  1618  026C  300A               	movlw	10
+  1619  026D  00CA               	movwf	___awdiv@divisor
+  1620  026E  3000               	movlw	0
+  1621  026F  00CB               	movwf	___awdiv@divisor+1
+  1622  0270  0856               	movf	UpdateLedBuffer@time,w
+  1623  0271  00D3               	movwf	??_UpdateLedBuffer
+  1624  0272  01D4               	clrf	??_UpdateLedBuffer+1
+  1625  0273  0853               	movf	??_UpdateLedBuffer,w
+  1626  0274  00CC               	movwf	___awdiv@dividend
+  1627  0275  0854               	movf	??_UpdateLedBuffer+1,w
+  1628  0276  00CD               	movwf	___awdiv@dividend+1
+  1629  0277  2189               	fcall	___awdiv
+  1630  0278  1283               	bcf	3,5	;RP0=0, select bank0
+  1631  0279  1303               	bcf	3,6	;RP1=0, select bank0
+  1632  027A  084A               	movf	?___awdiv,w
+  1633  027B  00D5               	movwf	??_UpdateLedBuffer+2
+  1634  027C  0855               	movf	??_UpdateLedBuffer+2,w
+  1635  027D  00C6               	movwf	_LEDBuffer
+  1636                           
+  1637                           ;led7seg.c: 36: LEDBuffer[1] = time % 10;
+  1638  027E  300A               	movlw	10
+  1639  027F  00CA               	movwf	___awmod@divisor
+  1640  0280  3000               	movlw	0
+  1641  0281  00CB               	movwf	___awmod@divisor+1
+  1642  0282  0856               	movf	UpdateLedBuffer@time,w
+  1643  0283  00D3               	movwf	??_UpdateLedBuffer
+  1644  0284  01D4               	clrf	??_UpdateLedBuffer+1
+  1645  0285  0853               	movf	??_UpdateLedBuffer,w
+  1646  0286  00CC               	movwf	___awmod@dividend
+  1647  0287  0854               	movf	??_UpdateLedBuffer+1,w
+  1648  0288  00CD               	movwf	___awmod@dividend+1
+  1649  0289  21E4               	fcall	___awmod
+  1650  028A  1283               	bcf	3,5	;RP0=0, select bank0
+  1651  028B  1303               	bcf	3,6	;RP1=0, select bank0
+  1652  028C  084A               	movf	?___awmod,w
+  1653  028D  00D5               	movwf	??_UpdateLedBuffer+2
+  1654  028E  0855               	movf	??_UpdateLedBuffer+2,w
+  1655  028F  00C7               	movwf	_LEDBuffer+1
+  1656  0290  0008               	return
+  1657  0291                     __end_of_UpdateLedBuffer:	
+  1658                           
+  1659                           	psect	text8
+  1660  01E4                     __ptext8:	
+  1661 ;; *************** function ___awmod *****************
+  1662 ;; Defined at:
+  1663 ;;		line 6 in file "C:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\awmod.c"
+  1664 ;; Parameters:    Size  Location     Type
+  1665 ;;  divisor         2    0[BANK0 ] int 
+  1666 ;;  dividend        2    2[BANK0 ] int 
+  1667 ;; Auto vars:     Size  Location     Type
+  1668 ;;  sign            1    6[BANK0 ] unsigned char 
+  1669 ;;  counter         1    5[BANK0 ] unsigned char 
+  1670 ;; Return value:  Size  Location     Type
+  1671 ;;                  2    0[BANK0 ] int 
+  1672 ;; Registers used:
+  1673 ;;		wreg, status,2, status,0
+  1674 ;; Tracked objects:
+  1675 ;;		On entry : 0/0
+  1676 ;;		On exit  : 0/0
+  1677 ;;		Unchanged: 0/0
+  1678 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1679 ;;      Params:         0       4       0       0
+  1680 ;;      Locals:         0       2       0       0
+  1681 ;;      Temps:          0       1       0       0
+  1682 ;;      Totals:         0       7       0       0
+  1683 ;;Total ram usage:        7 bytes
+  1684 ;; Hardware stack levels used:    1
+  1685 ;; Hardware stack levels required when called:    3
+  1686 ;; This function calls:
+  1687 ;;		Nothing
+  1688 ;; This function is called by:
+  1689 ;;		_UpdateLedBuffer
+  1690 ;; This function uses a non-reentrant model
+  1691 ;;
+  1692                           
+  1693                           
+  1694                           ;psect for function ___awmod
+  1695  01E4                     ___awmod:	
+  1696                           
+  1697                           ;incstack = 0
+  1698                           ; Regs used in ___awmod: [wreg+status,2+status,0]
+  1699  01E4  1283               	bcf	3,5	;RP0=0, select bank0
+  1700  01E5  1303               	bcf	3,6	;RP1=0, select bank0
+  1701  01E6  01D0               	clrf	___awmod@sign
+  1702  01E7  1FCD               	btfss	___awmod@dividend+1,7
+  1703  01E8  29F0               	goto	l1154
+  1704  01E9  09CC               	comf	___awmod@dividend,f
+  1705  01EA  09CD               	comf	___awmod@dividend+1,f
+  1706  01EB  0ACC               	incf	___awmod@dividend,f
+  1707  01EC  1903               	skipnz
+  1708  01ED  0ACD               	incf	___awmod@dividend+1,f
+  1709  01EE  01D0               	clrf	___awmod@sign
+  1710  01EF  0AD0               	incf	___awmod@sign,f
+  1711  01F0                     l1154:	
+  1712  01F0  1FCB               	btfss	___awmod@divisor+1,7
+  1713  01F1  29F7               	goto	l1158
+  1714  01F2  09CA               	comf	___awmod@divisor,f
+  1715  01F3  09CB               	comf	___awmod@divisor+1,f
+  1716  01F4  0ACA               	incf	___awmod@divisor,f
+  1717  01F5  1903               	skipnz
+  1718  01F6  0ACB               	incf	___awmod@divisor+1,f
+  1719  01F7                     l1158:	
+  1720  01F7  084A               	movf	___awmod@divisor,w
+  1721  01F8  044B               	iorwf	___awmod@divisor+1,w
+  1722  01F9  1903               	btfsc	3,2
+  1723  01FA  2A24               	goto	l1176
+  1724  01FB  01CF               	clrf	___awmod@counter
+  1725  01FC  0ACF               	incf	___awmod@counter,f
+  1726  01FD                     l1166:	
+  1727  01FD  1BCB               	btfsc	___awmod@divisor+1,7
+  1728  01FE  2A0B               	goto	l1168
+  1729  01FF  3001               	movlw	1
+  1730  0200                     u745:	
+  1731  0200  1003               	clrc
+  1732  0201  0DCA               	rlf	___awmod@divisor,f
+  1733  0202  0DCB               	rlf	___awmod@divisor+1,f
+  1734  0203  3EFF               	addlw	-1
+  1735  0204  1D03               	skipz
+  1736  0205  2A00               	goto	u745
+  1737  0206  3001               	movlw	1
+  1738  0207  00CE               	movwf	??___awmod
+  1739  0208  084E               	movf	??___awmod,w
+  1740  0209  07CF               	addwf	___awmod@counter,f
+  1741  020A  29FD               	goto	l1166
+  1742  020B                     l1168:	
+  1743  020B  084B               	movf	___awmod@divisor+1,w
+  1744  020C  024D               	subwf	___awmod@dividend+1,w
+  1745  020D  1D03               	skipz
+  1746  020E  2A11               	goto	u765
+  1747  020F  084A               	movf	___awmod@divisor,w
+  1748  0210  024C               	subwf	___awmod@dividend,w
+  1749  0211                     u765:	
+  1750  0211  1C03               	skipc
+  1751  0212  2A19               	goto	l1172
+  1752  0213  084A               	movf	___awmod@divisor,w
+  1753  0214  02CC               	subwf	___awmod@dividend,f
+  1754  0215  084B               	movf	___awmod@divisor+1,w
+  1755  0216  1C03               	skipc
+  1756  0217  03CD               	decf	___awmod@dividend+1,f
+  1757  0218  02CD               	subwf	___awmod@dividend+1,f
+  1758  0219                     l1172:	
+  1759  0219  3001               	movlw	1
+  1760  021A                     u775:	
+  1761  021A  1003               	clrc
+  1762  021B  0CCB               	rrf	___awmod@divisor+1,f
+  1763  021C  0CCA               	rrf	___awmod@divisor,f
+  1764  021D  3EFF               	addlw	-1
+  1765  021E  1D03               	skipz
+  1766  021F  2A1A               	goto	u775
+  1767  0220  3001               	movlw	1
+  1768  0221  02CF               	subwf	___awmod@counter,f
+  1769  0222  1D03               	btfss	3,2
+  1770  0223  2A0B               	goto	l1168
+  1771  0224                     l1176:	
+  1772  0224  0850               	movf	___awmod@sign,w
+  1773  0225  1903               	btfsc	3,2
+  1774  0226  2A2C               	goto	l1180
+  1775  0227  09CC               	comf	___awmod@dividend,f
+  1776  0228  09CD               	comf	___awmod@dividend+1,f
+  1777  0229  0ACC               	incf	___awmod@dividend,f
+  1778  022A  1903               	skipnz
+  1779  022B  0ACD               	incf	___awmod@dividend+1,f
+  1780  022C                     l1180:	
+  1781  022C  084D               	movf	___awmod@dividend+1,w
+  1782  022D  00CB               	movwf	?___awmod+1
+  1783  022E  084C               	movf	___awmod@dividend,w
+  1784  022F  00CA               	movwf	?___awmod
+  1785  0230  0008               	return
+  1786  0231                     __end_of___awmod:	
+  1787                           
+  1788                           	psect	text9
+  1789  0368                     __ptext9:	
+  1790 ;; *************** function _SetTimer1_ms *****************
+  1791 ;; Defined at:
+  1792 ;;		line 47 in file "timer.c"
+  1793 ;; Parameters:    Size  Location     Type
+  1794 ;;  time            2    9[BANK0 ] int 
+  1795 ;; Auto vars:     Size  Location     Type
+  1796 ;;		None
+  1797 ;; Return value:  Size  Location     Type
+  1798 ;;                  1    wreg      void 
+  1799 ;; Registers used:
+  1800 ;;		wreg, status,2, status,0, pclath, cstack
+  1801 ;; Tracked objects:
+  1802 ;;		On entry : 0/0
+  1803 ;;		On exit  : 0/0
+  1804 ;;		Unchanged: 0/0
+  1805 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1806 ;;      Params:         0       2       0       0
+  1807 ;;      Locals:         0       0       0       0
+  1808 ;;      Temps:          0       0       0       0
+  1809 ;;      Totals:         0       2       0       0
+  1810 ;;Total ram usage:        2 bytes
+  1811 ;; Hardware stack levels used:    1
+  1812 ;; Hardware stack levels required when called:    4
+  1813 ;; This function calls:
+  1814 ;;		___awdiv
+  1815 ;; This function is called by:
+  1816 ;;		_main
+  1817 ;;		_InitSystem
+  1818 ;; This function uses a non-reentrant model
+  1819 ;;
+  1820                           
+  1821                           
+  1822                           ;psect for function _SetTimer1_ms
+  1823  0368                     _SetTimer1_ms:	
+  1824                           
+  1825                           ;timer.c: 49: time1_MUL = time/10;
+  1826                           
+  1827                           ;incstack = 0
+  1828                           ; Regs used in _SetTimer1_ms: [wreg+status,2+status,0+pclath+cstack]
+  1829  0368  300A               	movlw	10
+  1830  0369  1283               	bcf	3,5	;RP0=0, select bank0
+  1831  036A  1303               	bcf	3,6	;RP1=0, select bank0
+  1832  036B  00CA               	movwf	___awdiv@divisor
+  1833  036C  3000               	movlw	0
+  1834  036D  00CB               	movwf	___awdiv@divisor+1
+  1835  036E  0854               	movf	SetTimer1_ms@time+1,w
+  1836  036F  00CD               	movwf	___awdiv@dividend+1
+  1837  0370  0853               	movf	SetTimer1_ms@time,w
+  1838  0371  00CC               	movwf	___awdiv@dividend
+  1839  0372  2189               	fcall	___awdiv
+  1840  0373  1283               	bcf	3,5	;RP0=0, select bank0
+  1841  0374  1303               	bcf	3,6	;RP1=0, select bank0
+  1842  0375  084B               	movf	?___awdiv+1,w
+  1843  0376  00C9               	movwf	_time1_MUL+1
+  1844  0377  084A               	movf	?___awdiv,w
+  1845  0378  00C8               	movwf	_time1_MUL
+  1846                           
+  1847                           ;timer.c: 50: timer1_cnt = 0;
+  1848  0379  01AC               	clrf	_timer1_cnt
+  1849  037A  01AD               	clrf	_timer1_cnt+1
+  1850                           
+  1851                           ;timer.c: 51: flag_timer1 = 0;
+  1852  037B  01B2               	clrf	_flag_timer1
+  1853  037C  0008               	return
+  1854  037D                     __end_of_SetTimer1_ms:	
+  1855                           
+  1856                           	psect	text10
+  1857  0189                     __ptext10:	
+  1858 ;; *************** function ___awdiv *****************
+  1859 ;; Defined at:
+  1860 ;;		line 6 in file "C:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\awdiv.c"
+  1861 ;; Parameters:    Size  Location     Type
+  1862 ;;  divisor         2    0[BANK0 ] int 
+  1863 ;;  dividend        2    2[BANK0 ] int 
+  1864 ;; Auto vars:     Size  Location     Type
+  1865 ;;  quotient        2    7[BANK0 ] int 
+  1866 ;;  sign            1    6[BANK0 ] unsigned char 
+  1867 ;;  counter         1    5[BANK0 ] unsigned char 
+  1868 ;; Return value:  Size  Location     Type
+  1869 ;;                  2    0[BANK0 ] int 
+  1870 ;; Registers used:
+  1871 ;;		wreg, status,2, status,0
+  1872 ;; Tracked objects:
+  1873 ;;		On entry : 0/0
+  1874 ;;		On exit  : 0/0
+  1875 ;;		Unchanged: 0/0
+  1876 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1877 ;;      Params:         0       4       0       0
+  1878 ;;      Locals:         0       4       0       0
+  1879 ;;      Temps:          0       1       0       0
+  1880 ;;      Totals:         0       9       0       0
+  1881 ;;Total ram usage:        9 bytes
+  1882 ;; Hardware stack levels used:    1
+  1883 ;; Hardware stack levels required when called:    3
+  1884 ;; This function calls:
+  1885 ;;		Nothing
+  1886 ;; This function is called by:
+  1887 ;;		_UpdateLedBuffer
+  1888 ;;		_SetTimer1_ms
+  1889 ;; This function uses a non-reentrant model
+  1890 ;;
+  1891                           
+  1892                           
+  1893                           ;psect for function ___awdiv
+  1894  0189                     ___awdiv:	
+  1895                           
+  1896                           ;incstack = 0
+  1897                           ; Regs used in ___awdiv: [wreg+status,2+status,0]
+  1898  0189  1283               	bcf	3,5	;RP0=0, select bank0
+  1899  018A  1303               	bcf	3,6	;RP1=0, select bank0
+  1900  018B  01D0               	clrf	___awdiv@sign
+  1901  018C  1FCB               	btfss	___awdiv@divisor+1,7
+  1902  018D  2995               	goto	l1110
+  1903  018E  09CA               	comf	___awdiv@divisor,f
+  1904  018F  09CB               	comf	___awdiv@divisor+1,f
+  1905  0190  0ACA               	incf	___awdiv@divisor,f
+  1906  0191  1903               	skipnz
+  1907  0192  0ACB               	incf	___awdiv@divisor+1,f
+  1908  0193  01D0               	clrf	___awdiv@sign
+  1909  0194  0AD0               	incf	___awdiv@sign,f
+  1910  0195                     l1110:	
+  1911  0195  1FCD               	btfss	___awdiv@dividend+1,7
+  1912  0196  29A0               	goto	l1116
+  1913  0197  09CC               	comf	___awdiv@dividend,f
+  1914  0198  09CD               	comf	___awdiv@dividend+1,f
+  1915  0199  0ACC               	incf	___awdiv@dividend,f
+  1916  019A  1903               	skipnz
+  1917  019B  0ACD               	incf	___awdiv@dividend+1,f
+  1918  019C  3001               	movlw	1
+  1919  019D  00CE               	movwf	??___awdiv
+  1920  019E  084E               	movf	??___awdiv,w
+  1921  019F  06D0               	xorwf	___awdiv@sign,f
+  1922  01A0                     l1116:	
+  1923  01A0  01D1               	clrf	___awdiv@quotient
+  1924  01A1  01D2               	clrf	___awdiv@quotient+1
+  1925  01A2  084A               	movf	___awdiv@divisor,w
+  1926  01A3  044B               	iorwf	___awdiv@divisor+1,w
+  1927  01A4  1903               	btfsc	3,2
+  1928  01A5  29D7               	goto	l1138
+  1929  01A6  01CF               	clrf	___awdiv@counter
+  1930  01A7  0ACF               	incf	___awdiv@counter,f
+  1931  01A8                     l1126:	
+  1932  01A8  1BCB               	btfsc	___awdiv@divisor+1,7
+  1933  01A9  29B6               	goto	l1128
+  1934  01AA  3001               	movlw	1
+  1935  01AB                     u645:	
+  1936  01AB  1003               	clrc
+  1937  01AC  0DCA               	rlf	___awdiv@divisor,f
+  1938  01AD  0DCB               	rlf	___awdiv@divisor+1,f
+  1939  01AE  3EFF               	addlw	-1
+  1940  01AF  1D03               	skipz
+  1941  01B0  29AB               	goto	u645
+  1942  01B1  3001               	movlw	1
+  1943  01B2  00CE               	movwf	??___awdiv
+  1944  01B3  084E               	movf	??___awdiv,w
+  1945  01B4  07CF               	addwf	___awdiv@counter,f
+  1946  01B5  29A8               	goto	l1126
+  1947  01B6                     l1128:	
+  1948  01B6  3001               	movlw	1
+  1949  01B7                     u665:	
+  1950  01B7  1003               	clrc
+  1951  01B8  0DD1               	rlf	___awdiv@quotient,f
+  1952  01B9  0DD2               	rlf	___awdiv@quotient+1,f
+  1953  01BA  3EFF               	addlw	-1
+  1954  01BB  1D03               	skipz
+  1955  01BC  29B7               	goto	u665
+  1956  01BD  084B               	movf	___awdiv@divisor+1,w
+  1957  01BE  024D               	subwf	___awdiv@dividend+1,w
+  1958  01BF  1D03               	skipz
+  1959  01C0  29C3               	goto	u675
+  1960  01C1  084A               	movf	___awdiv@divisor,w
+  1961  01C2  024C               	subwf	___awdiv@dividend,w
+  1962  01C3                     u675:	
+  1963  01C3  1C03               	skipc
+  1964  01C4  29CC               	goto	l1134
+  1965  01C5  084A               	movf	___awdiv@divisor,w
+  1966  01C6  02CC               	subwf	___awdiv@dividend,f
+  1967  01C7  084B               	movf	___awdiv@divisor+1,w
+  1968  01C8  1C03               	skipc
+  1969  01C9  03CD               	decf	___awdiv@dividend+1,f
+  1970  01CA  02CD               	subwf	___awdiv@dividend+1,f
+  1971  01CB  1451               	bsf	___awdiv@quotient,0
+  1972  01CC                     l1134:	
+  1973  01CC  3001               	movlw	1
+  1974  01CD                     u685:	
+  1975  01CD  1003               	clrc
+  1976  01CE  0CCB               	rrf	___awdiv@divisor+1,f
+  1977  01CF  0CCA               	rrf	___awdiv@divisor,f
+  1978  01D0  3EFF               	addlw	-1
+  1979  01D1  1D03               	skipz
+  1980  01D2  29CD               	goto	u685
+  1981  01D3  3001               	movlw	1
+  1982  01D4  02CF               	subwf	___awdiv@counter,f
+  1983  01D5  1D03               	btfss	3,2
+  1984  01D6  29B6               	goto	l1128
+  1985  01D7                     l1138:	
+  1986  01D7  0850               	movf	___awdiv@sign,w
+  1987  01D8  1903               	btfsc	3,2
+  1988  01D9  29DF               	goto	l1142
+  1989  01DA  09D1               	comf	___awdiv@quotient,f
+  1990  01DB  09D2               	comf	___awdiv@quotient+1,f
+  1991  01DC  0AD1               	incf	___awdiv@quotient,f
+  1992  01DD  1903               	skipnz
+  1993  01DE  0AD2               	incf	___awdiv@quotient+1,f
+  1994  01DF                     l1142:	
+  1995  01DF  0852               	movf	___awdiv@quotient+1,w
+  1996  01E0  00CB               	movwf	?___awdiv+1
+  1997  01E1  0851               	movf	___awdiv@quotient,w
+  1998  01E2  00CA               	movwf	?___awdiv
+  1999  01E3  0008               	return
+  2000  01E4                     __end_of___awdiv:	
+  2001                           
+  2002                           	psect	text11
+  2003  03C0                     __ptext11:	
+  2004 ;; *************** function _RelayOn *****************
+  2005 ;; Defined at:
+  2006 ;;		line 159 in file "main.c"
+  2007 ;; Parameters:    Size  Location     Type
+  2008 ;;  flag            1    wreg     unsigned char 
+  2009 ;; Auto vars:     Size  Location     Type
+  2010 ;;  flag            1    0[BANK0 ] unsigned char 
+  2011 ;; Return value:  Size  Location     Type
+  2012 ;;                  1    wreg      void 
+  2013 ;; Registers used:
+  2014 ;;		wreg, status,2, status,0
+  2015 ;; Tracked objects:
+  2016 ;;		On entry : 0/0
+  2017 ;;		On exit  : 0/0
+  2018 ;;		Unchanged: 0/0
+  2019 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2020 ;;      Params:         0       0       0       0
+  2021 ;;      Locals:         0       1       0       0
+  2022 ;;      Temps:          0       0       0       0
+  2023 ;;      Totals:         0       1       0       0
+  2024 ;;Total ram usage:        1 bytes
+  2025 ;; Hardware stack levels used:    1
+  2026 ;; Hardware stack levels required when called:    3
+  2027 ;; This function calls:
+  2028 ;;		Nothing
+  2029 ;; This function is called by:
+  2030 ;;		_main
+  2031 ;;		_InitSystem
+  2032 ;; This function uses a non-reentrant model
+  2033 ;;
+  2034                           
+  2035                           
+  2036                           ;psect for function _RelayOn
+  2037  03C0                     _RelayOn:	
+  2038                           
+  2039                           ;incstack = 0
+  2040                           ; Regs used in _RelayOn: [wreg+status,2+status,0]
+  2041                           ;RelayOn@flag stored from wreg
+  2042  03C0  1283               	bcf	3,5	;RP0=0, select bank0
+  2043  03C1  1303               	bcf	3,6	;RP1=0, select bank0
+  2044  03C2  00CA               	movwf	RelayOn@flag
+  2045                           
+  2046                           ;main.c: 160: if(flag == 0) PORTAbits.RA3 = 0;
+  2047  03C3  084A               	movf	RelayOn@flag,w
+  2048  03C4  1D03               	btfss	3,2
+  2049  03C5  2BC8               	goto	l130
+  2050  03C6  1185               	bcf	5,3	;volatile
+  2051  03C7  0008               	return
+  2052  03C8                     l130:	
+  2053                           
+  2054                           ;main.c: 161: else PORTAbits.RA3 = 1;
+  2055  03C8  1585               	bsf	5,3	;volatile
+  2056  03C9  0008               	return
+  2057  03CA                     __end_of_RelayOn:	
+  2058                           
+  2059                           	psect	text12
+  2060  03CA                     __ptext12:	
+  2061 ;; *************** function _ReadEEPROM *****************
+  2062 ;; Defined at:
+  2063 ;;		line 164 in file "main.c"
+  2064 ;; Parameters:    Size  Location     Type
+  2065 ;;  address         1    wreg     unsigned char 
+  2066 ;; Auto vars:     Size  Location     Type
+  2067 ;;  address         1    0[BANK0 ] unsigned char 
+  2068 ;; Return value:  Size  Location     Type
+  2069 ;;                  1    wreg      unsigned char 
+  2070 ;; Registers used:
+  2071 ;;		wreg
+  2072 ;; Tracked objects:
+  2073 ;;		On entry : 0/0
+  2074 ;;		On exit  : 0/0
+  2075 ;;		Unchanged: 0/0
+  2076 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2077 ;;      Params:         0       0       0       0
+  2078 ;;      Locals:         0       1       0       0
+  2079 ;;      Temps:          0       0       0       0
+  2080 ;;      Totals:         0       1       0       0
+  2081 ;;Total ram usage:        1 bytes
+  2082 ;; Hardware stack levels used:    1
+  2083 ;; Hardware stack levels required when called:    3
+  2084 ;; This function calls:
+  2085 ;;		Nothing
+  2086 ;; This function is called by:
+  2087 ;;		_InitSystem
+  2088 ;; This function uses a non-reentrant model
+  2089 ;;
+  2090                           
+  2091                           
+  2092                           ;psect for function _ReadEEPROM
+  2093  03CA                     _ReadEEPROM:	
+  2094                           
+  2095                           ;incstack = 0
+  2096                           ; Regs used in _ReadEEPROM: [wreg]
+  2097                           ;ReadEEPROM@address stored from wreg
+  2098  03CA  1283               	bcf	3,5	;RP0=0, select bank0
+  2099  03CB  1303               	bcf	3,6	;RP1=0, select bank0
+  2100  03CC  00CA               	movwf	ReadEEPROM@address
+  2101                           
+  2102                           ;main.c: 165: EEADR = address;
+  2103  03CD  084A               	movf	ReadEEPROM@address,w
+  2104  03CE  1683               	bsf	3,5	;RP0=1, select bank1
+  2105  03CF  1303               	bcf	3,6	;RP1=0, select bank1
+  2106  03D0  009B               	movwf	27	;volatile
+  2107                           
+  2108                           ;main.c: 166: EECON1bits.RD = 1;
+  2109  03D1  141C               	bsf	28,0	;volsfr
+  2110                           
+  2111                           ;main.c: 167: return EEDATA;
+  2112  03D2  081A               	movf	26,w	;volatile
+  2113  03D3  0008               	return
+  2114  03D4                     __end_of_ReadEEPROM:	
+  2115                           
+  2116                           	psect	text13
+  2117  0291                     __ptext13:	
+  2118 ;; *************** function _Delay_ms *****************
+  2119 ;; Defined at:
+  2120 ;;		line 152 in file "main.c"
+  2121 ;; Parameters:    Size  Location     Type
+  2122 ;;  delay           2    0[BANK0 ] unsigned int 
+  2123 ;; Auto vars:     Size  Location     Type
+  2124 ;;  j               2    4[BANK0 ] unsigned int 
+  2125 ;;  i               2    2[BANK0 ] unsigned int 
+  2126 ;; Return value:  Size  Location     Type
+  2127 ;;                  1    wreg      void 
+  2128 ;; Registers used:
+  2129 ;;		wreg, status,2
+  2130 ;; Tracked objects:
+  2131 ;;		On entry : 0/0
+  2132 ;;		On exit  : 0/0
+  2133 ;;		Unchanged: 0/0
+  2134 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2135 ;;      Params:         0       2       0       0
+  2136 ;;      Locals:         0       4       0       0
+  2137 ;;      Temps:          0       0       0       0
+  2138 ;;      Totals:         0       6       0       0
+  2139 ;;Total ram usage:        6 bytes
+  2140 ;; Hardware stack levels used:    1
+  2141 ;; Hardware stack levels required when called:    3
+  2142 ;; This function calls:
+  2143 ;;		Nothing
+  2144 ;; This function is called by:
+  2145 ;;		_main
+  2146 ;; This function uses a non-reentrant model
+  2147 ;;
+  2148                           
+  2149                           
+  2150                           ;psect for function _Delay_ms
+  2151  0291                     _Delay_ms:	
+  2152                           
+  2153                           ;main.c: 153: unsigned int i, j;
+  2154                           ;main.c: 154: for(i = 0; i < delay; i++){
+  2155                           
+  2156                           ;incstack = 0
+  2157                           ; Regs used in _Delay_ms: [wreg+status,2]
+  2158  0291  1283               	bcf	3,5	;RP0=0, select bank0
+  2159  0292  1303               	bcf	3,6	;RP1=0, select bank0
+  2160  0293  01CC               	clrf	Delay_ms@i
+  2161  0294  01CD               	clrf	Delay_ms@i+1
+  2162  0295                     l122:	
+  2163  0295  084B               	movf	Delay_ms@delay+1,w
+  2164  0296  024D               	subwf	Delay_ms@i+1,w
+  2165  0297  1D03               	skipz
+  2166  0298  2A9B               	goto	u1015
+  2167  0299  084A               	movf	Delay_ms@delay,w
+  2168  029A  024C               	subwf	Delay_ms@i,w
+  2169  029B                     u1015:	
+  2170  029B  1803               	btfsc	3,0
+  2171  029C  0008               	return
+  2172                           
+  2173                           ;main.c: 155: for(j = 0; j < 141; j++);
+  2174  029D  01CE               	clrf	Delay_ms@j
+  2175  029E  01CF               	clrf	Delay_ms@j+1
+  2176  029F  3000               	movlw	0
+  2177  02A0  024F               	subwf	Delay_ms@j+1,w
+  2178  02A1  308D               	movlw	141
+  2179  02A2  1903               	skipnz
+  2180  02A3  024E               	subwf	Delay_ms@j,w
+  2181  02A4  1803               	btfsc	3,0
+  2182  02A5  2AB3               	goto	l1338
+  2183  02A6                     l1336:	
+  2184  02A6  3001               	movlw	1
+  2185  02A7  07CE               	addwf	Delay_ms@j,f
+  2186  02A8  1803               	skipnc
+  2187  02A9  0ACF               	incf	Delay_ms@j+1,f
+  2188  02AA  3000               	movlw	0
+  2189  02AB  07CF               	addwf	Delay_ms@j+1,f
+  2190  02AC  3000               	movlw	0
+  2191  02AD  024F               	subwf	Delay_ms@j+1,w
+  2192  02AE  308D               	movlw	141
+  2193  02AF  1903               	skipnz
+  2194  02B0  024E               	subwf	Delay_ms@j,w
+  2195  02B1  1C03               	skipc
+  2196  02B2  2AA6               	goto	l1336
+  2197  02B3                     l1338:	
+  2198  02B3  3001               	movlw	1
+  2199  02B4  07CC               	addwf	Delay_ms@i,f
+  2200  02B5  1803               	skipnc
+  2201  02B6  0ACD               	incf	Delay_ms@i+1,f
+  2202  02B7  3000               	movlw	0
+  2203  02B8  07CD               	addwf	Delay_ms@i+1,f
+  2204  02B9  2A95               	goto	l122
+  2205  02BA                     __end_of_Delay_ms:	
+  2206                           
+  2207                           	psect	text14
+  2208  02BA                     __ptext14:	
+  2209 ;; *************** function _timer1 *****************
+  2210 ;; Defined at:
+  2211 ;;		line 29 in file "main.c"
+  2212 ;; Parameters:    Size  Location     Type
+  2213 ;;		None
+  2214 ;; Auto vars:     Size  Location     Type
+  2215 ;;		None
+  2216 ;; Return value:  Size  Location     Type
+  2217 ;;                  1    wreg      void 
+  2218 ;; Registers used:
+  2219 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  2220 ;; Tracked objects:
+  2221 ;;		On entry : 0/0
+  2222 ;;		On exit  : 0/0
+  2223 ;;		Unchanged: 0/0
+  2224 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2225 ;;      Params:         0       0       0       0
+  2226 ;;      Locals:         0       0       0       0
+  2227 ;;      Temps:          5       0       0       0
+  2228 ;;      Totals:         5       0       0       0
+  2229 ;;Total ram usage:        5 bytes
+  2230 ;; Hardware stack levels used:    1
+  2231 ;; Hardware stack levels required when called:    2
+  2232 ;; This function calls:
+  2233 ;;		_UpdateLed
+  2234 ;;		_button_reading
+  2235 ;;		_start_timer1
+  2236 ;;		_stop_timer1
+  2237 ;;		_timer1_isr
+  2238 ;; This function is called by:
+  2239 ;;		Interrupt level 1
+  2240 ;; This function uses a non-reentrant model
+  2241 ;;
+  2242                           
+  2243                           
+  2244                           ;psect for function _timer1
+  2245  02BA                     _timer1:	
+  2246                           
+  2247                           ;main.c: 30: if(TMR1IF == 1 && TMR1IE == 1){
+  2248  02BA  1C0C               	btfss	12,0	;volatile
+  2249  02BB  2AD1               	goto	i1l81
+  2250  02BC  1683               	bsf	3,5	;RP0=1, select bank1
+  2251  02BD  1303               	bcf	3,6	;RP1=0, select bank1
+  2252  02BE  1C0C               	btfss	12,0	;volatile
+  2253  02BF  2AD1               	goto	i1l81
+  2254                           
+  2255                           ;main.c: 31: stop_timer1();
+  2256  02C0  23F2               	fcall	_stop_timer1
+  2257                           
+  2258                           ;main.c: 32: TMR1IF = 0;
+  2259  02C1  1283               	bcf	3,5	;RP0=0, select bank0
+  2260  02C2  1303               	bcf	3,6	;RP1=0, select bank0
+  2261  02C3  100C               	bcf	12,0	;volatile
+  2262                           
+  2263                           ;main.c: 33: start_timer1();
+  2264  02C4  23E6               	fcall	_start_timer1
+  2265                           
+  2266                           ;main.c: 34: timer1_isr();
+  2267  02C5  237D               	fcall	_timer1_isr
+  2268                           
+  2269                           ;main.c: 35: button_reading();
+  2270  02C6  211D               	fcall	_button_reading
+  2271                           
+  2272                           ;main.c: 36: if(index > 1) index = 0;
+  2273  02C7  3002               	movlw	2
+  2274  02C8  027D               	subwf	_index,w
+  2275  02C9  1803               	btfsc	3,0
+  2276  02CA  01FD               	clrf	_index
+  2277                           
+  2278                           ;main.c: 37: UpdateLed(index++);
+  2279  02CB  087D               	movf	_index,w
+  2280  02CC  23D4               	fcall	_UpdateLed
+  2281  02CD  3001               	movlw	1
+  2282  02CE  00F4               	movwf	??_timer1
+  2283  02CF  0874               	movf	??_timer1,w
+  2284  02D0  07FD               	addwf	_index,f
+  2285  02D1                     i1l81:	
+  2286  02D1  0878               	movf	??_timer1+4,w
+  2287  02D2  1283               	bcf	3,5	;RP0=0, select bank0
+  2288  02D3  1303               	bcf	3,6	;RP1=0, select bank0
+  2289  02D4  00FF               	movwf	127
+  2290  02D5  0877               	movf	??_timer1+3,w
+  2291  02D6  008A               	movwf	10
+  2292  02D7  0876               	movf	??_timer1+2,w
+  2293  02D8  0084               	movwf	4
+  2294  02D9  0E75               	swapf	(??_timer1+1)^(0+-128),w
+  2295  02DA  0083               	movwf	3
+  2296  02DB  0EFE               	swapf	126,f
+  2297  02DC  0E7E               	swapf	126,w
+  2298  02DD  0009               	retfie
+  2299  02DE                     __end_of_timer1:	
+  2300                           
+  2301                           	psect	intentry
+  2302  0004                     __pintentry:	
+  2303                           ;incstack = 0
+  2304                           ; Regs used in _timer1: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  2305                           
+  2306  0004                     interrupt_function:	
+  2307  007E                     saved_w	set	btemp
+  2308  0004  00FE               	movwf	btemp
+  2309  0005  0E03               	swapf	3,w
+  2310  0006  00F5               	movwf	??_timer1+1
+  2311  0007  0804               	movf	4,w
+  2312  0008  00F6               	movwf	??_timer1+2
+  2313  0009  080A               	movf	10,w
+  2314  000A  00F7               	movwf	??_timer1+3
+  2315  000B  1283               	bcf	3,5	;RP0=0, select bank0
+  2316  000C  1303               	bcf	3,6	;RP1=0, select bank0
+  2317  000D  087F               	movf	btemp+1,w
+  2318  000E  00F8               	movwf	??_timer1+4
+  2319  000F  2ABA               	ljmp	_timer1
+  2320                           
+  2321                           	psect	text15
+  2322  037D                     __ptext15:	
+  2323 ;; *************** function _timer1_isr *****************
+  2324 ;; Defined at:
+  2325 ;;		line 36 in file "timer.c"
+  2326 ;; Parameters:    Size  Location     Type
+  2327 ;;		None
+  2328 ;; Auto vars:     Size  Location     Type
+  2329 ;;		None
+  2330 ;; Return value:  Size  Location     Type
+  2331 ;;                  1    wreg      void 
+  2332 ;; Registers used:
+  2333 ;;		wreg, status,2
+  2334 ;; Tracked objects:
+  2335 ;;		On entry : 0/0
+  2336 ;;		On exit  : 0/0
+  2337 ;;		Unchanged: 0/0
+  2338 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2339 ;;      Params:         0       0       0       0
+  2340 ;;      Locals:         0       0       0       0
+  2341 ;;      Temps:          0       0       0       0
+  2342 ;;      Totals:         0       0       0       0
+  2343 ;;Total ram usage:        0 bytes
+  2344 ;; Hardware stack levels used:    1
+  2345 ;; This function calls:
+  2346 ;;		Nothing
+  2347 ;; This function is called by:
+  2348 ;;		_timer1
+  2349 ;; This function uses a non-reentrant model
+  2350 ;;
+  2351                           
+  2352                           
+  2353                           ;psect for function _timer1_isr
+  2354  037D                     _timer1_isr:	
+  2355                           
+  2356                           ;timer.c: 38: timer1_cnt ++;
+  2357                           
+  2358                           ;incstack = 0
+  2359                           ; Regs used in _timer1_isr: [wreg+status,2]
+  2360  037D  3001               	movlw	1
+  2361  037E  1283               	bcf	3,5	;RP0=0, select bank0
+  2362  037F  1303               	bcf	3,6	;RP1=0, select bank0
+  2363  0380  07AC               	addwf	_timer1_cnt,f
+  2364  0381  1803               	skipnc
+  2365  0382  0AAD               	incf	_timer1_cnt+1,f
+  2366  0383  3000               	movlw	0
+  2367  0384  07AD               	addwf	_timer1_cnt+1,f
+  2368                           
+  2369                           ;timer.c: 39: if (timer1_cnt >= time1_MUL)
+  2370  0385  0849               	movf	_time1_MUL+1,w
+  2371  0386  022D               	subwf	_timer1_cnt+1,w
+  2372  0387  1D03               	skipz
+  2373  0388  2B8B               	goto	u85_25
+  2374  0389  0848               	movf	_time1_MUL,w
+  2375  038A  022C               	subwf	_timer1_cnt,w
+  2376  038B                     u85_25:	
+  2377  038B  1C03               	skipc
+  2378  038C  0008               	return
+  2379                           
+  2380                           ;timer.c: 40: {
+  2381                           ;timer.c: 41: timer1_cnt = 0;
+  2382  038D  01AC               	clrf	_timer1_cnt
+  2383  038E  01AD               	clrf	_timer1_cnt+1
+  2384                           
+  2385                           ;timer.c: 42: flag_timer1 = 1;
+  2386  038F  01B2               	clrf	_flag_timer1
+  2387  0390  0AB2               	incf	_flag_timer1,f
+  2388  0391  0008               	return
+  2389  0392                     __end_of_timer1_isr:	
+  2390                           
+  2391                           	psect	text16
+  2392  03F2                     __ptext16:	
+  2393 ;; *************** function _stop_timer1 *****************
+  2394 ;; Defined at:
+  2395 ;;		line 32 in file "timer.c"
+  2396 ;; Parameters:    Size  Location     Type
+  2397 ;;		None
+  2398 ;; Auto vars:     Size  Location     Type
+  2399 ;;		None
+  2400 ;; Return value:  Size  Location     Type
+  2401 ;;                  1    wreg      void 
+  2402 ;; Registers used:
+  2403 ;;		None
+  2404 ;; Tracked objects:
+  2405 ;;		On entry : 0/0
+  2406 ;;		On exit  : 0/0
+  2407 ;;		Unchanged: 0/0
+  2408 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2409 ;;      Params:         0       0       0       0
+  2410 ;;      Locals:         0       0       0       0
+  2411 ;;      Temps:          0       0       0       0
+  2412 ;;      Totals:         0       0       0       0
+  2413 ;;Total ram usage:        0 bytes
+  2414 ;; Hardware stack levels used:    1
+  2415 ;; This function calls:
+  2416 ;;		Nothing
+  2417 ;; This function is called by:
+  2418 ;;		_timer1
+  2419 ;; This function uses a non-reentrant model
+  2420 ;;
+  2421                           
+  2422                           
+  2423                           ;psect for function _stop_timer1
+  2424  03F2                     _stop_timer1:	
+  2425                           
+  2426                           ;timer.c: 34: T1CONbits.TMR1ON = 0;
+  2427                           
+  2428                           ;incstack = 0
+  2429                           ; Regs used in _stop_timer1: []
+  2430  03F2  1283               	bcf	3,5	;RP0=0, select bank0
+  2431  03F3  1303               	bcf	3,6	;RP1=0, select bank0
+  2432  03F4  1010               	bcf	16,0	;volatile
+  2433  03F5  0008               	return
+  2434  03F6                     __end_of_stop_timer1:	
+  2435                           
+  2436                           	psect	text17
+  2437  03E6                     __ptext17:	
+  2438 ;; *************** function _start_timer1 *****************
+  2439 ;; Defined at:
+  2440 ;;		line 26 in file "timer.c"
+  2441 ;; Parameters:    Size  Location     Type
+  2442 ;;		None
+  2443 ;; Auto vars:     Size  Location     Type
+  2444 ;;		None
+  2445 ;; Return value:  Size  Location     Type
+  2446 ;;                  1    wreg      void 
+  2447 ;; Registers used:
+  2448 ;;		wreg
+  2449 ;; Tracked objects:
+  2450 ;;		On entry : 0/0
+  2451 ;;		On exit  : 0/0
+  2452 ;;		Unchanged: 0/0
+  2453 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2454 ;;      Params:         0       0       0       0
+  2455 ;;      Locals:         0       0       0       0
+  2456 ;;      Temps:          0       0       0       0
+  2457 ;;      Totals:         0       0       0       0
+  2458 ;;Total ram usage:        0 bytes
+  2459 ;; Hardware stack levels used:    1
+  2460 ;; This function calls:
+  2461 ;;		Nothing
+  2462 ;; This function is called by:
+  2463 ;;		_timer1
+  2464 ;; This function uses a non-reentrant model
+  2465 ;;
+  2466                           
+  2467                           
+  2468                           ;psect for function _start_timer1
+  2469  03E6                     _start_timer1:	
+  2470                           
+  2471                           ;timer.c: 28: TMR1 = timer1_value;
+  2472                           
+  2473                           ;incstack = 0
+  2474                           ; Regs used in _start_timer1: [wreg]
+  2475  03E6  1283               	bcf	3,5	;RP0=0, select bank0
+  2476  03E7  1303               	bcf	3,6	;RP1=0, select bank0
+  2477  03E8  082F               	movf	_timer1_value+1,w
+  2478  03E9  008F               	movwf	15	;volatile
+  2479  03EA  082E               	movf	_timer1_value,w
+  2480  03EB  008E               	movwf	14	;volatile
+  2481                           
+  2482                           ;timer.c: 29: T1CONbits.TMR1ON = 1;
+  2483  03EC  1410               	bsf	16,0	;volatile
+  2484  03ED  0008               	return
+  2485  03EE                     __end_of_start_timer1:	
+  2486                           
+  2487                           	psect	text18
+  2488  011D                     __ptext18:	
+  2489 ;; *************** function _button_reading *****************
+  2490 ;; Defined at:
+  2491 ;;		line 15 in file "button.c"
+  2492 ;; Parameters:    Size  Location     Type
+  2493 ;;		None
+  2494 ;; Auto vars:     Size  Location     Type
+  2495 ;;  i               1    3[COMMON] unsigned char 
+  2496 ;; Return value:  Size  Location     Type
+  2497 ;;                  1    wreg      void 
+  2498 ;; Registers used:
+  2499 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  2500 ;; Tracked objects:
+  2501 ;;		On entry : 0/0
+  2502 ;;		On exit  : 0/0
+  2503 ;;		Unchanged: 0/0
+  2504 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2505 ;;      Params:         0       0       0       0
+  2506 ;;      Locals:         1       0       0       0
+  2507 ;;      Temps:          3       0       0       0
+  2508 ;;      Totals:         4       0       0       0
+  2509 ;;Total ram usage:        4 bytes
+  2510 ;; Hardware stack levels used:    1
+  2511 ;; This function calls:
+  2512 ;;		Nothing
+  2513 ;; This function is called by:
+  2514 ;;		_timer1
+  2515 ;; This function uses a non-reentrant model
+  2516 ;;
+  2517                           
+  2518                           
+  2519                           ;psect for function _button_reading
+  2520  011D                     _button_reading:	
+  2521                           
+  2522                           ;button.c: 16: unsigned char i;
+  2523                           ;button.c: 17: for(i = 0; i < 3; i++){
+  2524                           
+  2525                           ;incstack = 0
+  2526                           ; Regs used in _button_reading: [wreg-fsr0h+status,2+status,0]
+  2527  011D  01F3               	clrf	button_reading@i
+  2528  011E                     L2:	
+  2529  011E  3003               	movlw	3
+  2530  011F  0273               	subwf	button_reading@i,w
+  2531  0120  1803               	btfsc	3,0
+  2532  0121  0008               	return
+  2533                           
+  2534                           ;button.c: 18: debounceButtonBuffer2[i] = debounceButtonBuffer1[i];
+  2535  0122  0873               	movf	button_reading@i,w
+  2536  0123  3E79               	addlw	(low (_debounceButtonBuffer1| 0))& (0+255)
+  2537  0124  0084               	movwf	4
+  2538  0125  0800               	movf	0,w
+  2539  0126  00F0               	movwf	??_button_reading
+  2540  0127  0873               	movf	button_reading@i,w
+  2541  0128  3E26               	addlw	(low (_debounceButtonBuffer2| 0))& (0+255)
+  2542  0129  0084               	movwf	4
+  2543  012A  0870               	movf	??_button_reading,w
+  2544  012B  1383               	bcf	3,7	;select IRP bank0
+  2545  012C  0080               	movwf	0
+  2546                           
+  2547                           ;button.c: 19: debounceButtonBuffer1[i] = PORTA & buttonInputMask[i];
+  2548  012D  0873               	movf	button_reading@i,w
+  2549  012E  3E43               	addlw	(low (_buttonInputMask| 0))& (0+255)
+  2550  012F  0084               	movwf	4
+  2551  0130  0800               	movf	0,w
+  2552  0131  1283               	bcf	3,5	;RP0=0, select bank0
+  2553  0132  1303               	bcf	3,6	;RP1=0, select bank0
+  2554  0133  0505               	andwf	5,w	;volatile
+  2555  0134  00F0               	movwf	??_button_reading
+  2556  0135  0873               	movf	button_reading@i,w
+  2557  0136  3E79               	addlw	(low (_debounceButtonBuffer1| 0))& (0+255)
+  2558  0137  0084               	movwf	4
+  2559  0138  0870               	movf	??_button_reading,w
+  2560  0139  0080               	movwf	0
+  2561                           
+  2562                           ;button.c: 21: if(debounceButtonBuffer1[i] == debounceButtonBuffer2[i]){
+  2563  013A  0873               	movf	button_reading@i,w
+  2564  013B  3E26               	addlw	(low (_debounceButtonBuffer2| 0))& (0+255)
+  2565  013C  0084               	movwf	4
+  2566  013D  0800               	movf	0,w
+  2567  013E  00F0               	movwf	??_button_reading
+  2568  013F  0873               	movf	button_reading@i,w
+  2569  0140  3E79               	addlw	(low (_debounceButtonBuffer1| 0))& (0+255)
+  2570  0141  0084               	movwf	4
+  2571  0142  0800               	movf	0,w
+  2572  0143  0670               	xorwf	??_button_reading,w
+  2573  0144  1D03               	skipz
+  2574  0145  2984               	goto	i1l1266
+  2575                           
+  2576                           ;button.c: 22: buttonBuffer[i] = debounceButtonBuffer1[i];
+  2577  0146  0873               	movf	button_reading@i,w
+  2578  0147  3E79               	addlw	(low (_debounceButtonBuffer1| 0))& (0+255)
+  2579  0148  0084               	movwf	4
+  2580  0149  0800               	movf	0,w
+  2581  014A  00F0               	movwf	??_button_reading
+  2582  014B  0873               	movf	button_reading@i,w
+  2583  014C  3E40               	addlw	(low (_buttonBuffer| 0))& (0+255)
+  2584  014D  0084               	movwf	4
+  2585  014E  0870               	movf	??_button_reading,w
+  2586  014F  0080               	movwf	0
+  2587                           
+  2588                           ;button.c: 23: if(buttonBuffer[i] == 0){
+  2589  0150  0873               	movf	button_reading@i,w
+  2590  0151  3E40               	addlw	(low (_buttonBuffer| 0))& (0+255)
+  2591  0152  0084               	movwf	4
+  2592  0153  0800               	movf	0,w
+  2593  0154  1D03               	btfss	3,2
+  2594  0155  2978               	goto	i1l1264
+  2595                           
+  2596                           ;button.c: 24: if(counterForButtonPress[i] < 200){
+  2597  0156  0873               	movf	button_reading@i,w
+  2598  0157  00F0               	movwf	??_button_reading
+  2599  0158  0770               	addwf	??_button_reading,w
+  2600  0159  3E20               	addlw	(low (_counterForButtonPress| 0))& (0+255)
+  2601  015A  0084               	movwf	4
+  2602  015B  0800               	movf	0,w
+  2603  015C  00F1               	movwf	??_button_reading+1
+  2604  015D  0A84               	incf	4,f
+  2605  015E  0800               	movf	0,w
+  2606  015F  00F2               	movwf	??_button_reading+2
+  2607  0160  3000               	movlw	0
+  2608  0161  0272               	subwf	??_button_reading+2,w
+  2609  0162  30C8               	movlw	200
+  2610  0163  1903               	skipnz
+  2611  0164  0271               	subwf	??_button_reading+1,w
+  2612  0165  1803               	skipnc
+  2613  0166  2972               	goto	i1l1262
+  2614                           
+  2615                           ;button.c: 25: counterForButtonPress[i]++;
+  2616  0167  0873               	movf	button_reading@i,w
+  2617  0168  00F0               	movwf	??_button_reading
+  2618  0169  0770               	addwf	??_button_reading,w
+  2619  016A  3E20               	addlw	(low (_counterForButtonPress| 0))& (0+255)
+  2620  016B  0084               	movwf	4
+  2621  016C  3001               	movlw	1
+  2622  016D  0780               	addwf	0,f
+  2623  016E  0A84               	incf	4,f
+  2624  016F  1803               	skipnc
+  2625  0170  0A80               	incf	0,f
+  2626                           
+  2627                           ;button.c: 26: }
+  2628  0171  2984               	goto	i1l1266
+  2629  0172                     i1l1262:	
+  2630                           
+  2631                           ;button.c: 27: else flagForButtonPress_s[i] = 1;
+  2632  0172  0873               	movf	button_reading@i,w
+  2633  0173  3E29               	addlw	(low (_flagForButtonPress_s| 0))& (0+255)
+  2634  0174  0084               	movwf	4
+  2635  0175  0180               	clrf	0
+  2636  0176  0A80               	incf	0,f
+  2637                           
+  2638                           ;button.c: 28: }
+  2639  0177  2984               	goto	i1l1266
+  2640  0178                     i1l1264:	
+  2641                           
+  2642                           ;button.c: 29: else{
+  2643                           ;button.c: 30: counterForButtonPress[i] = 0;
+  2644  0178  0873               	movf	button_reading@i,w
+  2645  0179  00F0               	movwf	??_button_reading
+  2646  017A  0770               	addwf	??_button_reading,w
+  2647  017B  3E20               	addlw	(low (_counterForButtonPress| 0))& (0+255)
+  2648  017C  0084               	movwf	4
+  2649  017D  0180               	clrf	0
+  2650  017E  0A84               	incf	4,f
+  2651  017F  0180               	clrf	0
+  2652                           
+  2653                           ;button.c: 31: flagForButtonPress_s[i] = 0;
+  2654  0180  0873               	movf	button_reading@i,w
+  2655  0181  3E29               	addlw	(low (_flagForButtonPress_s| 0))& (0+255)
+  2656  0182  0084               	movwf	4
+  2657  0183  0180               	clrf	0
+  2658  0184                     i1l1266:	
+  2659  0184  3001               	movlw	1
+  2660  0185  00F0               	movwf	??_button_reading
+  2661  0186  0870               	movf	??_button_reading,w
+  2662  0187  07F3               	addwf	button_reading@i,f
+  2663  0188  291E               	goto	L2
+  2664  0189                     __end_of_button_reading:	
+  2665                           
+  2666                           	psect	text19
+  2667  03D4                     __ptext19:	
+  2668 ;; *************** function _UpdateLed *****************
+  2669 ;; Defined at:
+  2670 ;;		line 39 in file "led7seg.c"
+  2671 ;; Parameters:    Size  Location     Type
+  2672 ;;  index           1    wreg     unsigned char 
+  2673 ;; Auto vars:     Size  Location     Type
+  2674 ;;  index           1    1[COMMON] unsigned char 
+  2675 ;; Return value:  Size  Location     Type
+  2676 ;;                  1    wreg      void 
+  2677 ;; Registers used:
+  2678 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  2679 ;; Tracked objects:
+  2680 ;;		On entry : 0/0
+  2681 ;;		On exit  : 0/0
+  2682 ;;		Unchanged: 0/0
+  2683 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2684 ;;      Params:         0       0       0       0
+  2685 ;;      Locals:         1       0       0       0
+  2686 ;;      Temps:          0       0       0       0
+  2687 ;;      Totals:         1       0       0       0
+  2688 ;;Total ram usage:        1 bytes
+  2689 ;; Hardware stack levels used:    1
+  2690 ;; Hardware stack levels required when called:    1
+  2691 ;; This function calls:
+  2692 ;;		_Display
+  2693 ;;		_LedEnable
+  2694 ;; This function is called by:
+  2695 ;;		_timer1
+  2696 ;; This function uses a non-reentrant model
+  2697 ;;
+  2698                           
+  2699                           
+  2700                           ;psect for function _UpdateLed
+  2701  03D4                     _UpdateLed:	
+  2702                           
+  2703                           ;incstack = 0
+  2704                           ; Regs used in _UpdateLed: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  2705                           ;UpdateLed@index stored from wreg
+  2706  03D4  00F1               	movwf	UpdateLed@index
+  2707                           
+  2708                           ;led7seg.c: 40: LedEnable(index);
+  2709  03D5  0871               	movf	UpdateLed@index,w
+  2710  03D6  2392               	fcall	_LedEnable
+  2711                           
+  2712                           ;led7seg.c: 41: Display( LEDBuffer[index] );
+  2713  03D7  0871               	movf	UpdateLed@index,w
+  2714  03D8  3E46               	addlw	(low (_LEDBuffer| 0))& (0+255)
+  2715  03D9  0084               	movwf	4
+  2716  03DA  1383               	bcf	3,7	;select IRP bank0
+  2717  03DB  0800               	movf	0,w
+  2718  03DC  23B2               	fcall	_Display
+  2719  03DD  0008               	return
+  2720  03DE                     __end_of_UpdateLed:	
+  2721                           
+  2722                           	psect	text20
+  2723  0392                     __ptext20:	
+  2724 ;; *************** function _LedEnable *****************
+  2725 ;; Defined at:
+  2726 ;;		line 22 in file "led7seg.c"
+  2727 ;; Parameters:    Size  Location     Type
+  2728 ;;  index           1    wreg     unsigned char 
+  2729 ;; Auto vars:     Size  Location     Type
+  2730 ;;  index           1    0[COMMON] unsigned char 
+  2731 ;; Return value:  Size  Location     Type
+  2732 ;;                  1    wreg      void 
+  2733 ;; Registers used:
+  2734 ;;		wreg, status,2, status,0
+  2735 ;; Tracked objects:
+  2736 ;;		On entry : 0/0
+  2737 ;;		On exit  : 0/0
+  2738 ;;		Unchanged: 0/0
+  2739 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2740 ;;      Params:         0       0       0       0
+  2741 ;;      Locals:         1       0       0       0
+  2742 ;;      Temps:          0       0       0       0
+  2743 ;;      Totals:         1       0       0       0
+  2744 ;;Total ram usage:        1 bytes
+  2745 ;; Hardware stack levels used:    1
+  2746 ;; This function calls:
+  2747 ;;		Nothing
+  2748 ;; This function is called by:
+  2749 ;;		_UpdateLed
+  2750 ;; This function uses a non-reentrant model
+  2751 ;;
+  2752                           
+  2753                           
+  2754                           ;psect for function _LedEnable
+  2755  0392                     _LedEnable:	
+  2756                           
+  2757                           ;incstack = 0
+  2758                           ; Regs used in _LedEnable: [wreg+status,2+status,0]
+  2759                           ;LedEnable@index stored from wreg
+  2760  0392  00F0               	movwf	LedEnable@index
+  2761                           
+  2762                           ;led7seg.c: 23: if(index == 0){
+  2763  0393  0870               	movf	LedEnable@index,w
+  2764  0394  1D03               	btfss	3,2
+  2765  0395  2B9B               	goto	i1l1234
+  2766                           
+  2767                           ;led7seg.c: 24: PORTAbits.RA0 = 1;
+  2768  0396  1283               	bcf	3,5	;RP0=0, select bank0
+  2769  0397  1303               	bcf	3,6	;RP1=0, select bank0
+  2770  0398  1405               	bsf	5,0	;volatile
+  2771                           
+  2772                           ;led7seg.c: 25: PORTAbits.RA7 = 0;
+  2773  0399  1385               	bcf	5,7	;volatile
+  2774                           
+  2775                           ;led7seg.c: 26: }
+  2776  039A  0008               	return
+  2777  039B                     i1l1234:	
+  2778                           
+  2779                           ;led7seg.c: 27: else if(index == 1){
+  2780  039B  0370               	decf	LedEnable@index,w
+  2781  039C  1D03               	btfss	3,2
+  2782  039D  0008               	return
+  2783                           
+  2784                           ;led7seg.c: 28: PORTAbits.RA0 = 0;
+  2785  039E  1283               	bcf	3,5	;RP0=0, select bank0
+  2786  039F  1303               	bcf	3,6	;RP1=0, select bank0
+  2787  03A0  1005               	bcf	5,0	;volatile
+  2788                           
+  2789                           ;led7seg.c: 29: PORTAbits.RA7 = 1;
+  2790  03A1  1785               	bsf	5,7	;volatile
+  2791  03A2  0008               	return
+  2792  03A3                     __end_of_LedEnable:	
+  2793                           
+  2794                           	psect	text21
+  2795  03B2                     __ptext21:	
+  2796 ;; *************** function _Display *****************
+  2797 ;; Defined at:
+  2798 ;;		line 16 in file "led7seg.c"
+  2799 ;; Parameters:    Size  Location     Type
+  2800 ;;  number          1    wreg     unsigned char 
+  2801 ;; Auto vars:     Size  Location     Type
+  2802 ;;  number          1    0[COMMON] unsigned char 
+  2803 ;; Return value:  Size  Location     Type
+  2804 ;;                  1    wreg      void 
+  2805 ;; Registers used:
+  2806 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  2807 ;; Tracked objects:
+  2808 ;;		On entry : 0/0
+  2809 ;;		On exit  : 0/0
+  2810 ;;		Unchanged: 0/0
+  2811 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2812 ;;      Params:         0       0       0       0
+  2813 ;;      Locals:         1       0       0       0
+  2814 ;;      Temps:          0       0       0       0
+  2815 ;;      Totals:         1       0       0       0
+  2816 ;;Total ram usage:        1 bytes
+  2817 ;; Hardware stack levels used:    1
+  2818 ;; This function calls:
+  2819 ;;		Nothing
+  2820 ;; This function is called by:
+  2821 ;;		_UpdateLed
+  2822 ;; This function uses a non-reentrant model
+  2823 ;;
+  2824                           
+  2825                           
+  2826                           ;psect for function _Display
+  2827  03B2                     _Display:	
+  2828                           
+  2829                           ;incstack = 0
+  2830                           ; Regs used in _Display: [wreg-fsr0h+status,2+status,0]
+  2831                           ;Display@number stored from wreg
+  2832  03B2  00F0               	movwf	Display@number
+  2833                           
+  2834                           ;led7seg.c: 17: if(number >= 0 && number <= 10){
+  2835  03B3  300B               	movlw	11
+  2836  03B4  0270               	subwf	Display@number,w
+  2837  03B5  1803               	skipnc
+  2838  03B6  0008               	return
+  2839                           
+  2840                           ;led7seg.c: 18: PORTB = LEDDisplay[number];
+  2841  03B7  0870               	movf	Display@number,w
+  2842  03B8  3E35               	addlw	(low (_LEDDisplay| 0))& (0+255)
+  2843  03B9  0084               	movwf	4
+  2844  03BA  1383               	bcf	3,7	;select IRP bank0
+  2845  03BB  0800               	movf	0,w
+  2846  03BC  1283               	bcf	3,5	;RP0=0, select bank0
+  2847  03BD  1303               	bcf	3,6	;RP1=0, select bank0
+  2848  03BE  0086               	movwf	6	;volatile
+  2849  03BF  0008               	return
+  2850  03C0                     __end_of_Display:	
+  2851  007E                     btemp	set	126	;btemp
+  2852  007E                     wtemp	set	126
+  2853  007E                     wtemp0	set	126
+  2854  0080                     wtemp1	set	128
+  2855  0082                     wtemp2	set	130
+  2856  0084                     wtemp3	set	132
+  2857  0086                     wtemp4	set	134
+  2858  0088                     wtemp5	set	136
+  2859  007F                     wtemp6	set	127
+  2860  007E                     ttemp	set	126
+  2861  007E                     ttemp0	set	126
+  2862  0081                     ttemp1	set	129
+  2863  0084                     ttemp2	set	132
+  2864  0087                     ttemp3	set	135
+  2865  007F                     ttemp4	set	127
+  2866  007E                     ltemp	set	126
+  2867  007E                     ltemp0	set	126
+  2868  0082                     ltemp1	set	130
+  2869  0086                     ltemp2	set	134
+  2870  0080                     ltemp3	set	128
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        21
+    BSS         26
+    Persistent  1
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      9      14
+    BANK0            80     16      59
+    BANK1            80      0       0
+    BANK2            48      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _timer1 in COMMON
+
+    _timer1->_button_reading
+    _UpdateLed->_Display
+    _UpdateLed->_LedEnable
+
+Critical Paths under _main in BANK0
+
+    _main->_InitSystem
+    _InitSystem->_UpdateLedBuffer
+    _UpdateLedBuffer->___awdiv
+    _SetTimer1_ms->___awdiv
+
+Critical Paths under _timer1 in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _timer1 in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _timer1 in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 2     2      0    4173
+                                             14 BANK0      2     2      0
+                           _Delay_ms
+                         _InitSystem
+                            _RelayOn
+                       _SetTimer1_ms
+                    _UpdateLedBuffer
+                        _WriteEEPROM
+                     _is_button_held
+                  _is_button_pressed
+                _is_button_pressed_s
+ ---------------------------------------------------------------------------------
+ (1) _is_button_pressed_s                                  1     1      0      44
+                                              0 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _is_button_pressed                                    4     4      0      44
+                                              0 BANK0      4     4      0
+ ---------------------------------------------------------------------------------
+ (1) _is_button_held                                       4     4      0      44
+                                              0 BANK0      4     4      0
+ ---------------------------------------------------------------------------------
+ (1) _WriteEEPROM                                          2     1      1     150
+                                              0 BANK0      2     1      1
+ ---------------------------------------------------------------------------------
+ (1) _InitSystem                                           1     1      0    1845
+                                             13 BANK0      1     1      0
+                         _ReadEEPROM
+                            _RelayOn
+                       _SetTimer1_ms
+                    _UpdateLedBuffer
+                        _init_timer1
+ ---------------------------------------------------------------------------------
+ (2) _init_timer1                                          4     2      2      75
+                                              0 BANK0      4     2      2
+ ---------------------------------------------------------------------------------
+ (1) _UpdateLedBuffer                                      4     4      0     980
+                                              9 BANK0      4     4      0
+                            ___awdiv
+                            ___awmod
+ ---------------------------------------------------------------------------------
+ (2) ___awmod                                              7     3      4     402
+                                              0 BANK0      7     3      4
+ ---------------------------------------------------------------------------------
+ (1) _SetTimer1_ms                                         2     0      2     746
+                                              9 BANK0      2     0      2
+                            ___awdiv
+ ---------------------------------------------------------------------------------
+ (2) ___awdiv                                              9     5      4     512
+                                              0 BANK0      9     5      4
+ ---------------------------------------------------------------------------------
+ (1) _RelayOn                                              1     1      0      22
+                                              0 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (2) _ReadEEPROM                                           1     1      0      22
+                                              0 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _Delay_ms                                             6     4      2     251
+                                              0 BANK0      6     4      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (4) _timer1                                               5     5      0     486
+                                              4 COMMON     5     5      0
+                          _UpdateLed
+                     _button_reading
+                       _start_timer1
+                        _stop_timer1
+                         _timer1_isr
+ ---------------------------------------------------------------------------------
+ (5) _timer1_isr                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (5) _stop_timer1                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (5) _start_timer1                                         0     0      0       0
+ ---------------------------------------------------------------------------------
+ (5) _button_reading                                       4     4      0     354
+                                              0 COMMON     4     4      0
+ ---------------------------------------------------------------------------------
+ (5) _UpdateLed                                            1     1      0     132
+                                              1 COMMON     1     1      0
+                            _Display
+                          _LedEnable
+ ---------------------------------------------------------------------------------
+ (6) _LedEnable                                            1     1      0      44
+                                              0 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (6) _Display                                              1     1      0      44
+                                              0 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 6
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _Delay_ms
+   _InitSystem
+     _ReadEEPROM
+     _RelayOn
+     _SetTimer1_ms
+       ___awdiv
+     _UpdateLedBuffer
+       ___awdiv
+       ___awmod
+     _init_timer1
+   _RelayOn
+   _SetTimer1_ms
+     ___awdiv
+   _UpdateLedBuffer
+     ___awdiv
+     ___awmod
+   _WriteEEPROM
+   _is_button_held
+   _is_button_pressed
+   _is_button_pressed_s
+
+ _timer1 (ROOT)
+   _UpdateLed
+     _Display
+     _LedEnable
+   _button_reading
+   _start_timer1
+   _stop_timer1
+   _timer1_isr
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               30      0       0       9        0.0%
+BITBANK2            30      0       0       8        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK1            50      0       0       6        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50     10      3B       3       73.8%
+BITBANK0            50      0       0       5        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      9       E       1      100.0%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      49      10        0.0%
+ABS                  0      0      49       4        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA              80      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.36 build -262312587 
+Symbol Table                                                                                   Sun Nov 13 22:55:12 2022
+
+        __size_of_WriteEEPROM 001A         __size_of_start_timer1 0008                             pc 0002  
+                 __CFG_CP$OFF 0000             ??_UpdateLedBuffer 0053                  ___awdiv@sign 0050  
+                          fsr 0004                           l122 0295                           l130 03C8  
+                         l138 034E                           _GIE 005F                  __CFG_CPD$OFF 0000  
+                         u645 01AB                           u665 01B7                           u745 0200  
+                         u930 031B                           u675 01C3                           u685 01CD  
+                         u765 0211                           u775 021A                           u960 0337  
+            ??_button_reading 0070                           fsr0 0004                           indf 0000  
+                ___awmod@sign 0050                          S1504 03EE                  __CFG_LVP$OFF 0000  
+                        l1110 0195                          l1116 01A0                          l1142 01DF  
+                        l1134 01CC                          l1126 01A8                          l1128 01B6  
+                        l1304 030A                          l1138 01D7                          l1154 01F0  
+                        l1314 0326                          l1410 0099                          l1180 022C  
+                        l1172 0219                          l1166 01FD                          l1158 01F7  
+                        l1414 009F                          l1430 00BE                          l1336 02A6  
+                        l1168 020B                          l1176 0224                          l1440 00D4  
+                        l1432 00C4                          l1424 00B0                          l1338 02B3  
+                        l1346 03AC                          l1380 0055                          l1470 0100  
+                        l1448 00D9                          l1376 004B                          l1458 00ED  
+                        l1466 00FB                          l1396 007A                          l1476 010F  
+                        l1478 0108         _counterForButtonPress 0020                          u1015 029B  
+                 main@counter 0059                          _PEIE 005E                          i1l81 02D1  
+                        _TIME 0030                          _TMR1 000E                          _main 0046  
+                        _mode 0033                          btemp 007E                  _start_timer1 03E6  
+                        ltemp 007E                          start 0010                          ttemp 007E  
+                        wtemp 007E               __end_of_Display 03C0                   _stop_timer1 03F2  
+             __end_of_RelayOn 03CA                         ?_main 0070               __end_of___awdiv 01E4  
+                       _EEADR 009B                 __CFG_WDTE$OFF 0000               __end_of___awmod 0231  
+                       _CMCON 001F               ___awdiv@divisor 004A               ___awdiv@counter 004F  
+                       _PORTA 0005                         _PORTB 0006                         _TRISA 0085  
+                       _TRISB 0086                         u85_25 038B                  ?_init_timer1 004A  
+                       _index 007D                __CFG_BOREN$OFF 0000                         pclath 000A  
+                       ltemp0 007E                         ltemp1 0082                         ltemp2 0086  
+                       ltemp3 0080                    _ReadEEPROM 03CA                         ttemp0 007E  
+                       ttemp1 0081                         ttemp2 0084                         ttemp3 0087  
+                       ttemp4 007F                         status 0003                         wtemp0 007E  
+                       wtemp1 0080                         wtemp2 0082                         wtemp3 0084  
+                       wtemp4 0086                         wtemp5 0088                         wtemp6 007F  
+            __end_of_Delay_ms 02BA                __CFG_MCLRE$OFF 0000               __initialization 0011  
+                __end_of_main 011D                    _InitSystem 0231                        ??_main 0058  
+          __size_of_LedEnable 0011           _is_button_pressed_s 03A3             ReadEEPROM@address 004A  
+                      _EEDATA 009A                        _EECON2 009D              ___awdiv@dividend 004C  
+                      i1l1234 039B                        i1l1262 0172                        i1l1264 0178  
+                      i1l1266 0184                        _TMR1IE 0460                        _TMR1IF 0060  
+                   ??_Display 0070                __CFG_PWRTE$OFF 0000                     ??_RelayOn 004A  
+        ?_is_button_pressed_s 0070                     ??___awdiv 004E                     ??___awmod 004E  
+               Delay_ms@delay 004A          _flagForButtonPress_s 0029               _buttonInputMask 0043  
+            ___awdiv@quotient 0051               ___awmod@divisor 004A                        _timer1 02BA  
+             ___awmod@counter 004F                        saved_w 007E            __size_of_UpdateLed 000A  
+                 ?_ReadEEPROM 0070       __end_of__initialization 0044                   RelayOn@flag 004A  
+             _UpdateLedBuffer 0265             __end_of_LedEnable 03A3         ??_is_button_pressed_s 004A  
+               ?_SetTimer1_ms 0053                __pcstackCOMMON 0070                  __pidataBANK0 0353  
+                 ?_InitSystem 0070                     ?_Delay_ms 004A          __size_of_init_timer1 0023  
+                  __pbssBANK0 0020                 ??_WriteEEPROM 004B                ??_SetTimer1_ms 0055  
+          _RUN_button_counter 007C                    __pmaintext 0046             __end_of_UpdateLed 03DE  
+                ?_stop_timer1 0070              _cleaning_counter 005A                    __pintentry 0004  
+                     ?_timer1 0070           __size_of_ReadEEPROM 000A              init_timer1@count 004A  
+                  ??_Delay_ms 004C       __size_of_is_button_held 001C       __end_of_UpdateLedBuffer 0291  
+         __size_of_InitSystem 0034                       _Display 03B2                       _RelayOn 03C0  
+                     ___awdiv 0189                       ___awmod 01E4           __end_of_WriteEEPROM 0353  
+          WriteEEPROM@address 004B                       __ptext1 03A3                       __ptext2 0301  
+                     __ptext3 031D                       __ptext4 0339                       __ptext5 0231  
+                     __ptext6 02DE                       __ptext7 0265                       __ptext8 01E4  
+                     __ptext9 0368               __size_of_timer1 0024                     _T1CONbits 0010  
+            ___awmod@dividend 004C                     _LEDBuffer 0046                       clrloop0 03DF  
+        end_of_initialization 0044       __size_of_button_reading 006C                     Delay_ms@i 004C  
+                   Delay_ms@j 004E         _debounceButtonBuffer1 0079         _debounceButtonBuffer2 0026  
+         is_button_held@index 004D           UpdateLedBuffer@time 0056                    _timer1_cnt 002C  
+                  _timer1_isr 037D                     _PORTAbits 0005          __end_of_SetTimer1_ms 037D  
+            ?_UpdateLedBuffer 0070                  ??_ReadEEPROM 004A             _addressEEPROMused 0031  
+                 _WriteEEPROM 0339              SetTimer1_ms@time 0053                     _LedEnable 0392  
+                ??_InitSystem 0057             _is_button_pressed 0301          __size_of_stop_timer1 0004  
+          ?_is_button_pressed 0070                __end_of_timer1 02DE            __end_of_ReadEEPROM 03D4  
+         start_initialization 0011           ??_is_button_pressed 004A                _is_button_held 031D  
+           __size_of_Delay_ms 0029   __end_of_is_button_pressed_s 03B2            __end_of_InitSystem 0265  
+               ?_start_timer1 0070     __end_of_is_button_pressed 031D                    ?_LedEnable 0070  
+                 ?_timer1_isr 0070                   __pdataBANK0 0035                     _UpdateLed 03D4  
+                    ??_timer1 0074        __end_of_is_button_held 0339                 ??_init_timer1 004C  
+                 __pbssCOMMON 0079                     ___latbits 0000                 __pcstackBANK0 004A  
+              _button_reading 011D                  _buttonBuffer 0040                ??_start_timer1 0070  
+                    ?_Display 0070                     __pnvBANK0 005A      is_button_pressed_s@index 004A  
+                    ?_RelayOn 0070               button_reading@i 0073                      ?___awdiv 004A  
+                    ?___awmod 004A                    ?_UpdateLed 0070         __size_of_SetTimer1_ms 0015  
+                   __pswtext1 03EE               ?_is_button_held 0070                   _flag_timer1 0032  
+      __end_of_button_reading 0189           __size_of_timer1_isr 0015           __end_of_init_timer1 0301  
+           interrupt_function 0004                     _time1_MUL 0048                     clear_ram0 03DE  
+                _SetTimer1_ms 0368                      _PIR1bits 000C    __size_of_is_button_pressed 001C  
+                 ??_LedEnable 0070                     _pumpState 0034                      _Delay_ms 0291  
+             ?_button_reading 0070                    _EECON1bits 009C              __size_of_Display 000E  
+                ?_WriteEEPROM 004A                UpdateLed@index 0071              __size_of_RelayOn 000A  
+            __size_of___awdiv 005B              __size_of___awmod 004D                   ??_UpdateLed 0071  
+        __end_of_start_timer1 03EE                   _init_timer1 02DE                      __ptext10 0189  
+                    __ptext11 03C0                      __ptext20 0392                      __ptext12 03CA  
+                    __ptext21 03B2                      __ptext13 0291                      __ptext14 02BA  
+                    __ptext15 037D                      __ptext16 03F2                      __ptext17 03E6  
+                    __ptext18 011D                      __ptext19 03D4                 __size_of_main 00D7  
+    __size_of_UpdateLedBuffer 002C                 ??_stop_timer1 0070                  ??_timer1_isr 0070  
+               Display@number 0070                    _LEDDisplay 0035                  _timer1_value 002E  
+              LedEnable@index 0070                    _INTCONbits 000B        is_button_pressed@index 004D  
+                    intlevel1 0000            __end_of_timer1_isr 0392               WriteEEPROM@data 004A  
+__size_of_is_button_pressed_s 000F              ??_is_button_held 004A           __end_of_stop_timer1 03F6  
+          __CFG_FOSC$INTOSCIO 0000  

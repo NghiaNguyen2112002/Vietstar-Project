@@ -1,0 +1,303 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F628A ]
+[d frameptr 6 ]
+"13 E:\PIC\water_flow_sensor.X\main.c
+[e E625 MODE_FSM `uc
+INIT 0
+ADJUSTING_AUTO_0 1
+ADJUSTING_AUTO_1 2
+BREWING_0 3
+BREWING_1 4
+AUTO_CLEANING 5
+]
+"16 E:\PIC\water_flow_sensor.X\button.c
+[v _button_reading button_reading `(v  1 e 1 0 ]
+"47
+[v _is_button_pressed is_button_pressed `(uc  1 e 1 0 ]
+"52
+[v _is_button_pressed_s is_button_pressed_s `(uc  1 e 1 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.36\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"33 E:\PIC\water_flow_sensor.X\main.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+"48
+[v _main main `(v  1 e 1 0 ]
+"125
+[v _InitSystem InitSystem `(v  1 e 1 0 ]
+"153
+[v _Delay_ms Delay_ms `(v  1 e 1 0 ]
+"160
+[v _RelayOn RelayOn `(v  1 e 1 0 ]
+"165
+[v _ReadEEPROM ReadEEPROM `(uc  1 e 1 0 ]
+"171
+[v _WriteEEPROM WriteEEPROM `(v  1 e 1 0 ]
+"8 E:\PIC\water_flow_sensor.X\timer.c
+[v _init_timer1 init_timer1 `(v  1 e 1 0 ]
+"26
+[v _start_timer1 start_timer1 `(v  1 e 1 0 ]
+"32
+[v _stop_timer1 stop_timer1 `(v  1 e 1 0 ]
+"36
+[v _timer1_isr timer1_isr `(v  1 e 1 0 ]
+"47
+[v _SetTimer1_ms SetTimer1_ms `(v  1 e 1 0 ]
+"5 E:\PIC\water_flow_sensor.X\button.c
+[v _buttonInputMask buttonInputMask `[3]uc  1 e 3 0 ]
+"7
+[v _buttonBuffer buttonBuffer `[3]uc  1 s 3 buttonBuffer ]
+"9
+[v _debounceButtonBuffer1 debounceButtonBuffer1 `[3]uc  1 s 3 debounceButtonBuffer1 ]
+"10
+[v _debounceButtonBuffer2 debounceButtonBuffer2 `[3]uc  1 s 3 debounceButtonBuffer2 ]
+"12
+[v _flagForButtonPress flagForButtonPress `[3]uc  1 s 3 flagForButtonPress ]
+"13
+[v _flagForButtonPress_s flagForButtonPress_s `[3]uc  1 s 3 flagForButtonPress_s ]
+"14
+[v _counterForButtonPress counterForButtonPress `[3]ui  1 s 6 counterForButtonPress ]
+"160 C:\Program Files (x86)\Microchip\xc8\v1.36\include\pic16f628a.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+[s S80 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"177
+[u S89 . 1 `S80 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES89  1 e 1 @5 ]
+"221
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S44 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"324
+[s S53 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S58 . 1 `S44 1 . 1 0 `S53 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES58  1 e 1 @11 ]
+[s S190 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 CMIF 1 0 :1:6 
+`uc 1 EEIF 1 0 :1:7 
+]
+"395
+[u S199 . 1 `S190 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES199  1 e 1 @12 ]
+"434
+[v _TMR1 TMR1 `VEus  1 e 2 @14 ]
+[s S268 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+]
+"471
+[s S274 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[u S278 . 1 `S268 1 . 1 0 `S274 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES278  1 e 1 @16 ]
+"743
+[v _CMCON CMCON `VEuc  1 e 1 @31 ]
+[s S133 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+"832
+[s S140 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+]
+[u S144 . 1 `S133 1 . 1 0 `S140 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES144  1 e 1 @129 ]
+"881
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"942
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1175
+[v _EEDATA EEDATA `VEuc  1 e 1 @154 ]
+"1181
+[v _EEADR EEADR `VEuc  1 e 1 @155 ]
+[s S175 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+]
+"1200
+[u S180 . 1 `S175 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES180  1 e 1 @156 ]
+"1224
+[v _EECON2 EECON2 `VEuc  1 e 1 @157 ]
+"1356
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"1370
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"1460
+[v _TMR1IE TMR1IE `VEb  1 e 0 @1120 ]
+"1462
+[v _TMR1IF TMR1IF `VEb  1 e 0 @96 ]
+"13 E:\PIC\water_flow_sensor.X\main.c
+[v _mode mode `E625  1 e 1 0 ]
+"15
+[v _MAX_COUNTER_AUTO_0 MAX_COUNTER_AUTO_0 `ui  1 e 2 0 ]
+[v _MAX_COUNTER_AUTO_1 MAX_COUNTER_AUTO_1 `ui  1 e 2 0 ]
+"16
+[v _addressEEPROM_AUTO_0 addressEEPROM_AUTO_0 `uc  1 e 1 0 ]
+"17
+[v _addressEEPROM_AUTO_1 addressEEPROM_AUTO_1 `uc  1 e 1 0 ]
+"21
+[v _brewing_counter brewing_counter `uc  1 e 1 0 ]
+[v _cleaning_counter cleaning_counter `uc  1 e 1 0 ]
+"3 E:\PIC\water_flow_sensor.X\timer.c
+[v _timer1_value timer1_value `ui  1 e 2 0 ]
+"4
+[v _flag_timer1 flag_timer1 `uc  1 e 1 0 ]
+"6
+[v _timer1_cnt timer1_cnt `ui  1 e 2 0 ]
+"7
+[v _time1_MUL time1_MUL `ui  1 e 2 0 ]
+"48 E:\PIC\water_flow_sensor.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"123
+} 0
+"52 E:\PIC\water_flow_sensor.X\button.c
+[v _is_button_pressed_s is_button_pressed_s `(uc  1 e 1 0 ]
+{
+[v is_button_pressed_s@index index `uc  1 a 1 wreg ]
+[v is_button_pressed_s@index index `uc  1 a 1 wreg ]
+[v is_button_pressed_s@index index `uc  1 a 1 0 ]
+"56
+} 0
+"47
+[v _is_button_pressed is_button_pressed `(uc  1 e 1 0 ]
+{
+[v is_button_pressed@index index `uc  1 a 1 wreg ]
+[v is_button_pressed@index index `uc  1 a 1 wreg ]
+[v is_button_pressed@index index `uc  1 a 1 0 ]
+"51
+} 0
+"171 E:\PIC\water_flow_sensor.X\main.c
+[v _WriteEEPROM WriteEEPROM `(v  1 e 1 0 ]
+{
+[v WriteEEPROM@address address `uc  1 a 1 wreg ]
+[v WriteEEPROM@address address `uc  1 a 1 wreg ]
+[v WriteEEPROM@data data `uc  1 p 1 0 ]
+[v WriteEEPROM@address address `uc  1 a 1 1 ]
+"183
+} 0
+"125
+[v _InitSystem InitSystem `(v  1 e 1 0 ]
+{
+"151
+} 0
+"8 E:\PIC\water_flow_sensor.X\timer.c
+[v _init_timer1 init_timer1 `(v  1 e 1 0 ]
+{
+[v init_timer1@count count `ui  1 p 2 0 ]
+"24
+} 0
+"47
+[v _SetTimer1_ms SetTimer1_ms `(v  1 e 1 0 ]
+{
+[v SetTimer1_ms@time time `i  1 p 2 9 ]
+"52
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"6
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"42
+} 0
+"160 E:\PIC\water_flow_sensor.X\main.c
+[v _RelayOn RelayOn `(v  1 e 1 0 ]
+{
+[v RelayOn@flag flag `uc  1 a 1 wreg ]
+[v RelayOn@flag flag `uc  1 a 1 wreg ]
+[v RelayOn@flag flag `uc  1 a 1 0 ]
+"163
+} 0
+"165
+[v _ReadEEPROM ReadEEPROM `(uc  1 e 1 0 ]
+{
+[v ReadEEPROM@address address `uc  1 a 1 wreg ]
+[v ReadEEPROM@address address `uc  1 a 1 wreg ]
+[v ReadEEPROM@address address `uc  1 a 1 0 ]
+"169
+} 0
+"153
+[v _Delay_ms Delay_ms `(v  1 e 1 0 ]
+{
+"154
+[v Delay_ms@j j `ui  1 a 2 4 ]
+[v Delay_ms@i i `ui  1 a 2 2 ]
+"153
+[v Delay_ms@delay delay `ui  1 p 2 0 ]
+"158
+} 0
+"33
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"46
+} 0
+"36 E:\PIC\water_flow_sensor.X\timer.c
+[v _timer1_isr timer1_isr `(v  1 e 1 0 ]
+{
+"45
+} 0
+"32
+[v _stop_timer1 stop_timer1 `(v  1 e 1 0 ]
+{
+"35
+} 0
+"26
+[v _start_timer1 start_timer1 `(v  1 e 1 0 ]
+{
+"30
+} 0
+"16 E:\PIC\water_flow_sensor.X\button.c
+[v _button_reading button_reading `(v  1 e 1 0 ]
+{
+"17
+[v button_reading@i i `uc  1 a 1 4 ]
+"38
+} 0

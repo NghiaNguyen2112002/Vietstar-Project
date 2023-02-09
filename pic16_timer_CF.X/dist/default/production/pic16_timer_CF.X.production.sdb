@@ -1,0 +1,354 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F628A ]
+[d frameptr 6 ]
+"10 E:\PIC\pic16_timer_CF.X\main.c
+[e E633 MODE_FSM `uc
+INIT 0
+ADJUSTING 1
+AUTO_BREWING 2
+AUTO_CLEANING 3
+]
+"15 E:\PIC\pic16_timer_CF.X\button.c
+[v _button_reading button_reading `(v  1 e 1 0 ]
+"38
+[v _is_button_held is_button_held `(uc  1 e 1 0 ]
+"44
+[v _is_button_pressed is_button_pressed `(uc  1 e 1 0 ]
+"49
+[v _is_button_pressed_s is_button_pressed_s `(uc  1 e 1 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.36\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"16 E:\PIC\pic16_timer_CF.X\led7seg.c
+[v _Display Display `(v  1 e 1 0 ]
+"22
+[v _LedEnable LedEnable `(v  1 e 1 0 ]
+"33
+[v _UpdateLedBuffer UpdateLedBuffer `(v  1 e 1 0 ]
+"39
+[v _UpdateLed UpdateLed `(v  1 e 1 0 ]
+"29 E:\PIC\pic16_timer_CF.X\main.c
+[v _timer1 timer1 `II(v  1 e 1 0 ]
+"40
+[v _main main `(v  1 e 1 0 ]
+"129
+[v _InitSystem InitSystem `(v  1 e 1 0 ]
+"152
+[v _Delay_ms Delay_ms `(v  1 e 1 0 ]
+"159
+[v _RelayOn RelayOn `(v  1 e 1 0 ]
+"164
+[v _ReadEEPROM ReadEEPROM `(uc  1 e 1 0 ]
+"169
+[v _WriteEEPROM WriteEEPROM `(v  1 e 1 0 ]
+"8 E:\PIC\pic16_timer_CF.X\timer.c
+[v _init_timer1 init_timer1 `(v  1 e 1 0 ]
+"26
+[v _start_timer1 start_timer1 `(v  1 e 1 0 ]
+"32
+[v _stop_timer1 stop_timer1 `(v  1 e 1 0 ]
+"36
+[v _timer1_isr timer1_isr `(v  1 e 1 0 ]
+"47
+[v _SetTimer1_ms SetTimer1_ms `(v  1 e 1 0 ]
+"5 E:\PIC\pic16_timer_CF.X\button.c
+[v _buttonInputMask buttonInputMask `[3]uc  1 e 3 0 ]
+"7
+[v _buttonBuffer buttonBuffer `[3]uc  1 s 3 buttonBuffer ]
+"9
+[v _debounceButtonBuffer1 debounceButtonBuffer1 `[3]uc  1 s 3 debounceButtonBuffer1 ]
+"10
+[v _debounceButtonBuffer2 debounceButtonBuffer2 `[3]uc  1 s 3 debounceButtonBuffer2 ]
+"12
+[v _flagForButtonPress_s flagForButtonPress_s `[3]uc  1 s 3 flagForButtonPress_s ]
+"13
+[v _counterForButtonPress counterForButtonPress `[3]ui  1 s 6 counterForButtonPress ]
+"160 C:\Program Files (x86)\Microchip\xc8\v1.36\include\pic16f628a.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+[s S108 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"177
+[u S117 . 1 `S108 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES117  1 e 1 @5 ]
+"221
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S144 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"324
+[s S153 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S158 . 1 `S144 1 . 1 0 `S153 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES158  1 e 1 @11 ]
+[s S177 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 CMIF 1 0 :1:6 
+`uc 1 EEIF 1 0 :1:7 
+]
+"395
+[u S186 . 1 `S177 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES186  1 e 1 @12 ]
+"434
+[v _TMR1 TMR1 `VEus  1 e 2 @14 ]
+[s S274 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+]
+"471
+[s S280 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[u S284 . 1 `S274 1 . 1 0 `S280 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES284  1 e 1 @16 ]
+"743
+[v _CMCON CMCON `VEuc  1 e 1 @31 ]
+"881
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"942
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1175
+[v _EEDATA EEDATA `VEuc  1 e 1 @154 ]
+"1181
+[v _EEADR EEADR `VEuc  1 e 1 @155 ]
+[s S130 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+]
+"1200
+[u S135 . 1 `S130 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES135  1 e 1 @156 ]
+"1224
+[v _EECON2 EECON2 `VEuc  1 e 1 @157 ]
+"1356
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"1370
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"1460
+[v _TMR1IE TMR1IE `VEb  1 e 0 @1120 ]
+"1462
+[v _TMR1IF TMR1IF `VEb  1 e 0 @96 ]
+"8 E:\PIC\pic16_timer_CF.X\led7seg.c
+[v _LEDDisplay LEDDisplay `[11]uc  1 e 11 0 ]
+"12
+[v _LEDBuffer LEDBuffer `[2]uc  1 e 2 0 ]
+"10 E:\PIC\pic16_timer_CF.X\main.c
+[v _mode mode `E633  1 e 1 0 ]
+"12
+[v _addressEEPROMused addressEEPROMused `uc  1 e 1 0 ]
+"13
+[v _TIME TIME `uc  1 e 1 0 ]
+"15
+[v _index index `uc  1 e 1 0 ]
+"16
+[v _pumpState pumpState `uc  1 e 1 0 ]
+"19
+[v _cleaning_counter cleaning_counter `uc  1 e 1 0 ]
+"3 E:\PIC\pic16_timer_CF.X\timer.c
+[v _timer1_value timer1_value `ui  1 e 2 0 ]
+"4
+[v _flag_timer1 flag_timer1 `uc  1 e 1 0 ]
+"6
+[v _timer1_cnt timer1_cnt `ui  1 e 2 0 ]
+"7
+[v _time1_MUL time1_MUL `ui  1 e 2 0 ]
+"40 E:\PIC\pic16_timer_CF.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"42
+[v main@counter counter `uc  1 a 1 15 ]
+"127
+} 0
+"49 E:\PIC\pic16_timer_CF.X\button.c
+[v _is_button_pressed_s is_button_pressed_s `(uc  1 e 1 0 ]
+{
+[v is_button_pressed_s@index index `uc  1 a 1 wreg ]
+[v is_button_pressed_s@index index `uc  1 a 1 wreg ]
+[v is_button_pressed_s@index index `uc  1 a 1 0 ]
+"53
+} 0
+"44
+[v _is_button_pressed is_button_pressed `(uc  1 e 1 0 ]
+{
+[v is_button_pressed@index index `uc  1 a 1 wreg ]
+[v is_button_pressed@index index `uc  1 a 1 wreg ]
+[v is_button_pressed@index index `uc  1 a 1 3 ]
+"48
+} 0
+"38
+[v _is_button_held is_button_held `(uc  1 e 1 0 ]
+{
+[v is_button_held@index index `uc  1 a 1 wreg ]
+[v is_button_held@index index `uc  1 a 1 wreg ]
+[v is_button_held@index index `uc  1 a 1 3 ]
+"42
+} 0
+"169 E:\PIC\pic16_timer_CF.X\main.c
+[v _WriteEEPROM WriteEEPROM `(v  1 e 1 0 ]
+{
+[v WriteEEPROM@address address `uc  1 a 1 wreg ]
+[v WriteEEPROM@address address `uc  1 a 1 wreg ]
+[v WriteEEPROM@data data `uc  1 p 1 0 ]
+[v WriteEEPROM@address address `uc  1 a 1 1 ]
+"181
+} 0
+"129
+[v _InitSystem InitSystem `(v  1 e 1 0 ]
+{
+"149
+} 0
+"8 E:\PIC\pic16_timer_CF.X\timer.c
+[v _init_timer1 init_timer1 `(v  1 e 1 0 ]
+{
+[v init_timer1@count count `ui  1 p 2 0 ]
+"24
+} 0
+"33 E:\PIC\pic16_timer_CF.X\led7seg.c
+[v _UpdateLedBuffer UpdateLedBuffer `(v  1 e 1 0 ]
+{
+[v UpdateLedBuffer@time time `uc  1 a 1 wreg ]
+[v UpdateLedBuffer@time time `uc  1 a 1 wreg ]
+[v UpdateLedBuffer@time time `uc  1 a 1 12 ]
+"38
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"11
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"6
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"35
+} 0
+"47 E:\PIC\pic16_timer_CF.X\timer.c
+[v _SetTimer1_ms SetTimer1_ms `(v  1 e 1 0 ]
+{
+[v SetTimer1_ms@time time `i  1 p 2 9 ]
+"52
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"6
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"42
+} 0
+"159 E:\PIC\pic16_timer_CF.X\main.c
+[v _RelayOn RelayOn `(v  1 e 1 0 ]
+{
+[v RelayOn@flag flag `uc  1 a 1 wreg ]
+[v RelayOn@flag flag `uc  1 a 1 wreg ]
+[v RelayOn@flag flag `uc  1 a 1 0 ]
+"162
+} 0
+"164
+[v _ReadEEPROM ReadEEPROM `(uc  1 e 1 0 ]
+{
+[v ReadEEPROM@address address `uc  1 a 1 wreg ]
+[v ReadEEPROM@address address `uc  1 a 1 wreg ]
+[v ReadEEPROM@address address `uc  1 a 1 0 ]
+"168
+} 0
+"152
+[v _Delay_ms Delay_ms `(v  1 e 1 0 ]
+{
+"153
+[v Delay_ms@j j `ui  1 a 2 4 ]
+[v Delay_ms@i i `ui  1 a 2 2 ]
+"152
+[v Delay_ms@delay delay `ui  1 p 2 0 ]
+"157
+} 0
+"29
+[v _timer1 timer1 `II(v  1 e 1 0 ]
+{
+"39
+} 0
+"36 E:\PIC\pic16_timer_CF.X\timer.c
+[v _timer1_isr timer1_isr `(v  1 e 1 0 ]
+{
+"45
+} 0
+"32
+[v _stop_timer1 stop_timer1 `(v  1 e 1 0 ]
+{
+"35
+} 0
+"26
+[v _start_timer1 start_timer1 `(v  1 e 1 0 ]
+{
+"30
+} 0
+"15 E:\PIC\pic16_timer_CF.X\button.c
+[v _button_reading button_reading `(v  1 e 1 0 ]
+{
+"16
+[v button_reading@i i `uc  1 a 1 3 ]
+"35
+} 0
+"39 E:\PIC\pic16_timer_CF.X\led7seg.c
+[v _UpdateLed UpdateLed `(v  1 e 1 0 ]
+{
+[v UpdateLed@index index `uc  1 a 1 wreg ]
+[v UpdateLed@index index `uc  1 a 1 wreg ]
+[v UpdateLed@index index `uc  1 a 1 1 ]
+"42
+} 0
+"22
+[v _LedEnable LedEnable `(v  1 e 1 0 ]
+{
+[v LedEnable@index index `uc  1 a 1 wreg ]
+[v LedEnable@index index `uc  1 a 1 wreg ]
+[v LedEnable@index index `uc  1 a 1 0 ]
+"31
+} 0
+"16
+[v _Display Display `(v  1 e 1 0 ]
+{
+[v Display@number number `uc  1 a 1 wreg ]
+[v Display@number number `uc  1 a 1 wreg ]
+[v Display@number number `uc  1 a 1 0 ]
+"20
+} 0

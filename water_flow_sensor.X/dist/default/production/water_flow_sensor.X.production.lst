@@ -1,0 +1,2522 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.36 build -262312587 
+                                                                                               Sat Nov 26 09:11:58 2022
+
+Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150325
+     1                           	processor	16F628A
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	idataBANK0,global,class=CODE,delta=2
+     5                           	psect	nvBANK0,global,class=BANK0,space=1,delta=1
+     6                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     7                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1
+    10                           	psect	clrtext,global,class=CODE,delta=2
+    11                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    12                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    13                           	psect	maintext,global,class=CODE,split=1,delta=2
+    14                           	psect	swtext1,local,class=CONST,delta=2
+    15                           	psect	text1,local,class=CODE,merge=1,delta=2
+    16                           	psect	text2,local,class=CODE,merge=1,delta=2
+    17                           	psect	text3,local,class=CODE,merge=1,delta=2
+    18                           	psect	text4,local,class=CODE,merge=1,delta=2
+    19                           	psect	text5,local,class=CODE,merge=1,delta=2
+    20                           	psect	text6,local,class=CODE,merge=1,delta=2
+    21                           	psect	text7,local,class=CODE,merge=1,delta=2
+    22                           	psect	text8,local,class=CODE,merge=1,delta=2
+    23                           	psect	text9,local,class=CODE,merge=1,delta=2
+    24                           	psect	text10,local,class=CODE,merge=1,delta=2
+    25                           	psect	text11,local,class=CODE,merge=1,delta=2
+    26                           	psect	intentry,global,class=CODE,delta=2
+    27                           	psect	text12,local,class=CODE,merge=1,delta=2
+    28                           	psect	text13,local,class=CODE,merge=1,delta=2
+    29                           	psect	text14,local,class=CODE,merge=1,delta=2
+    30                           	psect	text15,local,class=CODE,merge=1,delta=2
+    31                           	dabs	1,0x7E,2
+    32  0000                     	;# 
+    33  0001                     	;# 
+    34  0002                     	;# 
+    35  0003                     	;# 
+    36  0004                     	;# 
+    37  0005                     	;# 
+    38  0006                     	;# 
+    39  000A                     	;# 
+    40  000B                     	;# 
+    41  000C                     	;# 
+    42  000E                     	;# 
+    43  000E                     	;# 
+    44  000F                     	;# 
+    45  0010                     	;# 
+    46  0011                     	;# 
+    47  0012                     	;# 
+    48  0015                     	;# 
+    49  0015                     	;# 
+    50  0016                     	;# 
+    51  0017                     	;# 
+    52  0018                     	;# 
+    53  0019                     	;# 
+    54  001A                     	;# 
+    55  001F                     	;# 
+    56  0081                     	;# 
+    57  0085                     	;# 
+    58  0086                     	;# 
+    59  008C                     	;# 
+    60  008E                     	;# 
+    61  0092                     	;# 
+    62  0098                     	;# 
+    63  0099                     	;# 
+    64  009A                     	;# 
+    65  009B                     	;# 
+    66  009C                     	;# 
+    67  009D                     	;# 
+    68  009F                     	;# 
+    69  0000                     	;# 
+    70  0001                     	;# 
+    71  0002                     	;# 
+    72  0003                     	;# 
+    73  0004                     	;# 
+    74  0005                     	;# 
+    75  0006                     	;# 
+    76  000A                     	;# 
+    77  000B                     	;# 
+    78  000C                     	;# 
+    79  000E                     	;# 
+    80  000E                     	;# 
+    81  000F                     	;# 
+    82  0010                     	;# 
+    83  0011                     	;# 
+    84  0012                     	;# 
+    85  0015                     	;# 
+    86  0015                     	;# 
+    87  0016                     	;# 
+    88  0017                     	;# 
+    89  0018                     	;# 
+    90  0019                     	;# 
+    91  001A                     	;# 
+    92  001F                     	;# 
+    93  0081                     	;# 
+    94  0085                     	;# 
+    95  0086                     	;# 
+    96  008C                     	;# 
+    97  008E                     	;# 
+    98  0092                     	;# 
+    99  0098                     	;# 
+   100  0099                     	;# 
+   101  009A                     	;# 
+   102  009B                     	;# 
+   103  009C                     	;# 
+   104  009D                     	;# 
+   105  009F                     	;# 
+   106  0000                     	;# 
+   107  0001                     	;# 
+   108  0002                     	;# 
+   109  0003                     	;# 
+   110  0004                     	;# 
+   111  0005                     	;# 
+   112  0006                     	;# 
+   113  000A                     	;# 
+   114  000B                     	;# 
+   115  000C                     	;# 
+   116  000E                     	;# 
+   117  000E                     	;# 
+   118  000F                     	;# 
+   119  0010                     	;# 
+   120  0011                     	;# 
+   121  0012                     	;# 
+   122  0015                     	;# 
+   123  0015                     	;# 
+   124  0016                     	;# 
+   125  0017                     	;# 
+   126  0018                     	;# 
+   127  0019                     	;# 
+   128  001A                     	;# 
+   129  001F                     	;# 
+   130  0081                     	;# 
+   131  0085                     	;# 
+   132  0086                     	;# 
+   133  008C                     	;# 
+   134  008E                     	;# 
+   135  0092                     	;# 
+   136  0098                     	;# 
+   137  0099                     	;# 
+   138  009A                     	;# 
+   139  009B                     	;# 
+   140  009C                     	;# 
+   141  009D                     	;# 
+   142  009F                     	;# 
+   143                           
+   144                           	psect	idataBANK0
+   145  02FA                     __pidataBANK0:	
+   146                           
+   147                           ;initializer for _buttonBuffer
+   148  02FA  3401               	retlw	1
+   149  02FB  3401               	retlw	1
+   150  02FC  3401               	retlw	1
+   151                           
+   152                           ;initializer for _buttonInputMask
+   153  02FD  3410               	retlw	16
+   154  02FE  3420               	retlw	32
+   155  02FF  3404               	retlw	4
+   156                           
+   157                           ;initializer for _time1_MUL
+   158  0300  3401               	retlw	1
+   159  0301  3400               	retlw	0
+   160                           
+   161                           ;initializer for _addressEEPROM_AUTO_1
+   162  0302  3401               	retlw	1
+   163                           
+   164                           	psect	nvBANK0
+   165  004F                     __pnvBANK0:	
+   166  004F                     _MAX_COUNTER_AUTO_0:	
+   167  004F                     	ds	2
+   168  0051                     _MAX_COUNTER_AUTO_1:	
+   169  0051                     	ds	2
+   170  0053                     _cleaning_counter:	
+   171  0053                     	ds	1
+   172  000E                     _TMR1	set	14
+   173  001F                     _CMCON	set	31
+   174  000B                     _INTCONbits	set	11
+   175  000C                     _PIR1bits	set	12
+   176  0005                     _PORTA	set	5
+   177  0005                     _PORTAbits	set	5
+   178  0006                     _PORTB	set	6
+   179  0010                     _T1CONbits	set	16
+   180  005F                     _GIE	set	95
+   181  005E                     _PEIE	set	94
+   182  0060                     _TMR1IF	set	96
+   183  009B                     _EEADR	set	155
+   184  009C                     _EECON1bits	set	156
+   185  009D                     _EECON2	set	157
+   186  009A                     _EEDATA	set	154
+   187  0081                     _OPTION_REGbits	set	129
+   188  0085                     _TRISA	set	133
+   189  0086                     _TRISB	set	134
+   190  0460                     _TMR1IE	set	1120
+   191                           
+   192                           ; #config settings
+   193  0000                     
+   194                           	psect	cinit
+   195  0011                     start_initialization:	
+   196  0011                     __initialization:	
+   197                           
+   198                           ; Clear objects allocated to COMMON
+   199  0011  307A               	movlw	low __pbssCOMMON
+   200  0012  0084               	movwf	4
+   201  0013  307E               	movlw	low (__pbssCOMMON+4)
+   202  0014  2303               	fcall	clear_ram0
+   203                           
+   204                           ; Clear objects allocated to BANK0
+   205  0015  1383               	bcf	3,7	;select IRP bank0
+   206  0016  3020               	movlw	low __pbssBANK0
+   207  0017  0084               	movwf	4
+   208  0018  3037               	movlw	low (__pbssBANK0+23)
+   209  0019  2303               	fcall	clear_ram0
+   210                           
+   211                           ; Initialize objects allocated to BANK0
+   212  001A  22FA               	fcall	__pidataBANK0	;fetch initializer
+   213  001B  00C6               	movwf	__pdataBANK0& (0+127)
+   214  001C  22FB               	fcall	__pidataBANK0+1	;fetch initializer
+   215  001D  00C7               	movwf	(__pdataBANK0+1)& (0+127)
+   216  001E  22FC               	fcall	__pidataBANK0+2	;fetch initializer
+   217  001F  00C8               	movwf	(__pdataBANK0+2)& (0+127)
+   218  0020  22FD               	fcall	__pidataBANK0+3	;fetch initializer
+   219  0021  00C9               	movwf	(__pdataBANK0+3)& (0+127)
+   220  0022  22FE               	fcall	__pidataBANK0+4	;fetch initializer
+   221  0023  00CA               	movwf	(__pdataBANK0+4)& (0+127)
+   222  0024  22FF               	fcall	__pidataBANK0+5	;fetch initializer
+   223  0025  00CB               	movwf	(__pdataBANK0+5)& (0+127)
+   224  0026  2300               	fcall	__pidataBANK0+6	;fetch initializer
+   225  0027  00CC               	movwf	(__pdataBANK0+6)& (0+127)
+   226  0028  2301               	fcall	__pidataBANK0+7	;fetch initializer
+   227  0029  00CD               	movwf	(__pdataBANK0+7)& (0+127)
+   228  002A  2302               	fcall	__pidataBANK0+8	;fetch initializer
+   229  002B  00CE               	movwf	(__pdataBANK0+8)& (0+127)
+   230  002C                     end_of_initialization:	
+   231                           ;End of C runtime variable initialization code
+   232                           
+   233  002C                     __end_of__initialization:	
+   234  002C  0183               	clrf	3
+   235  002D  282E               	ljmp	_main	;jump to C main() function
+   236                           
+   237                           	psect	bssCOMMON
+   238  007A                     __pbssCOMMON:	
+   239  007A                     _debounceButtonBuffer1:	
+   240  007A                     	ds	3
+   241  007D                     _pumpState:	
+   242  007D                     	ds	1
+   243                           
+   244                           	psect	bssBANK0
+   245  0020                     __pbssBANK0:	
+   246  0020                     _counterForButtonPress:	
+   247  0020                     	ds	6
+   248  0026                     _debounceButtonBuffer2:	
+   249  0026                     	ds	3
+   250  0029                     _flagForButtonPress:	
+   251  0029                     	ds	3
+   252  002C                     _flagForButtonPress_s:	
+   253  002C                     	ds	3
+   254  002F                     _timer1_cnt:	
+   255  002F                     	ds	2
+   256  0031                     _timer1_value:	
+   257  0031                     	ds	2
+   258  0033                     _addressEEPROM_AUTO_0:	
+   259  0033                     	ds	1
+   260  0034                     _brewing_counter:	
+   261  0034                     	ds	1
+   262  0035                     _flag_timer1:	
+   263  0035                     	ds	1
+   264  0036                     _mode:	
+   265  0036                     	ds	1
+   266                           
+   267                           	psect	dataBANK0
+   268  0046                     __pdataBANK0:	
+   269  0046                     _buttonBuffer:	
+   270  0046                     	ds	3
+   271  0049                     _buttonInputMask:	
+   272  0049                     	ds	3
+   273  004C                     _time1_MUL:	
+   274  004C                     	ds	2
+   275  004E                     _addressEEPROM_AUTO_1:	
+   276  004E                     	ds	1
+   277                           
+   278                           	psect	clrtext
+   279  0303                     clear_ram0:	
+   280                           ;	Called with FSR containing the base address, and
+   281                           ;	W with the last address+1
+   282                           
+   283  0303  0064               	clrwdt	;clear the watchdog before getting into this loop
+   284  0304                     clrloop0:	
+   285  0304  0180               	clrf	0	;clear RAM location pointed to by FSR
+   286  0305  0A84               	incf	4,f	;increment pointer
+   287  0306  0604               	xorwf	4,w	;XOR with final address
+   288  0307  1903               	btfsc	3,2	;have we reached the end yet?
+   289  0308  3400               	retlw	0	;all done for this memory range, return
+   290  0309  0604               	xorwf	4,w	;XOR again to restore value
+   291  030A  2B04               	goto	clrloop0	;do the next byte
+   292                           
+   293                           	psect	cstackCOMMON
+   294  0070                     __pcstackCOMMON:	
+   295  0070                     ?_stop_timer1:	
+   296  0070                     ??_stop_timer1:	
+   297                           ; 1 bytes @ 0x0
+   298                           
+   299  0070                     ?_start_timer1:	
+   300                           ; 1 bytes @ 0x0
+   301                           
+   302  0070                     ??_start_timer1:	
+   303                           ; 1 bytes @ 0x0
+   304                           
+   305  0070                     ?_timer1_isr:	
+   306                           ; 1 bytes @ 0x0
+   307                           
+   308  0070                     ??_timer1_isr:	
+   309                           ; 1 bytes @ 0x0
+   310                           
+   311  0070                     ?_button_reading:	
+   312                           ; 1 bytes @ 0x0
+   313                           
+   314  0070                     ??_button_reading:	
+   315                           ; 1 bytes @ 0x0
+   316                           
+   317  0070                     ?_InitSystem:	
+   318                           ; 1 bytes @ 0x0
+   319                           
+   320  0070                     ?_is_button_pressed:	
+   321                           ; 1 bytes @ 0x0
+   322                           
+   323  0070                     ?_is_button_pressed_s:	
+   324                           ; 1 bytes @ 0x0
+   325                           
+   326  0070                     ?_ReadEEPROM:	
+   327                           ; 1 bytes @ 0x0
+   328                           
+   329  0070                     ?_RelayOn:	
+   330                           ; 1 bytes @ 0x0
+   331                           
+   332  0070                     ?_ISR:	
+   333                           ; 1 bytes @ 0x0
+   334                           
+   335  0070                     ?_main:	
+   336                           ; 1 bytes @ 0x0
+   337                           
+   338                           
+   339                           ; 1 bytes @ 0x0
+   340  0070                     	ds	3
+   341  0073                     _button_reading$326:	
+   342                           
+   343                           ; 1 bytes @ 0x3
+   344  0073                     	ds	1
+   345  0074                     button_reading@i:	
+   346                           
+   347                           ; 1 bytes @ 0x4
+   348  0074                     	ds	1
+   349  0075                     ??_ISR:	
+   350                           
+   351                           ; 1 bytes @ 0x5
+   352  0075                     	ds	5
+   353                           
+   354                           	psect	cstackBANK0
+   355  0037                     __pcstackBANK0:	
+   356  0037                     ??_is_button_pressed:	
+   357  0037                     ??_is_button_pressed_s:	
+   358                           ; 1 bytes @ 0x0
+   359                           
+   360  0037                     ?_WriteEEPROM:	
+   361                           ; 1 bytes @ 0x0
+   362                           
+   363  0037                     ?_Delay_ms:	
+   364                           ; 1 bytes @ 0x0
+   365                           
+   366  0037                     ??_ReadEEPROM:	
+   367                           ; 1 bytes @ 0x0
+   368                           
+   369  0037                     ??_RelayOn:	
+   370                           ; 1 bytes @ 0x0
+   371                           
+   372  0037                     ?_init_timer1:	
+   373                           ; 1 bytes @ 0x0
+   374                           
+   375  0037                     ?___awdiv:	
+   376                           ; 1 bytes @ 0x0
+   377                           
+   378  0037                     RelayOn@flag:	
+   379                           ; 2 bytes @ 0x0
+   380                           
+   381  0037                     ReadEEPROM@address:	
+   382                           ; 1 bytes @ 0x0
+   383                           
+   384  0037                     WriteEEPROM@data:	
+   385                           ; 1 bytes @ 0x0
+   386                           
+   387  0037                     is_button_pressed@index:	
+   388                           ; 1 bytes @ 0x0
+   389                           
+   390  0037                     is_button_pressed_s@index:	
+   391                           ; 1 bytes @ 0x0
+   392                           
+   393  0037                     Delay_ms@delay:	
+   394                           ; 1 bytes @ 0x0
+   395                           
+   396  0037                     init_timer1@count:	
+   397                           ; 2 bytes @ 0x0
+   398                           
+   399  0037                     ___awdiv@divisor:	
+   400                           ; 2 bytes @ 0x0
+   401                           
+   402                           
+   403                           ; 2 bytes @ 0x0
+   404  0037                     	ds	1
+   405  0038                     ??_WriteEEPROM:	
+   406  0038                     WriteEEPROM@address:	
+   407                           ; 1 bytes @ 0x1
+   408                           
+   409                           
+   410                           ; 1 bytes @ 0x1
+   411  0038                     	ds	1
+   412  0039                     ??_Delay_ms:	
+   413  0039                     ??_init_timer1:	
+   414                           ; 1 bytes @ 0x2
+   415                           
+   416  0039                     Delay_ms@i:	
+   417                           ; 1 bytes @ 0x2
+   418                           
+   419  0039                     ___awdiv@dividend:	
+   420                           ; 2 bytes @ 0x2
+   421                           
+   422                           
+   423                           ; 2 bytes @ 0x2
+   424  0039                     	ds	2
+   425  003B                     ??___awdiv:	
+   426  003B                     Delay_ms@j:	
+   427                           ; 1 bytes @ 0x4
+   428                           
+   429                           
+   430                           ; 2 bytes @ 0x4
+   431  003B                     	ds	1
+   432  003C                     ___awdiv@counter:	
+   433                           
+   434                           ; 1 bytes @ 0x5
+   435  003C                     	ds	1
+   436  003D                     ___awdiv@sign:	
+   437                           
+   438                           ; 1 bytes @ 0x6
+   439  003D                     	ds	1
+   440  003E                     ___awdiv@quotient:	
+   441                           
+   442                           ; 2 bytes @ 0x7
+   443  003E                     	ds	2
+   444  0040                     ?_SetTimer1_ms:	
+   445  0040                     SetTimer1_ms@time:	
+   446                           ; 1 bytes @ 0x9
+   447                           
+   448                           
+   449                           ; 2 bytes @ 0x9
+   450  0040                     	ds	2
+   451  0042                     ??_InitSystem:	
+   452  0042                     ??_SetTimer1_ms:	
+   453                           ; 1 bytes @ 0xB
+   454                           
+   455                           
+   456                           ; 1 bytes @ 0xB
+   457  0042                     	ds	2
+   458  0044                     ??_main:	
+   459                           
+   460                           ; 1 bytes @ 0xD
+   461  0044                     	ds	2
+   462                           
+   463                           	psect	maintext
+   464  002E                     __pmaintext:	
+   465 ;;
+   466 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   467 ;;
+   468 ;; *************** function _main *****************
+   469 ;; Defined at:
+   470 ;;		line 48 in file "main.c"
+   471 ;; Parameters:    Size  Location     Type
+   472 ;;		None
+   473 ;; Auto vars:     Size  Location     Type
+   474 ;;		None
+   475 ;; Return value:  Size  Location     Type
+   476 ;;                  1    wreg      void 
+   477 ;; Registers used:
+   478 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   479 ;; Tracked objects:
+   480 ;;		On entry : B00/0
+   481 ;;		On exit  : 0/0
+   482 ;;		Unchanged: 0/0
+   483 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   484 ;;      Params:         0       0       0       0
+   485 ;;      Locals:         0       0       0       0
+   486 ;;      Temps:          0       2       0       0
+   487 ;;      Totals:         0       2       0       0
+   488 ;;Total ram usage:        2 bytes
+   489 ;; Hardware stack levels required when called:    5
+   490 ;; This function calls:
+   491 ;;		_Delay_ms
+   492 ;;		_InitSystem
+   493 ;;		_SetTimer1_ms
+   494 ;;		_WriteEEPROM
+   495 ;;		_is_button_pressed
+   496 ;;		_is_button_pressed_s
+   497 ;; This function is called by:
+   498 ;;		Startup code after reset
+   499 ;; This function uses a non-reentrant model
+   500 ;;
+   501                           
+   502                           
+   503                           ;psect for function _main
+   504  002E                     _main:	
+   505                           
+   506                           ;main.c: 49: InitSystem();
+   507                           
+   508                           ;incstack = 0
+   509                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   510  002E  21D0               	fcall	_InitSystem
+   511                           
+   512                           ;main.c: 52: switch (mode) {
+   513                           
+   514                           ;main.c: 51: while (1) {
+   515  002F  28DD               	goto	l1303
+   516  0030                     l84:	
+   517                           ;main.c: 53: case INIT:
+   518                           
+   519                           
+   520                           ;main.c: 54: PORTAbits.RA3 = 0;
+   521  0030  1185               	bcf	5,3	;volatile
+   522                           
+   523                           ;main.c: 55: brewing_counter = 0;
+   524  0031  01B4               	clrf	_brewing_counter
+   525                           
+   526                           ;main.c: 57: if (is_button_pressed(0)) {
+   527  0032  3000               	movlw	0
+   528  0033  22D7               	fcall	_is_button_pressed
+   529  0034  3A00               	xorlw	0
+   530  0035  1903               	skipnz
+   531  0036  2839               	goto	l1223
+   532                           
+   533                           ;main.c: 58: mode = BREWING_0;
+   534  0037  3003               	movlw	3
+   535  0038  2850               	goto	L2
+   536  0039                     l1223:	
+   537                           ;main.c: 59: } else if (is_button_pressed(1)) {
+   538                           
+   539  0039  3001               	movlw	1
+   540  003A  22D7               	fcall	_is_button_pressed
+   541  003B  3A00               	xorlw	0
+   542  003C  1903               	skipnz
+   543  003D  2840               	goto	l1227
+   544                           
+   545                           ;main.c: 60: mode = BREWING_1;
+   546  003E  3004               	movlw	4
+   547  003F  2850               	goto	L2
+   548  0040                     l1227:	
+   549                           ;main.c: 61: } else if (is_button_pressed_s(0)) {
+   550                           
+   551  0040  3000               	movlw	0
+   552  0041  22C8               	fcall	_is_button_pressed_s
+   553  0042  3A00               	xorlw	0
+   554  0043  1903               	skipnz
+   555  0044  284A               	goto	l1231
+   556                           
+   557                           ;main.c: 62: mode = ADJUSTING_AUTO_0;
+   558  0045  1283               	bcf	3,5	;RP0=0, select bank0
+   559  0046  1303               	bcf	3,6	;RP1=0, select bank0
+   560  0047  01B6               	clrf	_mode
+   561  0048  0AB6               	incf	_mode,f
+   562                           
+   563                           ;main.c: 63: } else if (is_button_pressed_s(1)) {
+   564  0049  28D6               	goto	l1305
+   565  004A                     l1231:	
+   566  004A  3001               	movlw	1
+   567  004B  22C8               	fcall	_is_button_pressed_s
+   568  004C  3A00               	xorlw	0
+   569  004D  1903               	skipnz
+   570  004E  2853               	goto	l1235
+   571                           
+   572                           ;main.c: 64: mode = ADJUSTING_AUTO_1;
+   573  004F  3002               	movlw	2
+   574  0050                     L2:	
+   575  0050  1283               	bcf	3,5	;RP0=0, select bank0
+   576  0051  1303               	bcf	3,6	;RP1=0, select bank0
+   577  0052  2867               	goto	L3
+   578  0053                     l1235:	
+   579                           ;main.c: 65: } else if (is_button_pressed(2)) {
+   580                           
+   581  0053  3002               	movlw	2
+   582  0054  22D7               	fcall	_is_button_pressed
+   583  0055  3A00               	xorlw	0
+   584  0056  1903               	skipnz
+   585  0057  28D6               	goto	l1305
+   586                           
+   587                           ;main.c: 66: SetTimer1_ms(10000);
+   588  0058  3010               	movlw	16
+   589  0059  1283               	bcf	3,5	;RP0=0, select bank0
+   590  005A  1303               	bcf	3,6	;RP1=0, select bank0
+   591  005B  00C0               	movwf	SetTimer1_ms@time
+   592  005C  3027               	movlw	39
+   593  005D  00C1               	movwf	SetTimer1_ms@time+1
+   594  005E  229E               	fcall	_SetTimer1_ms
+   595                           
+   596                           ;main.c: 67: PORTAbits.RA3 = 1;
+   597  005F  1283               	bcf	3,5	;RP0=0, select bank0
+   598  0060  1303               	bcf	3,6	;RP1=0, select bank0
+   599  0061  1585               	bsf	5,3	;volatile
+   600                           
+   601                           ;main.c: 68: cleaning_counter = 10;
+   602  0062  300A               	movlw	10
+   603  0063  00C4               	movwf	??_main
+   604  0064  0844               	movf	??_main,w
+   605  0065  00D3               	movwf	_cleaning_counter
+   606                           
+   607                           ;main.c: 69: mode = AUTO_CLEANING;
+   608  0066  3005               	movlw	5
+   609  0067                     L3:	
+   610  0067  00C4               	movwf	??_main
+   611  0068  0844               	movf	??_main,w
+   612  0069  00B6               	movwf	_mode
+   613                           
+   614                           ;main.c: 70: }
+   615                           ;main.c: 71: break;
+   616  006A  28D6               	goto	l1305
+   617  006B                     l95:	
+   618                           ;main.c: 72: case ADJUSTING_AUTO_0:
+   619                           
+   620                           
+   621                           ;main.c: 73: PORTAbits.RA3 = 1;
+   622  006B  1585               	bsf	5,3	;volatile
+   623                           
+   624                           ;main.c: 74: if (is_button_pressed(0)) {
+   625  006C  3000               	movlw	0
+   626  006D  22D7               	fcall	_is_button_pressed
+   627  006E  3A00               	xorlw	0
+   628  006F  1903               	skipnz
+   629  0070  28D6               	goto	l1305
+   630                           
+   631                           ;main.c: 75: MAX_COUNTER_AUTO_0 = brewing_counter;
+   632  0071  1283               	bcf	3,5	;RP0=0, select bank0
+   633  0072  1303               	bcf	3,6	;RP1=0, select bank0
+   634  0073  0834               	movf	_brewing_counter,w
+   635  0074  00C4               	movwf	??_main
+   636  0075  01C5               	clrf	??_main+1
+   637  0076  0844               	movf	??_main,w
+   638  0077  00CF               	movwf	_MAX_COUNTER_AUTO_0
+   639  0078  0845               	movf	??_main+1,w
+   640  0079  00D0               	movwf	_MAX_COUNTER_AUTO_0+1
+   641                           
+   642                           ;main.c: 76: WriteEEPROM(addressEEPROM_AUTO_0, MAX_COUNTER_AUTO_0);
+   643  007A  084F               	movf	_MAX_COUNTER_AUTO_0,w
+   644  007B  00C4               	movwf	??_main
+   645  007C  0844               	movf	??_main,w
+   646  007D  00B7               	movwf	WriteEEPROM@data
+   647  007E  0833               	movf	_addressEEPROM_AUTO_0,w
+   648  007F  2284               	fcall	_WriteEEPROM
+   649  0080  28D3               	goto	l1297
+   650  0081                     l97:	
+   651                           ;main.c: 80: case ADJUSTING_AUTO_1:
+   652                           
+   653                           ;main.c: 78: }
+   654                           ;main.c: 79: break;
+   655                           
+   656                           ;main.c: 77: mode = INIT;
+   657                           
+   658                           
+   659                           ;main.c: 81: PORTAbits.RA3 = 1;
+   660  0081  1585               	bsf	5,3	;volatile
+   661                           
+   662                           ;main.c: 82: if (is_button_pressed(1)) {
+   663  0082  3001               	movlw	1
+   664  0083  22D7               	fcall	_is_button_pressed
+   665  0084  3A00               	xorlw	0
+   666  0085  1903               	skipnz
+   667  0086  28D6               	goto	l1305
+   668                           
+   669                           ;main.c: 83: MAX_COUNTER_AUTO_1 = brewing_counter;
+   670  0087  1283               	bcf	3,5	;RP0=0, select bank0
+   671  0088  1303               	bcf	3,6	;RP1=0, select bank0
+   672  0089  0834               	movf	_brewing_counter,w
+   673  008A  00C4               	movwf	??_main
+   674  008B  01C5               	clrf	??_main+1
+   675  008C  0844               	movf	??_main,w
+   676  008D  00D1               	movwf	_MAX_COUNTER_AUTO_1
+   677  008E  0845               	movf	??_main+1,w
+   678  008F  00D2               	movwf	_MAX_COUNTER_AUTO_1+1
+   679                           
+   680                           ;main.c: 84: WriteEEPROM(addressEEPROM_AUTO_1, MAX_COUNTER_AUTO_1);
+   681  0090  0851               	movf	_MAX_COUNTER_AUTO_1,w
+   682  0091  00C4               	movwf	??_main
+   683  0092  0844               	movf	??_main,w
+   684  0093  00B7               	movwf	WriteEEPROM@data
+   685  0094  084E               	movf	_addressEEPROM_AUTO_1,w
+   686  0095  2284               	fcall	_WriteEEPROM
+   687  0096  28D3               	goto	l1297
+   688  0097                     l99:	
+   689                           ;main.c: 88: case BREWING_0:
+   690                           
+   691                           ;main.c: 86: }
+   692                           ;main.c: 87: break;
+   693                           
+   694                           ;main.c: 85: mode = INIT;
+   695                           
+   696                           
+   697                           ;main.c: 89: PORTAbits.RA3 = 1;
+   698  0097  1585               	bsf	5,3	;volatile
+   699                           
+   700                           ;main.c: 90: if(brewing_counter > MAX_COUNTER_AUTO_0) mode = INIT;
+   701  0098  0834               	movf	_brewing_counter,w
+   702  0099  00C4               	movwf	??_main
+   703  009A  01C5               	clrf	??_main+1
+   704  009B  0845               	movf	??_main+1,w
+   705  009C  0250               	subwf	_MAX_COUNTER_AUTO_0+1,w
+   706  009D  1D03               	skipz
+   707  009E  28A1               	goto	u795
+   708  009F  0844               	movf	??_main,w
+   709  00A0  024F               	subwf	_MAX_COUNTER_AUTO_0,w
+   710  00A1                     u795:	
+   711  00A1  1C03               	btfss	3,0
+   712  00A2  01B6               	clrf	_mode
+   713                           
+   714                           ;main.c: 91: if (is_button_pressed(0)) mode = INIT;
+   715  00A3  3000               	movlw	0
+   716  00A4  28CF               	goto	L4
+   717  00A5                     l102:	
+   718                           ;main.c: 94: case BREWING_1:
+   719                           
+   720                           ;main.c: 93: break;
+   721                           
+   722                           
+   723                           ;main.c: 95: PORTAbits.RA3 = 1;
+   724  00A5  1585               	bsf	5,3	;volatile
+   725                           
+   726                           ;main.c: 96: if (brewing_counter > MAX_COUNTER_AUTO_1) mode = INIT;
+   727  00A6  0834               	movf	_brewing_counter,w
+   728  00A7  00C4               	movwf	??_main
+   729  00A8  01C5               	clrf	??_main+1
+   730  00A9  0845               	movf	??_main+1,w
+   731  00AA  0252               	subwf	_MAX_COUNTER_AUTO_1+1,w
+   732  00AB  1D03               	skipz
+   733  00AC  28AF               	goto	u815
+   734  00AD  0844               	movf	??_main,w
+   735  00AE  0251               	subwf	_MAX_COUNTER_AUTO_1,w
+   736  00AF                     u815:	
+   737  00AF  1C03               	btfss	3,0
+   738  00B0  01B6               	clrf	_mode
+   739                           
+   740                           ;main.c: 97: if (is_button_pressed(1)) mode = INIT;
+   741  00B1  3001               	movlw	1
+   742  00B2  28CF               	goto	L4
+   743  00B3                     l1277:	
+   744                           ;main.c: 100: case AUTO_CLEANING:
+   745                           
+   746                           ;main.c: 99: break;
+   747                           
+   748                           
+   749                           ;main.c: 101: if (flag_timer1) {
+   750  00B3  0835               	movf	_flag_timer1,w
+   751  00B4  1903               	btfsc	3,2
+   752  00B5  28CB               	goto	l1291
+   753                           
+   754                           ;main.c: 102: if (PORTAbits.RA3 == 0) {
+   755  00B6  1985               	btfsc	5,3	;volatile
+   756  00B7  28C1               	goto	l1285
+   757                           
+   758                           ;main.c: 103: SetTimer1_ms(10000);
+   759  00B8  3010               	movlw	16
+   760  00B9  00C0               	movwf	SetTimer1_ms@time
+   761  00BA  3027               	movlw	39
+   762  00BB  00C1               	movwf	SetTimer1_ms@time+1
+   763  00BC  229E               	fcall	_SetTimer1_ms
+   764                           
+   765                           ;main.c: 104: PORTAbits.RA3 = 1;
+   766  00BD  1283               	bcf	3,5	;RP0=0, select bank0
+   767  00BE  1303               	bcf	3,6	;RP1=0, select bank0
+   768  00BF  1585               	bsf	5,3	;volatile
+   769                           
+   770                           ;main.c: 105: } else {
+   771  00C0  28CB               	goto	l1291
+   772  00C1                     l1285:	
+   773                           
+   774                           ;main.c: 106: cleaning_counter--;
+   775  00C1  3001               	movlw	1
+   776  00C2  02D3               	subwf	_cleaning_counter,f
+   777                           
+   778                           ;main.c: 107: SetTimer1_ms(2000);
+   779  00C3  30D0               	movlw	208
+   780  00C4  00C0               	movwf	SetTimer1_ms@time
+   781  00C5  3007               	movlw	7
+   782  00C6  00C1               	movwf	SetTimer1_ms@time+1
+   783  00C7  229E               	fcall	_SetTimer1_ms
+   784                           
+   785                           ;main.c: 108: PORTAbits.RA3 = 0;
+   786  00C8  1283               	bcf	3,5	;RP0=0, select bank0
+   787  00C9  1303               	bcf	3,6	;RP1=0, select bank0
+   788  00CA  1185               	bcf	5,3	;volatile
+   789  00CB                     l1291:	
+   790                           
+   791                           ;main.c: 109: }
+   792                           ;main.c: 110: }
+   793                           ;main.c: 111: if (cleaning_counter == 0) mode = INIT;
+   794  00CB  0853               	movf	_cleaning_counter,w
+   795  00CC  1903               	btfsc	3,2
+   796  00CD  01B6               	clrf	_mode
+   797                           
+   798                           ;main.c: 112: if (is_button_pressed(2)) {
+   799  00CE  3002               	movlw	2
+   800  00CF                     L4:	
+   801  00CF  22D7               	fcall	_is_button_pressed
+   802  00D0  3A00               	xorlw	0
+   803  00D1  1903               	skipnz
+   804  00D2  28D6               	goto	l1305
+   805  00D3                     l1297:	
+   806                           
+   807                           ;main.c: 113: mode = INIT;
+   808  00D3  1283               	bcf	3,5	;RP0=0, select bank0
+   809  00D4  1303               	bcf	3,6	;RP1=0, select bank0
+   810  00D5                     l1299:	
+   811                           ;main.c: 116: default:
+   812                           
+   813                           ;main.c: 114: }
+   814                           ;main.c: 115: break;
+   815                           
+   816                           
+   817                           ;main.c: 117: mode = INIT;
+   818  00D5  01B6               	clrf	_mode
+   819  00D6                     l1305:	
+   820                           ;main.c: 119: }
+   821                           
+   822                           ;main.c: 118: break;
+   823                           
+   824                           
+   825                           ;main.c: 120: Delay_ms(3);
+   826  00D6  3003               	movlw	3
+   827  00D7  1283               	bcf	3,5	;RP0=0, select bank0
+   828  00D8  1303               	bcf	3,6	;RP1=0, select bank0
+   829  00D9  00B7               	movwf	Delay_ms@delay
+   830  00DA  3000               	movlw	0
+   831  00DB  00B8               	movwf	Delay_ms@delay+1
+   832  00DC  2215               	fcall	_Delay_ms
+   833  00DD                     l1303:	
+   834  00DD  1283               	bcf	3,5	;RP0=0, select bank0
+   835  00DE  1303               	bcf	3,6	;RP1=0, select bank0
+   836  00DF  0836               	movf	_mode,w
+   837                           
+   838                           ; Switch size 1, requested type "space"
+   839                           ; Number of cases is 6, Range of values is 0 to 5
+   840                           ; switch strategies available:
+   841                           ; Name         Instructions Cycles
+   842                           ; direct_byte           12     6 (fixed)
+   843                           ; simple_byte           19    10 (average)
+   844                           ; jumptable            260     6 (fixed)
+   845                           ;	Chosen strategy is direct_byte
+   846  00E0  0084               	movwf	4
+   847  00E1  3006               	movlw	6
+   848  00E2  0204               	subwf	4,w
+   849  00E3  1803               	skipnc
+   850  00E4  28D5               	goto	l1299
+   851  00E5  3003               	movlw	high S1331
+   852  00E6  008A               	movwf	10
+   853  00E7  3013               	movlw	low S1331
+   854  00E8  0704               	addwf	4,w
+   855  00E9  0082               	movwf	2
+   856  00EA  28D6               	goto	l1305
+   857  00EB                     __end_of_main:	
+   858                           ;main.c: 121: }
+   859                           ;main.c: 122: return;
+   860                           
+   861                           
+   862                           	psect	swtext1
+   863  0313                     __pswtext1:	
+   864  0313                     S1331:	
+   865  0313  2830               	ljmp	l84
+   866  0314  286B               	ljmp	l95
+   867  0315  2881               	ljmp	l97
+   868  0316  2897               	ljmp	l99
+   869  0317  28A5               	ljmp	l102
+   870  0318  28B3               	ljmp	l1277
+   871                           
+   872                           	psect	text1
+   873  02C8                     __ptext1:	
+   874 ;; *************** function _is_button_pressed_s *****************
+   875 ;; Defined at:
+   876 ;;		line 52 in file "button.c"
+   877 ;; Parameters:    Size  Location     Type
+   878 ;;  index           1    wreg     unsigned char 
+   879 ;; Auto vars:     Size  Location     Type
+   880 ;;  index           1    0[BANK0 ] unsigned char 
+   881 ;; Return value:  Size  Location     Type
+   882 ;;                  1    wreg      unsigned char 
+   883 ;; Registers used:
+   884 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   885 ;; Tracked objects:
+   886 ;;		On entry : 0/0
+   887 ;;		On exit  : 0/0
+   888 ;;		Unchanged: 0/0
+   889 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   890 ;;      Params:         0       0       0       0
+   891 ;;      Locals:         0       1       0       0
+   892 ;;      Temps:          0       0       0       0
+   893 ;;      Totals:         0       1       0       0
+   894 ;;Total ram usage:        1 bytes
+   895 ;; Hardware stack levels used:    1
+   896 ;; Hardware stack levels required when called:    2
+   897 ;; This function calls:
+   898 ;;		Nothing
+   899 ;; This function is called by:
+   900 ;;		_main
+   901 ;; This function uses a non-reentrant model
+   902 ;;
+   903                           
+   904                           
+   905                           ;psect for function _is_button_pressed_s
+   906  02C8                     _is_button_pressed_s:	
+   907                           
+   908                           ;incstack = 0
+   909                           ; Regs used in _is_button_pressed_s: [wreg-fsr0h+status,2+status,0]
+   910                           ;is_button_pressed_s@index stored from wreg
+   911  02C8  1283               	bcf	3,5	;RP0=0, select bank0
+   912  02C9  1303               	bcf	3,6	;RP1=0, select bank0
+   913  02CA  00B7               	movwf	is_button_pressed_s@index
+   914                           
+   915                           ;button.c: 53: if(index >= 3) return 0xFF;
+   916  02CB  3003               	movlw	3
+   917  02CC  0237               	subwf	is_button_pressed_s@index,w
+   918  02CD  1C03               	skipc
+   919  02CE  2AD1               	goto	l1169
+   920  02CF  30FF               	movlw	255
+   921  02D0  0008               	return
+   922  02D1                     l1169:	
+   923                           
+   924                           ;button.c: 54: return flagForButtonPress_s[index];
+   925  02D1  0837               	movf	is_button_pressed_s@index,w
+   926  02D2  3E2C               	addlw	(low (_flagForButtonPress_s| 0))& (0+255)
+   927  02D3  0084               	movwf	4
+   928  02D4  1383               	bcf	3,7	;select IRP bank0
+   929  02D5  0800               	movf	0,w
+   930  02D6  0008               	return
+   931  02D7                     __end_of_is_button_pressed_s:	
+   932                           
+   933                           	psect	text2
+   934  02D7                     __ptext2:	
+   935 ;; *************** function _is_button_pressed *****************
+   936 ;; Defined at:
+   937 ;;		line 47 in file "button.c"
+   938 ;; Parameters:    Size  Location     Type
+   939 ;;  index           1    wreg     unsigned char 
+   940 ;; Auto vars:     Size  Location     Type
+   941 ;;  index           1    0[BANK0 ] unsigned char 
+   942 ;; Return value:  Size  Location     Type
+   943 ;;                  1    wreg      unsigned char 
+   944 ;; Registers used:
+   945 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   946 ;; Tracked objects:
+   947 ;;		On entry : 0/0
+   948 ;;		On exit  : 0/0
+   949 ;;		Unchanged: 0/0
+   950 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   951 ;;      Params:         0       0       0       0
+   952 ;;      Locals:         0       1       0       0
+   953 ;;      Temps:          0       0       0       0
+   954 ;;      Totals:         0       1       0       0
+   955 ;;Total ram usage:        1 bytes
+   956 ;; Hardware stack levels used:    1
+   957 ;; Hardware stack levels required when called:    2
+   958 ;; This function calls:
+   959 ;;		Nothing
+   960 ;; This function is called by:
+   961 ;;		_main
+   962 ;; This function uses a non-reentrant model
+   963 ;;
+   964                           
+   965                           
+   966                           ;psect for function _is_button_pressed
+   967  02D7                     _is_button_pressed:	
+   968                           
+   969                           ;incstack = 0
+   970                           ; Regs used in _is_button_pressed: [wreg-fsr0h+status,2+status,0]
+   971                           ;is_button_pressed@index stored from wreg
+   972  02D7  1283               	bcf	3,5	;RP0=0, select bank0
+   973  02D8  1303               	bcf	3,6	;RP1=0, select bank0
+   974  02D9  00B7               	movwf	is_button_pressed@index
+   975                           
+   976                           ;button.c: 48: if(index >= 3) return 0;
+   977  02DA  3003               	movlw	3
+   978  02DB  0237               	subwf	is_button_pressed@index,w
+   979  02DC  1C03               	skipc
+   980  02DD  2AE0               	goto	l1159
+   981  02DE  3000               	movlw	0
+   982  02DF  0008               	return
+   983  02E0                     l1159:	
+   984                           
+   985                           ;button.c: 50: return flagForButtonPress[index];
+   986  02E0  0837               	movf	is_button_pressed@index,w
+   987  02E1  3E29               	addlw	(low (_flagForButtonPress| 0))& (0+255)
+   988  02E2  0084               	movwf	4
+   989  02E3  1383               	bcf	3,7	;select IRP bank0
+   990  02E4  0800               	movf	0,w
+   991  02E5  0008               	return
+   992  02E6                     __end_of_is_button_pressed:	
+   993                           
+   994                           	psect	text3
+   995  0284                     __ptext3:	
+   996 ;; *************** function _WriteEEPROM *****************
+   997 ;; Defined at:
+   998 ;;		line 171 in file "main.c"
+   999 ;; Parameters:    Size  Location     Type
+  1000 ;;  address         1    wreg     unsigned char 
+  1001 ;;  data            1    0[BANK0 ] unsigned char 
+  1002 ;; Auto vars:     Size  Location     Type
+  1003 ;;  address         1    1[BANK0 ] unsigned char 
+  1004 ;; Return value:  Size  Location     Type
+  1005 ;;                  1    wreg      void 
+  1006 ;; Registers used:
+  1007 ;;		wreg
+  1008 ;; Tracked objects:
+  1009 ;;		On entry : 0/0
+  1010 ;;		On exit  : 0/0
+  1011 ;;		Unchanged: 0/0
+  1012 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1013 ;;      Params:         0       1       0       0
+  1014 ;;      Locals:         0       1       0       0
+  1015 ;;      Temps:          0       0       0       0
+  1016 ;;      Totals:         0       2       0       0
+  1017 ;;Total ram usage:        2 bytes
+  1018 ;; Hardware stack levels used:    1
+  1019 ;; Hardware stack levels required when called:    2
+  1020 ;; This function calls:
+  1021 ;;		Nothing
+  1022 ;; This function is called by:
+  1023 ;;		_main
+  1024 ;; This function uses a non-reentrant model
+  1025 ;;
+  1026                           
+  1027                           
+  1028                           ;psect for function _WriteEEPROM
+  1029  0284                     _WriteEEPROM:	
+  1030                           
+  1031                           ;incstack = 0
+  1032                           ; Regs used in _WriteEEPROM: [wreg]
+  1033                           ;WriteEEPROM@address stored from wreg
+  1034  0284  1283               	bcf	3,5	;RP0=0, select bank0
+  1035  0285  1303               	bcf	3,6	;RP1=0, select bank0
+  1036  0286  00B8               	movwf	WriteEEPROM@address
+  1037                           
+  1038                           ;main.c: 172: EEADR = address;
+  1039  0287  0838               	movf	WriteEEPROM@address,w
+  1040  0288  1683               	bsf	3,5	;RP0=1, select bank1
+  1041  0289  1303               	bcf	3,6	;RP1=0, select bank1
+  1042  028A  009B               	movwf	27	;volatile
+  1043                           
+  1044                           ;main.c: 173: EEDATA = data;
+  1045  028B  1283               	bcf	3,5	;RP0=0, select bank0
+  1046  028C  1303               	bcf	3,6	;RP1=0, select bank0
+  1047  028D  0837               	movf	WriteEEPROM@data,w
+  1048  028E  1683               	bsf	3,5	;RP0=1, select bank1
+  1049  028F  1303               	bcf	3,6	;RP1=0, select bank1
+  1050  0290  009A               	movwf	26	;volatile
+  1051                           
+  1052                           ;main.c: 174: EECON1bits.WREN = 1;
+  1053  0291  151C               	bsf	28,2	;volsfr
+  1054                           
+  1055                           ;main.c: 175: INTCONbits.GIE = 0;
+  1056  0292  138B               	bcf	11,7	;volatile
+  1057                           
+  1058                           ;main.c: 176: EECON2 = 0x55;
+  1059  0293  3055               	movlw	85
+  1060  0294  009D               	movwf	29	;volsfr
+  1061                           
+  1062                           ;main.c: 177: EECON2 = 0xAA;
+  1063  0295  30AA               	movlw	170
+  1064  0296  009D               	movwf	29	;volsfr
+  1065                           
+  1066                           ;main.c: 178: EECON1bits.WR = 1;
+  1067  0297  149C               	bsf	28,1	;volsfr
+  1068                           
+  1069                           ;main.c: 179: INTCONbits.GIE = 1;
+  1070  0298  178B               	bsf	11,7	;volatile
+  1071  0299                     l136:	
+  1072                           ;main.c: 181: while (PIR1bits.EEIF == 0);
+  1073                           
+  1074  0299  1283               	bcf	3,5	;RP0=0, select bank0
+  1075  029A  1F8C               	btfss	12,7	;volatile
+  1076  029B  2A99               	goto	l136
+  1077                           
+  1078                           ;main.c: 182: PIR1bits.EEIF = 0;
+  1079  029C  138C               	bcf	12,7	;volatile
+  1080  029D  0008               	return
+  1081  029E                     __end_of_WriteEEPROM:	
+  1082                           
+  1083                           	psect	text4
+  1084  01D0                     __ptext4:	
+  1085 ;; *************** function _InitSystem *****************
+  1086 ;; Defined at:
+  1087 ;;		line 125 in file "main.c"
+  1088 ;; Parameters:    Size  Location     Type
+  1089 ;;		None
+  1090 ;; Auto vars:     Size  Location     Type
+  1091 ;;		None
+  1092 ;; Return value:  Size  Location     Type
+  1093 ;;                  1    wreg      void 
+  1094 ;; Registers used:
+  1095 ;;		wreg, status,2, status,0, pclath, cstack
+  1096 ;; Tracked objects:
+  1097 ;;		On entry : 0/0
+  1098 ;;		On exit  : 0/0
+  1099 ;;		Unchanged: 0/0
+  1100 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1101 ;;      Params:         0       0       0       0
+  1102 ;;      Locals:         0       0       0       0
+  1103 ;;      Temps:          0       2       0       0
+  1104 ;;      Totals:         0       2       0       0
+  1105 ;;Total ram usage:        2 bytes
+  1106 ;; Hardware stack levels used:    1
+  1107 ;; Hardware stack levels required when called:    4
+  1108 ;; This function calls:
+  1109 ;;		_ReadEEPROM
+  1110 ;;		_RelayOn
+  1111 ;;		_SetTimer1_ms
+  1112 ;;		_init_timer1
+  1113 ;; This function is called by:
+  1114 ;;		_main
+  1115 ;; This function uses a non-reentrant model
+  1116 ;;
+  1117                           
+  1118                           
+  1119                           ;psect for function _InitSystem
+  1120  01D0                     _InitSystem:	
+  1121                           
+  1122                           ;main.c: 126: CMCON = 0x07;
+  1123                           
+  1124                           ;incstack = 0
+  1125                           ; Regs used in _InitSystem: [wreg+status,2+status,0+pclath+cstack]
+  1126  01D0  3007               	movlw	7
+  1127  01D1  1283               	bcf	3,5	;RP0=0, select bank0
+  1128  01D2  1303               	bcf	3,6	;RP1=0, select bank0
+  1129  01D3  009F               	movwf	31	;volatile
+  1130                           
+  1131                           ;main.c: 128: TRISA = 0b00110100;
+  1132  01D4  3034               	movlw	52
+  1133  01D5  1683               	bsf	3,5	;RP0=1, select bank1
+  1134  01D6  1303               	bcf	3,6	;RP1=0, select bank1
+  1135  01D7  0085               	movwf	5	;volatile
+  1136                           
+  1137                           ;main.c: 129: PORTA = 0xFF;
+  1138  01D8  30FF               	movlw	255
+  1139  01D9  1283               	bcf	3,5	;RP0=0, select bank0
+  1140  01DA  1303               	bcf	3,6	;RP1=0, select bank0
+  1141  01DB  0085               	movwf	5	;volatile
+  1142                           
+  1143                           ;main.c: 131: TRISB = 0x01;
+  1144  01DC  3001               	movlw	1
+  1145  01DD  1683               	bsf	3,5	;RP0=1, select bank1
+  1146  01DE  1303               	bcf	3,6	;RP1=0, select bank1
+  1147  01DF  0086               	movwf	6	;volatile
+  1148                           
+  1149                           ;main.c: 132: PORTB = 0x00;
+  1150  01E0  1283               	bcf	3,5	;RP0=0, select bank0
+  1151  01E1  1303               	bcf	3,6	;RP1=0, select bank0
+  1152  01E2  0186               	clrf	6	;volatile
+  1153                           
+  1154                           ;main.c: 134: brewing_counter = 0;
+  1155  01E3  01B4               	clrf	_brewing_counter
+  1156                           
+  1157                           ;main.c: 135: cleaning_counter = 10;
+  1158  01E4  300A               	movlw	10
+  1159  01E5  00C2               	movwf	??_InitSystem
+  1160  01E6  0842               	movf	??_InitSystem,w
+  1161  01E7  00D3               	movwf	_cleaning_counter
+  1162                           
+  1163                           ;main.c: 137: mode = INIT;
+  1164  01E8  01B6               	clrf	_mode
+  1165                           
+  1166                           ;main.c: 139: OPTION_REGbits.nRBPU = 0;
+  1167  01E9  1683               	bsf	3,5	;RP0=1, select bank1
+  1168  01EA  1303               	bcf	3,6	;RP1=0, select bank1
+  1169  01EB  1381               	bcf	1,7	;volatile
+  1170                           
+  1171                           ;main.c: 140: OPTION_REGbits.INTEDG = 1;
+  1172  01EC  1701               	bsf	1,6	;volatile
+  1173                           
+  1174                           ;main.c: 142: INTCONbits.INTE = 1;
+  1175  01ED  160B               	bsf	11,4	;volatile
+  1176                           
+  1177                           ;main.c: 144: MAX_COUNTER_AUTO_0 = ReadEEPROM(addressEEPROM_AUTO_0);
+  1178  01EE  1283               	bcf	3,5	;RP0=0, select bank0
+  1179  01EF  1303               	bcf	3,6	;RP1=0, select bank0
+  1180  01F0  0833               	movf	_addressEEPROM_AUTO_0,w
+  1181  01F1  22F0               	fcall	_ReadEEPROM
+  1182  01F2  1283               	bcf	3,5	;RP0=0, select bank0
+  1183  01F3  1303               	bcf	3,6	;RP1=0, select bank0
+  1184  01F4  00C2               	movwf	??_InitSystem
+  1185  01F5  01C3               	clrf	??_InitSystem+1
+  1186  01F6  0842               	movf	??_InitSystem,w
+  1187  01F7  00CF               	movwf	_MAX_COUNTER_AUTO_0
+  1188  01F8  0843               	movf	??_InitSystem+1,w
+  1189  01F9  00D0               	movwf	_MAX_COUNTER_AUTO_0+1
+  1190                           
+  1191                           ;main.c: 145: MAX_COUNTER_AUTO_1 = ReadEEPROM(addressEEPROM_AUTO_1);
+  1192  01FA  084E               	movf	_addressEEPROM_AUTO_1,w
+  1193  01FB  22F0               	fcall	_ReadEEPROM
+  1194  01FC  1283               	bcf	3,5	;RP0=0, select bank0
+  1195  01FD  1303               	bcf	3,6	;RP1=0, select bank0
+  1196  01FE  00C2               	movwf	??_InitSystem
+  1197  01FF  01C3               	clrf	??_InitSystem+1
+  1198  0200  0842               	movf	??_InitSystem,w
+  1199  0201  00D1               	movwf	_MAX_COUNTER_AUTO_1
+  1200  0202  0843               	movf	??_InitSystem+1,w
+  1201  0203  00D2               	movwf	_MAX_COUNTER_AUTO_1+1
+  1202                           
+  1203                           ;main.c: 146: RelayOn(0);
+  1204  0204  3000               	movlw	0
+  1205  0205  22E6               	fcall	_RelayOn
+  1206                           
+  1207                           ;main.c: 148: init_timer1(10000);
+  1208  0206  3010               	movlw	16
+  1209  0207  1283               	bcf	3,5	;RP0=0, select bank0
+  1210  0208  1303               	bcf	3,6	;RP1=0, select bank0
+  1211  0209  00B7               	movwf	init_timer1@count
+  1212  020A  3027               	movlw	39
+  1213  020B  00B8               	movwf	init_timer1@count+1
+  1214  020C  223E               	fcall	_init_timer1
+  1215                           
+  1216                           ;main.c: 149: SetTimer1_ms(1000);
+  1217  020D  30E8               	movlw	232
+  1218  020E  1283               	bcf	3,5	;RP0=0, select bank0
+  1219  020F  1303               	bcf	3,6	;RP1=0, select bank0
+  1220  0210  00C0               	movwf	SetTimer1_ms@time
+  1221  0211  3003               	movlw	3
+  1222  0212  00C1               	movwf	SetTimer1_ms@time+1
+  1223  0213  229E               	fcall	_SetTimer1_ms
+  1224  0214  0008               	return
+  1225  0215                     __end_of_InitSystem:	
+  1226                           
+  1227                           	psect	text5
+  1228  023E                     __ptext5:	
+  1229 ;; *************** function _init_timer1 *****************
+  1230 ;; Defined at:
+  1231 ;;		line 8 in file "timer.c"
+  1232 ;; Parameters:    Size  Location     Type
+  1233 ;;  count           2    0[BANK0 ] unsigned int 
+  1234 ;; Auto vars:     Size  Location     Type
+  1235 ;;		None
+  1236 ;; Return value:  Size  Location     Type
+  1237 ;;                  1    wreg      void 
+  1238 ;; Registers used:
+  1239 ;;		wreg, status,2, status,0
+  1240 ;; Tracked objects:
+  1241 ;;		On entry : 0/0
+  1242 ;;		On exit  : 0/0
+  1243 ;;		Unchanged: 0/0
+  1244 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1245 ;;      Params:         0       2       0       0
+  1246 ;;      Locals:         0       0       0       0
+  1247 ;;      Temps:          0       2       0       0
+  1248 ;;      Totals:         0       4       0       0
+  1249 ;;Total ram usage:        4 bytes
+  1250 ;; Hardware stack levels used:    1
+  1251 ;; Hardware stack levels required when called:    2
+  1252 ;; This function calls:
+  1253 ;;		Nothing
+  1254 ;; This function is called by:
+  1255 ;;		_InitSystem
+  1256 ;; This function uses a non-reentrant model
+  1257 ;;
+  1258                           
+  1259                           
+  1260                           ;psect for function _init_timer1
+  1261  023E                     _init_timer1:	
+  1262                           
+  1263                           ;timer.c: 10: T1CONbits.TMR1ON = 0;
+  1264                           
+  1265                           ;incstack = 0
+  1266                           ; Regs used in _init_timer1: [wreg+status,2+status,0]
+  1267  023E  1283               	bcf	3,5	;RP0=0, select bank0
+  1268  023F  1303               	bcf	3,6	;RP1=0, select bank0
+  1269  0240  1010               	bcf	16,0	;volatile
+  1270                           
+  1271                           ;timer.c: 11: timer1_value = 65535 - count;
+  1272  0241  0937               	comf	init_timer1@count,w
+  1273  0242  00B9               	movwf	??_init_timer1
+  1274  0243  0938               	comf	init_timer1@count+1,w
+  1275  0244  00BA               	movwf	??_init_timer1+1
+  1276  0245  0AB9               	incf	??_init_timer1,f
+  1277  0246  1903               	skipnz
+  1278  0247  0ABA               	incf	??_init_timer1+1,f
+  1279  0248  0839               	movf	??_init_timer1,w
+  1280  0249  3EFF               	addlw	255
+  1281  024A  00B1               	movwf	_timer1_value
+  1282  024B  083A               	movf	??_init_timer1+1,w
+  1283  024C  1803               	skipnc
+  1284  024D  3E01               	addlw	1
+  1285  024E  3EFF               	addlw	255
+  1286  024F  00B2               	movwf	_timer1_value+1
+  1287                           
+  1288                           ;timer.c: 12: TMR1 = timer1_value;
+  1289  0250  0832               	movf	_timer1_value+1,w
+  1290  0251  008F               	movwf	15	;volatile
+  1291  0252  0831               	movf	_timer1_value,w
+  1292  0253  008E               	movwf	14	;volatile
+  1293                           
+  1294                           ;timer.c: 14: T1CONbits.TMR1CS = 0;
+  1295  0254  1090               	bcf	16,1	;volatile
+  1296                           
+  1297                           ;timer.c: 16: T1CONbits.T1CKPS0 = 0;
+  1298  0255  1210               	bcf	16,4	;volatile
+  1299                           
+  1300                           ;timer.c: 17: T1CONbits.T1CKPS1 = 0;
+  1301  0256  1290               	bcf	16,5	;volatile
+  1302                           
+  1303                           ;timer.c: 19: TMR1IF = 0;
+  1304  0257  100C               	bcf	12,0	;volatile
+  1305                           
+  1306                           ;timer.c: 20: TMR1IE = 1;
+  1307  0258  1683               	bsf	3,5	;RP0=1, select bank1
+  1308  0259  1303               	bcf	3,6	;RP1=0, select bank1
+  1309  025A  140C               	bsf	12,0	;volatile
+  1310                           
+  1311                           ;timer.c: 21: GIE = 1;
+  1312  025B  178B               	bsf	11,7	;volatile
+  1313                           
+  1314                           ;timer.c: 22: PEIE = 1;
+  1315  025C  170B               	bsf	11,6	;volatile
+  1316                           
+  1317                           ;timer.c: 23: T1CONbits.TMR1ON = 1;
+  1318  025D  1283               	bcf	3,5	;RP0=0, select bank0
+  1319  025E  1303               	bcf	3,6	;RP1=0, select bank0
+  1320  025F  1410               	bsf	16,0	;volatile
+  1321  0260  0008               	return
+  1322  0261                     __end_of_init_timer1:	
+  1323                           
+  1324                           	psect	text6
+  1325  029E                     __ptext6:	
+  1326 ;; *************** function _SetTimer1_ms *****************
+  1327 ;; Defined at:
+  1328 ;;		line 47 in file "timer.c"
+  1329 ;; Parameters:    Size  Location     Type
+  1330 ;;  time            2    9[BANK0 ] int 
+  1331 ;; Auto vars:     Size  Location     Type
+  1332 ;;		None
+  1333 ;; Return value:  Size  Location     Type
+  1334 ;;                  1    wreg      void 
+  1335 ;; Registers used:
+  1336 ;;		wreg, status,2, status,0, pclath, cstack
+  1337 ;; Tracked objects:
+  1338 ;;		On entry : 0/0
+  1339 ;;		On exit  : 0/0
+  1340 ;;		Unchanged: 0/0
+  1341 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1342 ;;      Params:         0       2       0       0
+  1343 ;;      Locals:         0       0       0       0
+  1344 ;;      Temps:          0       0       0       0
+  1345 ;;      Totals:         0       2       0       0
+  1346 ;;Total ram usage:        2 bytes
+  1347 ;; Hardware stack levels used:    1
+  1348 ;; Hardware stack levels required when called:    3
+  1349 ;; This function calls:
+  1350 ;;		___awdiv
+  1351 ;; This function is called by:
+  1352 ;;		_main
+  1353 ;;		_InitSystem
+  1354 ;; This function uses a non-reentrant model
+  1355 ;;
+  1356                           
+  1357                           
+  1358                           ;psect for function _SetTimer1_ms
+  1359  029E                     _SetTimer1_ms:	
+  1360                           
+  1361                           ;timer.c: 49: time1_MUL = time/10;
+  1362                           
+  1363                           ;incstack = 0
+  1364                           ; Regs used in _SetTimer1_ms: [wreg+status,2+status,0+pclath+cstack]
+  1365  029E  300A               	movlw	10
+  1366  029F  1283               	bcf	3,5	;RP0=0, select bank0
+  1367  02A0  1303               	bcf	3,6	;RP1=0, select bank0
+  1368  02A1  00B7               	movwf	___awdiv@divisor
+  1369  02A2  3000               	movlw	0
+  1370  02A3  00B8               	movwf	___awdiv@divisor+1
+  1371  02A4  0841               	movf	SetTimer1_ms@time+1,w
+  1372  02A5  00BA               	movwf	___awdiv@dividend+1
+  1373  02A6  0840               	movf	SetTimer1_ms@time,w
+  1374  02A7  00B9               	movwf	___awdiv@dividend
+  1375  02A8  2175               	fcall	___awdiv
+  1376  02A9  1283               	bcf	3,5	;RP0=0, select bank0
+  1377  02AA  1303               	bcf	3,6	;RP1=0, select bank0
+  1378  02AB  0838               	movf	?___awdiv+1,w
+  1379  02AC  00CD               	movwf	_time1_MUL+1
+  1380  02AD  0837               	movf	?___awdiv,w
+  1381  02AE  00CC               	movwf	_time1_MUL
+  1382                           
+  1383                           ;timer.c: 50: timer1_cnt = 0;
+  1384  02AF  01AF               	clrf	_timer1_cnt
+  1385  02B0  01B0               	clrf	_timer1_cnt+1
+  1386                           
+  1387                           ;timer.c: 51: flag_timer1 = 0;
+  1388  02B1  01B5               	clrf	_flag_timer1
+  1389  02B2  0008               	return
+  1390  02B3                     __end_of_SetTimer1_ms:	
+  1391                           
+  1392                           	psect	text7
+  1393  0175                     __ptext7:	
+  1394 ;; *************** function ___awdiv *****************
+  1395 ;; Defined at:
+  1396 ;;		line 6 in file "C:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\awdiv.c"
+  1397 ;; Parameters:    Size  Location     Type
+  1398 ;;  divisor         2    0[BANK0 ] int 
+  1399 ;;  dividend        2    2[BANK0 ] int 
+  1400 ;; Auto vars:     Size  Location     Type
+  1401 ;;  quotient        2    7[BANK0 ] int 
+  1402 ;;  sign            1    6[BANK0 ] unsigned char 
+  1403 ;;  counter         1    5[BANK0 ] unsigned char 
+  1404 ;; Return value:  Size  Location     Type
+  1405 ;;                  2    0[BANK0 ] int 
+  1406 ;; Registers used:
+  1407 ;;		wreg, status,2, status,0
+  1408 ;; Tracked objects:
+  1409 ;;		On entry : 0/0
+  1410 ;;		On exit  : 0/0
+  1411 ;;		Unchanged: 0/0
+  1412 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1413 ;;      Params:         0       4       0       0
+  1414 ;;      Locals:         0       4       0       0
+  1415 ;;      Temps:          0       1       0       0
+  1416 ;;      Totals:         0       9       0       0
+  1417 ;;Total ram usage:        9 bytes
+  1418 ;; Hardware stack levels used:    1
+  1419 ;; Hardware stack levels required when called:    2
+  1420 ;; This function calls:
+  1421 ;;		Nothing
+  1422 ;; This function is called by:
+  1423 ;;		_SetTimer1_ms
+  1424 ;; This function uses a non-reentrant model
+  1425 ;;
+  1426                           
+  1427                           
+  1428                           ;psect for function ___awdiv
+  1429  0175                     ___awdiv:	
+  1430                           
+  1431                           ;incstack = 0
+  1432                           ; Regs used in ___awdiv: [wreg+status,2+status,0]
+  1433  0175  1283               	bcf	3,5	;RP0=0, select bank0
+  1434  0176  1303               	bcf	3,6	;RP1=0, select bank0
+  1435  0177  01BD               	clrf	___awdiv@sign
+  1436  0178  1FB8               	btfss	___awdiv@divisor+1,7
+  1437  0179  2981               	goto	l1013
+  1438  017A  09B7               	comf	___awdiv@divisor,f
+  1439  017B  09B8               	comf	___awdiv@divisor+1,f
+  1440  017C  0AB7               	incf	___awdiv@divisor,f
+  1441  017D  1903               	skipnz
+  1442  017E  0AB8               	incf	___awdiv@divisor+1,f
+  1443  017F  01BD               	clrf	___awdiv@sign
+  1444  0180  0ABD               	incf	___awdiv@sign,f
+  1445  0181                     l1013:	
+  1446  0181  1FBA               	btfss	___awdiv@dividend+1,7
+  1447  0182  298C               	goto	l1019
+  1448  0183  09B9               	comf	___awdiv@dividend,f
+  1449  0184  09BA               	comf	___awdiv@dividend+1,f
+  1450  0185  0AB9               	incf	___awdiv@dividend,f
+  1451  0186  1903               	skipnz
+  1452  0187  0ABA               	incf	___awdiv@dividend+1,f
+  1453  0188  3001               	movlw	1
+  1454  0189  00BB               	movwf	??___awdiv
+  1455  018A  083B               	movf	??___awdiv,w
+  1456  018B  06BD               	xorwf	___awdiv@sign,f
+  1457  018C                     l1019:	
+  1458  018C  01BE               	clrf	___awdiv@quotient
+  1459  018D  01BF               	clrf	___awdiv@quotient+1
+  1460  018E  0837               	movf	___awdiv@divisor,w
+  1461  018F  0438               	iorwf	___awdiv@divisor+1,w
+  1462  0190  1903               	btfsc	3,2
+  1463  0191  29C3               	goto	l1041
+  1464  0192  01BC               	clrf	___awdiv@counter
+  1465  0193  0ABC               	incf	___awdiv@counter,f
+  1466  0194                     l1029:	
+  1467  0194  1BB8               	btfsc	___awdiv@divisor+1,7
+  1468  0195  29A2               	goto	l1031
+  1469  0196  3001               	movlw	1
+  1470  0197                     u475:	
+  1471  0197  1003               	clrc
+  1472  0198  0DB7               	rlf	___awdiv@divisor,f
+  1473  0199  0DB8               	rlf	___awdiv@divisor+1,f
+  1474  019A  3EFF               	addlw	-1
+  1475  019B  1D03               	skipz
+  1476  019C  2997               	goto	u475
+  1477  019D  3001               	movlw	1
+  1478  019E  00BB               	movwf	??___awdiv
+  1479  019F  083B               	movf	??___awdiv,w
+  1480  01A0  07BC               	addwf	___awdiv@counter,f
+  1481  01A1  2994               	goto	l1029
+  1482  01A2                     l1031:	
+  1483  01A2  3001               	movlw	1
+  1484  01A3                     u495:	
+  1485  01A3  1003               	clrc
+  1486  01A4  0DBE               	rlf	___awdiv@quotient,f
+  1487  01A5  0DBF               	rlf	___awdiv@quotient+1,f
+  1488  01A6  3EFF               	addlw	-1
+  1489  01A7  1D03               	skipz
+  1490  01A8  29A3               	goto	u495
+  1491  01A9  0838               	movf	___awdiv@divisor+1,w
+  1492  01AA  023A               	subwf	___awdiv@dividend+1,w
+  1493  01AB  1D03               	skipz
+  1494  01AC  29AF               	goto	u505
+  1495  01AD  0837               	movf	___awdiv@divisor,w
+  1496  01AE  0239               	subwf	___awdiv@dividend,w
+  1497  01AF                     u505:	
+  1498  01AF  1C03               	skipc
+  1499  01B0  29B8               	goto	l1037
+  1500  01B1  0837               	movf	___awdiv@divisor,w
+  1501  01B2  02B9               	subwf	___awdiv@dividend,f
+  1502  01B3  0838               	movf	___awdiv@divisor+1,w
+  1503  01B4  1C03               	skipc
+  1504  01B5  03BA               	decf	___awdiv@dividend+1,f
+  1505  01B6  02BA               	subwf	___awdiv@dividend+1,f
+  1506  01B7  143E               	bsf	___awdiv@quotient,0
+  1507  01B8                     l1037:	
+  1508  01B8  3001               	movlw	1
+  1509  01B9                     u515:	
+  1510  01B9  1003               	clrc
+  1511  01BA  0CB8               	rrf	___awdiv@divisor+1,f
+  1512  01BB  0CB7               	rrf	___awdiv@divisor,f
+  1513  01BC  3EFF               	addlw	-1
+  1514  01BD  1D03               	skipz
+  1515  01BE  29B9               	goto	u515
+  1516  01BF  3001               	movlw	1
+  1517  01C0  02BC               	subwf	___awdiv@counter,f
+  1518  01C1  1D03               	btfss	3,2
+  1519  01C2  29A2               	goto	l1031
+  1520  01C3                     l1041:	
+  1521  01C3  083D               	movf	___awdiv@sign,w
+  1522  01C4  1903               	btfsc	3,2
+  1523  01C5  29CB               	goto	l1045
+  1524  01C6  09BE               	comf	___awdiv@quotient,f
+  1525  01C7  09BF               	comf	___awdiv@quotient+1,f
+  1526  01C8  0ABE               	incf	___awdiv@quotient,f
+  1527  01C9  1903               	skipnz
+  1528  01CA  0ABF               	incf	___awdiv@quotient+1,f
+  1529  01CB                     l1045:	
+  1530  01CB  083F               	movf	___awdiv@quotient+1,w
+  1531  01CC  00B8               	movwf	?___awdiv+1
+  1532  01CD  083E               	movf	___awdiv@quotient,w
+  1533  01CE  00B7               	movwf	?___awdiv
+  1534  01CF  0008               	return
+  1535  01D0                     __end_of___awdiv:	
+  1536                           
+  1537                           	psect	text8
+  1538  02E6                     __ptext8:	
+  1539 ;; *************** function _RelayOn *****************
+  1540 ;; Defined at:
+  1541 ;;		line 160 in file "main.c"
+  1542 ;; Parameters:    Size  Location     Type
+  1543 ;;  flag            1    wreg     unsigned char 
+  1544 ;; Auto vars:     Size  Location     Type
+  1545 ;;  flag            1    0[BANK0 ] unsigned char 
+  1546 ;; Return value:  Size  Location     Type
+  1547 ;;                  1    wreg      void 
+  1548 ;; Registers used:
+  1549 ;;		wreg, status,2, status,0
+  1550 ;; Tracked objects:
+  1551 ;;		On entry : 0/0
+  1552 ;;		On exit  : 0/0
+  1553 ;;		Unchanged: 0/0
+  1554 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1555 ;;      Params:         0       0       0       0
+  1556 ;;      Locals:         0       1       0       0
+  1557 ;;      Temps:          0       0       0       0
+  1558 ;;      Totals:         0       1       0       0
+  1559 ;;Total ram usage:        1 bytes
+  1560 ;; Hardware stack levels used:    1
+  1561 ;; Hardware stack levels required when called:    2
+  1562 ;; This function calls:
+  1563 ;;		Nothing
+  1564 ;; This function is called by:
+  1565 ;;		_InitSystem
+  1566 ;; This function uses a non-reentrant model
+  1567 ;;
+  1568                           
+  1569                           
+  1570                           ;psect for function _RelayOn
+  1571  02E6                     _RelayOn:	
+  1572                           
+  1573                           ;incstack = 0
+  1574                           ; Regs used in _RelayOn: [wreg+status,2+status,0]
+  1575                           ;RelayOn@flag stored from wreg
+  1576  02E6  1283               	bcf	3,5	;RP0=0, select bank0
+  1577  02E7  1303               	bcf	3,6	;RP1=0, select bank0
+  1578  02E8  00B7               	movwf	RelayOn@flag
+  1579                           
+  1580                           ;main.c: 161: if (flag == 0) PORTAbits.RA3 = 0;
+  1581  02E9  0837               	movf	RelayOn@flag,w
+  1582  02EA  1D03               	btfss	3,2
+  1583  02EB  2AEE               	goto	l128
+  1584  02EC  1185               	bcf	5,3	;volatile
+  1585  02ED  0008               	return
+  1586  02EE                     l128:	
+  1587                           
+  1588                           ;main.c: 162: else PORTAbits.RA3 = 1;
+  1589  02EE  1585               	bsf	5,3	;volatile
+  1590  02EF  0008               	return
+  1591  02F0                     __end_of_RelayOn:	
+  1592                           
+  1593                           	psect	text9
+  1594  02F0                     __ptext9:	
+  1595 ;; *************** function _ReadEEPROM *****************
+  1596 ;; Defined at:
+  1597 ;;		line 165 in file "main.c"
+  1598 ;; Parameters:    Size  Location     Type
+  1599 ;;  address         1    wreg     unsigned char 
+  1600 ;; Auto vars:     Size  Location     Type
+  1601 ;;  address         1    0[BANK0 ] unsigned char 
+  1602 ;; Return value:  Size  Location     Type
+  1603 ;;                  1    wreg      unsigned char 
+  1604 ;; Registers used:
+  1605 ;;		wreg
+  1606 ;; Tracked objects:
+  1607 ;;		On entry : 0/0
+  1608 ;;		On exit  : 0/0
+  1609 ;;		Unchanged: 0/0
+  1610 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1611 ;;      Params:         0       0       0       0
+  1612 ;;      Locals:         0       1       0       0
+  1613 ;;      Temps:          0       0       0       0
+  1614 ;;      Totals:         0       1       0       0
+  1615 ;;Total ram usage:        1 bytes
+  1616 ;; Hardware stack levels used:    1
+  1617 ;; Hardware stack levels required when called:    2
+  1618 ;; This function calls:
+  1619 ;;		Nothing
+  1620 ;; This function is called by:
+  1621 ;;		_InitSystem
+  1622 ;; This function uses a non-reentrant model
+  1623 ;;
+  1624                           
+  1625                           
+  1626                           ;psect for function _ReadEEPROM
+  1627  02F0                     _ReadEEPROM:	
+  1628                           
+  1629                           ;incstack = 0
+  1630                           ; Regs used in _ReadEEPROM: [wreg]
+  1631                           ;ReadEEPROM@address stored from wreg
+  1632  02F0  1283               	bcf	3,5	;RP0=0, select bank0
+  1633  02F1  1303               	bcf	3,6	;RP1=0, select bank0
+  1634  02F2  00B7               	movwf	ReadEEPROM@address
+  1635                           
+  1636                           ;main.c: 166: EEADR = address;
+  1637  02F3  0837               	movf	ReadEEPROM@address,w
+  1638  02F4  1683               	bsf	3,5	;RP0=1, select bank1
+  1639  02F5  1303               	bcf	3,6	;RP1=0, select bank1
+  1640  02F6  009B               	movwf	27	;volatile
+  1641                           
+  1642                           ;main.c: 167: EECON1bits.RD = 1;
+  1643  02F7  141C               	bsf	28,0	;volsfr
+  1644                           
+  1645                           ;main.c: 168: return EEDATA;
+  1646  02F8  081A               	movf	26,w	;volatile
+  1647  02F9  0008               	return
+  1648  02FA                     __end_of_ReadEEPROM:	
+  1649                           
+  1650                           	psect	text10
+  1651  0215                     __ptext10:	
+  1652 ;; *************** function _Delay_ms *****************
+  1653 ;; Defined at:
+  1654 ;;		line 153 in file "main.c"
+  1655 ;; Parameters:    Size  Location     Type
+  1656 ;;  delay           2    0[BANK0 ] unsigned int 
+  1657 ;; Auto vars:     Size  Location     Type
+  1658 ;;  j               2    4[BANK0 ] unsigned int 
+  1659 ;;  i               2    2[BANK0 ] unsigned int 
+  1660 ;; Return value:  Size  Location     Type
+  1661 ;;                  1    wreg      void 
+  1662 ;; Registers used:
+  1663 ;;		wreg, status,2
+  1664 ;; Tracked objects:
+  1665 ;;		On entry : 0/0
+  1666 ;;		On exit  : 0/0
+  1667 ;;		Unchanged: 0/0
+  1668 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1669 ;;      Params:         0       2       0       0
+  1670 ;;      Locals:         0       4       0       0
+  1671 ;;      Temps:          0       0       0       0
+  1672 ;;      Totals:         0       6       0       0
+  1673 ;;Total ram usage:        6 bytes
+  1674 ;; Hardware stack levels used:    1
+  1675 ;; Hardware stack levels required when called:    2
+  1676 ;; This function calls:
+  1677 ;;		Nothing
+  1678 ;; This function is called by:
+  1679 ;;		_main
+  1680 ;; This function uses a non-reentrant model
+  1681 ;;
+  1682                           
+  1683                           
+  1684                           ;psect for function _Delay_ms
+  1685  0215                     _Delay_ms:	
+  1686                           
+  1687                           ;main.c: 154: unsigned int i, j;
+  1688                           ;main.c: 155: for (i = 0; i < delay; i++) {
+  1689                           
+  1690                           ;incstack = 0
+  1691                           ; Regs used in _Delay_ms: [wreg+status,2]
+  1692  0215  1283               	bcf	3,5	;RP0=0, select bank0
+  1693  0216  1303               	bcf	3,6	;RP1=0, select bank0
+  1694  0217  01B9               	clrf	Delay_ms@i
+  1695  0218  01BA               	clrf	Delay_ms@i+1
+  1696  0219                     l120:	
+  1697  0219  0838               	movf	Delay_ms@delay+1,w
+  1698  021A  023A               	subwf	Delay_ms@i+1,w
+  1699  021B  1D03               	skipz
+  1700  021C  2A1F               	goto	u685
+  1701  021D  0837               	movf	Delay_ms@delay,w
+  1702  021E  0239               	subwf	Delay_ms@i,w
+  1703  021F                     u685:	
+  1704  021F  1803               	btfsc	3,0
+  1705  0220  0008               	return
+  1706                           
+  1707                           ;main.c: 156: for (j = 0; j < 141; j++);
+  1708  0221  01BB               	clrf	Delay_ms@j
+  1709  0222  01BC               	clrf	Delay_ms@j+1
+  1710  0223  3000               	movlw	0
+  1711  0224  023C               	subwf	Delay_ms@j+1,w
+  1712  0225  308D               	movlw	141
+  1713  0226  1903               	skipnz
+  1714  0227  023B               	subwf	Delay_ms@j,w
+  1715  0228  1803               	btfsc	3,0
+  1716  0229  2A37               	goto	l1193
+  1717  022A                     l1191:	
+  1718  022A  3001               	movlw	1
+  1719  022B  07BB               	addwf	Delay_ms@j,f
+  1720  022C  1803               	skipnc
+  1721  022D  0ABC               	incf	Delay_ms@j+1,f
+  1722  022E  3000               	movlw	0
+  1723  022F  07BC               	addwf	Delay_ms@j+1,f
+  1724  0230  3000               	movlw	0
+  1725  0231  023C               	subwf	Delay_ms@j+1,w
+  1726  0232  308D               	movlw	141
+  1727  0233  1903               	skipnz
+  1728  0234  023B               	subwf	Delay_ms@j,w
+  1729  0235  1C03               	skipc
+  1730  0236  2A2A               	goto	l1191
+  1731  0237                     l1193:	
+  1732  0237  3001               	movlw	1
+  1733  0238  07B9               	addwf	Delay_ms@i,f
+  1734  0239  1803               	skipnc
+  1735  023A  0ABA               	incf	Delay_ms@i+1,f
+  1736  023B  3000               	movlw	0
+  1737  023C  07BA               	addwf	Delay_ms@i+1,f
+  1738  023D  2A19               	goto	l120
+  1739  023E                     __end_of_Delay_ms:	
+  1740                           
+  1741                           	psect	text11
+  1742  0261                     __ptext11:	
+  1743 ;; *************** function _ISR *****************
+  1744 ;; Defined at:
+  1745 ;;		line 33 in file "main.c"
+  1746 ;; Parameters:    Size  Location     Type
+  1747 ;;		None
+  1748 ;; Auto vars:     Size  Location     Type
+  1749 ;;		None
+  1750 ;; Return value:  Size  Location     Type
+  1751 ;;                  1    wreg      void 
+  1752 ;; Registers used:
+  1753 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1754 ;; Tracked objects:
+  1755 ;;		On entry : 0/0
+  1756 ;;		On exit  : 0/0
+  1757 ;;		Unchanged: 0/0
+  1758 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1759 ;;      Params:         0       0       0       0
+  1760 ;;      Locals:         0       0       0       0
+  1761 ;;      Temps:          5       0       0       0
+  1762 ;;      Totals:         5       0       0       0
+  1763 ;;Total ram usage:        5 bytes
+  1764 ;; Hardware stack levels used:    1
+  1765 ;; Hardware stack levels required when called:    1
+  1766 ;; This function calls:
+  1767 ;;		_button_reading
+  1768 ;;		_start_timer1
+  1769 ;;		_stop_timer1
+  1770 ;;		_timer1_isr
+  1771 ;; This function is called by:
+  1772 ;;		Interrupt level 1
+  1773 ;; This function uses a non-reentrant model
+  1774 ;;
+  1775                           
+  1776                           
+  1777                           ;psect for function _ISR
+  1778  0261                     _ISR:	
+  1779                           
+  1780                           ;main.c: 34: if (TMR1IF == 1 && TMR1IE == 1) {
+  1781  0261  1C0C               	btfss	12,0	;volatile
+  1782  0262  2A6E               	goto	i1l1209
+  1783  0263  1683               	bsf	3,5	;RP0=1, select bank1
+  1784  0264  1303               	bcf	3,6	;RP1=0, select bank1
+  1785  0265  1C0C               	btfss	12,0	;volatile
+  1786  0266  2A6E               	goto	i1l1209
+  1787                           
+  1788                           ;main.c: 35: stop_timer1();
+  1789  0267  2319               	fcall	_stop_timer1
+  1790                           
+  1791                           ;main.c: 36: TMR1IF = 0;
+  1792  0268  1283               	bcf	3,5	;RP0=0, select bank0
+  1793  0269  1303               	bcf	3,6	;RP1=0, select bank0
+  1794  026A  100C               	bcf	12,0	;volatile
+  1795                           
+  1796                           ;main.c: 37: start_timer1();
+  1797  026B  230B               	fcall	_start_timer1
+  1798                           
+  1799                           ;main.c: 38: timer1_isr();
+  1800  026C  22B3               	fcall	_timer1_isr
+  1801                           
+  1802                           ;main.c: 39: button_reading();
+  1803  026D  20EB               	fcall	_button_reading
+  1804  026E                     i1l1209:	
+  1805                           
+  1806                           ;main.c: 40: }
+  1807                           ;main.c: 42: if (INTCONbits.INTF == 1) {
+  1808  026E  1C8B               	btfss	11,1	;volatile
+  1809  026F  2A77               	goto	i1l79
+  1810                           
+  1811                           ;main.c: 43: INTCONbits.INTF = 0;
+  1812  0270  108B               	bcf	11,1	;volatile
+  1813                           
+  1814                           ;main.c: 44: brewing_counter++;
+  1815  0271  3001               	movlw	1
+  1816  0272  00F5               	movwf	??_ISR
+  1817  0273  0875               	movf	??_ISR,w
+  1818  0274  1283               	bcf	3,5	;RP0=0, select bank0
+  1819  0275  1303               	bcf	3,6	;RP1=0, select bank0
+  1820  0276  07B4               	addwf	_brewing_counter,f
+  1821  0277                     i1l79:	
+  1822  0277  0879               	movf	??_ISR+4,w
+  1823  0278  1283               	bcf	3,5	;RP0=0, select bank0
+  1824  0279  1303               	bcf	3,6	;RP1=0, select bank0
+  1825  027A  00FF               	movwf	127
+  1826  027B  0878               	movf	??_ISR+3,w
+  1827  027C  008A               	movwf	10
+  1828  027D  0877               	movf	??_ISR+2,w
+  1829  027E  0084               	movwf	4
+  1830  027F  0E76               	swapf	(??_ISR+1)^(0+-128),w
+  1831  0280  0083               	movwf	3
+  1832  0281  0EFE               	swapf	126,f
+  1833  0282  0E7E               	swapf	126,w
+  1834  0283  0009               	retfie
+  1835  0284                     __end_of_ISR:	
+  1836                           
+  1837                           	psect	intentry
+  1838  0004                     __pintentry:	
+  1839                           ;incstack = 0
+  1840                           ; Regs used in _ISR: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1841                           
+  1842  0004                     interrupt_function:	
+  1843  007E                     saved_w	set	btemp
+  1844  0004  00FE               	movwf	btemp
+  1845  0005  0E03               	swapf	3,w
+  1846  0006  00F6               	movwf	??_ISR+1
+  1847  0007  0804               	movf	4,w
+  1848  0008  00F7               	movwf	??_ISR+2
+  1849  0009  080A               	movf	10,w
+  1850  000A  00F8               	movwf	??_ISR+3
+  1851  000B  1283               	bcf	3,5	;RP0=0, select bank0
+  1852  000C  1303               	bcf	3,6	;RP1=0, select bank0
+  1853  000D  087F               	movf	btemp+1,w
+  1854  000E  00F9               	movwf	??_ISR+4
+  1855  000F  2A61               	ljmp	_ISR
+  1856                           
+  1857                           	psect	text12
+  1858  02B3                     __ptext12:	
+  1859 ;; *************** function _timer1_isr *****************
+  1860 ;; Defined at:
+  1861 ;;		line 36 in file "timer.c"
+  1862 ;; Parameters:    Size  Location     Type
+  1863 ;;		None
+  1864 ;; Auto vars:     Size  Location     Type
+  1865 ;;		None
+  1866 ;; Return value:  Size  Location     Type
+  1867 ;;                  1    wreg      void 
+  1868 ;; Registers used:
+  1869 ;;		wreg, status,2
+  1870 ;; Tracked objects:
+  1871 ;;		On entry : 0/0
+  1872 ;;		On exit  : 0/0
+  1873 ;;		Unchanged: 0/0
+  1874 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1875 ;;      Params:         0       0       0       0
+  1876 ;;      Locals:         0       0       0       0
+  1877 ;;      Temps:          0       0       0       0
+  1878 ;;      Totals:         0       0       0       0
+  1879 ;;Total ram usage:        0 bytes
+  1880 ;; Hardware stack levels used:    1
+  1881 ;; This function calls:
+  1882 ;;		Nothing
+  1883 ;; This function is called by:
+  1884 ;;		_ISR
+  1885 ;; This function uses a non-reentrant model
+  1886 ;;
+  1887                           
+  1888                           
+  1889                           ;psect for function _timer1_isr
+  1890  02B3                     _timer1_isr:	
+  1891                           
+  1892                           ;timer.c: 38: timer1_cnt ++;
+  1893                           
+  1894                           ;incstack = 0
+  1895                           ; Regs used in _timer1_isr: [wreg+status,2]
+  1896  02B3  3001               	movlw	1
+  1897  02B4  1283               	bcf	3,5	;RP0=0, select bank0
+  1898  02B5  1303               	bcf	3,6	;RP1=0, select bank0
+  1899  02B6  07AF               	addwf	_timer1_cnt,f
+  1900  02B7  1803               	skipnc
+  1901  02B8  0AB0               	incf	_timer1_cnt+1,f
+  1902  02B9  3000               	movlw	0
+  1903  02BA  07B0               	addwf	_timer1_cnt+1,f
+  1904                           
+  1905                           ;timer.c: 39: if (timer1_cnt >= time1_MUL)
+  1906  02BB  084D               	movf	_time1_MUL+1,w
+  1907  02BC  0230               	subwf	_timer1_cnt+1,w
+  1908  02BD  1D03               	skipz
+  1909  02BE  2AC1               	goto	u55_25
+  1910  02BF  084C               	movf	_time1_MUL,w
+  1911  02C0  022F               	subwf	_timer1_cnt,w
+  1912  02C1                     u55_25:	
+  1913  02C1  1C03               	skipc
+  1914  02C2  0008               	return
+  1915                           
+  1916                           ;timer.c: 40: {
+  1917                           ;timer.c: 41: timer1_cnt = 0;
+  1918  02C3  01AF               	clrf	_timer1_cnt
+  1919  02C4  01B0               	clrf	_timer1_cnt+1
+  1920                           
+  1921                           ;timer.c: 42: flag_timer1 = 1;
+  1922  02C5  01B5               	clrf	_flag_timer1
+  1923  02C6  0AB5               	incf	_flag_timer1,f
+  1924  02C7  0008               	return
+  1925  02C8                     __end_of_timer1_isr:	
+  1926                           
+  1927                           	psect	text13
+  1928  0319                     __ptext13:	
+  1929 ;; *************** function _stop_timer1 *****************
+  1930 ;; Defined at:
+  1931 ;;		line 32 in file "timer.c"
+  1932 ;; Parameters:    Size  Location     Type
+  1933 ;;		None
+  1934 ;; Auto vars:     Size  Location     Type
+  1935 ;;		None
+  1936 ;; Return value:  Size  Location     Type
+  1937 ;;                  1    wreg      void 
+  1938 ;; Registers used:
+  1939 ;;		None
+  1940 ;; Tracked objects:
+  1941 ;;		On entry : 0/0
+  1942 ;;		On exit  : 0/0
+  1943 ;;		Unchanged: 0/0
+  1944 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1945 ;;      Params:         0       0       0       0
+  1946 ;;      Locals:         0       0       0       0
+  1947 ;;      Temps:          0       0       0       0
+  1948 ;;      Totals:         0       0       0       0
+  1949 ;;Total ram usage:        0 bytes
+  1950 ;; Hardware stack levels used:    1
+  1951 ;; This function calls:
+  1952 ;;		Nothing
+  1953 ;; This function is called by:
+  1954 ;;		_ISR
+  1955 ;; This function uses a non-reentrant model
+  1956 ;;
+  1957                           
+  1958                           
+  1959                           ;psect for function _stop_timer1
+  1960  0319                     _stop_timer1:	
+  1961                           
+  1962                           ;timer.c: 34: T1CONbits.TMR1ON = 0;
+  1963                           
+  1964                           ;incstack = 0
+  1965                           ; Regs used in _stop_timer1: []
+  1966  0319  1283               	bcf	3,5	;RP0=0, select bank0
+  1967  031A  1303               	bcf	3,6	;RP1=0, select bank0
+  1968  031B  1010               	bcf	16,0	;volatile
+  1969  031C  0008               	return
+  1970  031D                     __end_of_stop_timer1:	
+  1971                           
+  1972                           	psect	text14
+  1973  030B                     __ptext14:	
+  1974 ;; *************** function _start_timer1 *****************
+  1975 ;; Defined at:
+  1976 ;;		line 26 in file "timer.c"
+  1977 ;; Parameters:    Size  Location     Type
+  1978 ;;		None
+  1979 ;; Auto vars:     Size  Location     Type
+  1980 ;;		None
+  1981 ;; Return value:  Size  Location     Type
+  1982 ;;                  1    wreg      void 
+  1983 ;; Registers used:
+  1984 ;;		wreg
+  1985 ;; Tracked objects:
+  1986 ;;		On entry : 0/0
+  1987 ;;		On exit  : 0/0
+  1988 ;;		Unchanged: 0/0
+  1989 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1990 ;;      Params:         0       0       0       0
+  1991 ;;      Locals:         0       0       0       0
+  1992 ;;      Temps:          0       0       0       0
+  1993 ;;      Totals:         0       0       0       0
+  1994 ;;Total ram usage:        0 bytes
+  1995 ;; Hardware stack levels used:    1
+  1996 ;; This function calls:
+  1997 ;;		Nothing
+  1998 ;; This function is called by:
+  1999 ;;		_ISR
+  2000 ;; This function uses a non-reentrant model
+  2001 ;;
+  2002                           
+  2003                           
+  2004                           ;psect for function _start_timer1
+  2005  030B                     _start_timer1:	
+  2006                           
+  2007                           ;timer.c: 28: TMR1 = timer1_value;
+  2008                           
+  2009                           ;incstack = 0
+  2010                           ; Regs used in _start_timer1: [wreg]
+  2011  030B  1283               	bcf	3,5	;RP0=0, select bank0
+  2012  030C  1303               	bcf	3,6	;RP1=0, select bank0
+  2013  030D  0832               	movf	_timer1_value+1,w
+  2014  030E  008F               	movwf	15	;volatile
+  2015  030F  0831               	movf	_timer1_value,w
+  2016  0310  008E               	movwf	14	;volatile
+  2017                           
+  2018                           ;timer.c: 29: T1CONbits.TMR1ON = 1;
+  2019  0311  1410               	bsf	16,0	;volatile
+  2020  0312  0008               	return
+  2021  0313                     __end_of_start_timer1:	
+  2022                           
+  2023                           	psect	text15
+  2024  00EB                     __ptext15:	
+  2025 ;; *************** function _button_reading *****************
+  2026 ;; Defined at:
+  2027 ;;		line 16 in file "button.c"
+  2028 ;; Parameters:    Size  Location     Type
+  2029 ;;		None
+  2030 ;; Auto vars:     Size  Location     Type
+  2031 ;;  i               1    4[COMMON] unsigned char 
+  2032 ;; Return value:  Size  Location     Type
+  2033 ;;                  1    wreg      void 
+  2034 ;; Registers used:
+  2035 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  2036 ;; Tracked objects:
+  2037 ;;		On entry : 0/0
+  2038 ;;		On exit  : 0/0
+  2039 ;;		Unchanged: 0/0
+  2040 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2041 ;;      Params:         0       0       0       0
+  2042 ;;      Locals:         2       0       0       0
+  2043 ;;      Temps:          3       0       0       0
+  2044 ;;      Totals:         5       0       0       0
+  2045 ;;Total ram usage:        5 bytes
+  2046 ;; Hardware stack levels used:    1
+  2047 ;; This function calls:
+  2048 ;;		Nothing
+  2049 ;; This function is called by:
+  2050 ;;		_ISR
+  2051 ;; This function uses a non-reentrant model
+  2052 ;;
+  2053                           
+  2054                           
+  2055                           ;psect for function _button_reading
+  2056  00EB                     _button_reading:	
+  2057                           
+  2058                           ;button.c: 17: unsigned char i;
+  2059                           ;button.c: 18: for(i = 0; i < 3; i++){
+  2060                           
+  2061                           ;incstack = 0
+  2062                           ; Regs used in _button_reading: [wreg-fsr0h+status,2+status,0]
+  2063  00EB  01F4               	clrf	button_reading@i
+  2064  00EC                     L5:	
+  2065  00EC  3003               	movlw	3
+  2066  00ED  0274               	subwf	button_reading@i,w
+  2067  00EE  1803               	btfsc	3,0
+  2068  00EF  0008               	return
+  2069                           
+  2070                           ;button.c: 19: debounceButtonBuffer2[i] = debounceButtonBuffer1[i];
+  2071  00F0  0874               	movf	button_reading@i,w
+  2072  00F1  3E7A               	addlw	(low (_debounceButtonBuffer1| 0))& (0+255)
+  2073  00F2  0084               	movwf	4
+  2074  00F3  0800               	movf	0,w
+  2075  00F4  00F0               	movwf	??_button_reading
+  2076  00F5  0874               	movf	button_reading@i,w
+  2077  00F6  3E26               	addlw	(low (_debounceButtonBuffer2| 0))& (0+255)
+  2078  00F7  0084               	movwf	4
+  2079  00F8  0870               	movf	??_button_reading,w
+  2080  00F9  1383               	bcf	3,7	;select IRP bank0
+  2081  00FA  0080               	movwf	0
+  2082                           
+  2083                           ;button.c: 20: debounceButtonBuffer1[i] = PORTA & buttonInputMask[i];
+  2084  00FB  0874               	movf	button_reading@i,w
+  2085  00FC  3E49               	addlw	(low (_buttonInputMask| 0))& (0+255)
+  2086  00FD  0084               	movwf	4
+  2087  00FE  0800               	movf	0,w
+  2088  00FF  1283               	bcf	3,5	;RP0=0, select bank0
+  2089  0100  1303               	bcf	3,6	;RP1=0, select bank0
+  2090  0101  0505               	andwf	5,w	;volatile
+  2091  0102  00F0               	movwf	??_button_reading
+  2092  0103  0874               	movf	button_reading@i,w
+  2093  0104  3E7A               	addlw	(low (_debounceButtonBuffer1| 0))& (0+255)
+  2094  0105  0084               	movwf	4
+  2095  0106  0870               	movf	??_button_reading,w
+  2096  0107  0080               	movwf	0
+  2097                           
+  2098                           ;button.c: 22: if(debounceButtonBuffer1[i] == debounceButtonBuffer2[i]){
+  2099  0108  0874               	movf	button_reading@i,w
+  2100  0109  3E26               	addlw	(low (_debounceButtonBuffer2| 0))& (0+255)
+  2101  010A  0084               	movwf	4
+  2102  010B  0800               	movf	0,w
+  2103  010C  00F0               	movwf	??_button_reading
+  2104  010D  0874               	movf	button_reading@i,w
+  2105  010E  3E7A               	addlw	(low (_debounceButtonBuffer1| 0))& (0+255)
+  2106  010F  0084               	movwf	4
+  2107  0110  0800               	movf	0,w
+  2108  0111  0670               	xorwf	??_button_reading,w
+  2109  0112  1D03               	skipz
+  2110  0113  2970               	goto	i1l1125
+  2111                           
+  2112                           ;button.c: 23: buttonBuffer[i] = debounceButtonBuffer1[i];
+  2113  0114  0874               	movf	button_reading@i,w
+  2114  0115  3E7A               	addlw	(low (_debounceButtonBuffer1| 0))& (0+255)
+  2115  0116  0084               	movwf	4
+  2116  0117  0800               	movf	0,w
+  2117  0118  00F0               	movwf	??_button_reading
+  2118  0119  0874               	movf	button_reading@i,w
+  2119  011A  3E46               	addlw	(low (_buttonBuffer| 0))& (0+255)
+  2120  011B  0084               	movwf	4
+  2121  011C  0870               	movf	??_button_reading,w
+  2122  011D  0080               	movwf	0
+  2123                           
+  2124                           ;button.c: 24: if(buttonBuffer[i] == 0){
+  2125  011E  0874               	movf	button_reading@i,w
+  2126  011F  3E46               	addlw	(low (_buttonBuffer| 0))& (0+255)
+  2127  0120  0084               	movwf	4
+  2128  0121  0800               	movf	0,w
+  2129  0122  1D03               	btfss	3,2
+  2130  0123  2946               	goto	i1l1115
+  2131                           
+  2132                           ;button.c: 25: if(counterForButtonPress[i] < 200){
+  2133  0124  0874               	movf	button_reading@i,w
+  2134  0125  00F0               	movwf	??_button_reading
+  2135  0126  0770               	addwf	??_button_reading,w
+  2136  0127  3E20               	addlw	(low (_counterForButtonPress| 0))& (0+255)
+  2137  0128  0084               	movwf	4
+  2138  0129  0800               	movf	0,w
+  2139  012A  00F1               	movwf	??_button_reading+1
+  2140  012B  0A84               	incf	4,f
+  2141  012C  0800               	movf	0,w
+  2142  012D  00F2               	movwf	??_button_reading+2
+  2143  012E  3000               	movlw	0
+  2144  012F  0272               	subwf	??_button_reading+2,w
+  2145  0130  30C8               	movlw	200
+  2146  0131  1903               	skipnz
+  2147  0132  0271               	subwf	??_button_reading+1,w
+  2148  0133  1803               	skipnc
+  2149  0134  2940               	goto	i1l1113
+  2150                           
+  2151                           ;button.c: 26: counterForButtonPress[i]++;
+  2152  0135  0874               	movf	button_reading@i,w
+  2153  0136  00F0               	movwf	??_button_reading
+  2154  0137  0770               	addwf	??_button_reading,w
+  2155  0138  3E20               	addlw	(low (_counterForButtonPress| 0))& (0+255)
+  2156  0139  0084               	movwf	4
+  2157  013A  3001               	movlw	1
+  2158  013B  0780               	addwf	0,f
+  2159  013C  0A84               	incf	4,f
+  2160  013D  1803               	skipnc
+  2161  013E  0A80               	incf	0,f
+  2162                           
+  2163                           ;button.c: 27: }
+  2164  013F  2970               	goto	i1l1125
+  2165  0140                     i1l1113:	
+  2166                           
+  2167                           ;button.c: 28: else flagForButtonPress_s[i] = 1;
+  2168  0140  0874               	movf	button_reading@i,w
+  2169  0141  3E2C               	addlw	(low (_flagForButtonPress_s| 0))& (0+255)
+  2170  0142  0084               	movwf	4
+  2171  0143  0180               	clrf	0
+  2172  0144  0A80               	incf	0,f
+  2173                           
+  2174                           ;button.c: 29: }
+  2175  0145  2970               	goto	i1l1125
+  2176  0146                     i1l1115:	
+  2177                           
+  2178                           ;button.c: 30: else{
+  2179                           ;button.c: 32: flagForButtonPress[i] = counterForButtonPress[i] && (!flagForButtonPress_
+      +                          s[i]);
+  2180  0146  01F3               	clrf	_button_reading$326
+  2181  0147  0874               	movf	button_reading@i,w
+  2182  0148  00F0               	movwf	??_button_reading
+  2183  0149  0770               	addwf	??_button_reading,w
+  2184  014A  3E20               	addlw	(low (_counterForButtonPress| 0))& (0+255)
+  2185  014B  0084               	movwf	4
+  2186  014C  0800               	movf	0,w
+  2187  014D  00F1               	movwf	??_button_reading+1
+  2188  014E  0A84               	incf	4,f
+  2189  014F  0800               	movf	0,w
+  2190  0150  00F2               	movwf	??_button_reading+2
+  2191  0151  0871               	movf	??_button_reading+1,w
+  2192  0152  0472               	iorwf	??_button_reading+2,w
+  2193  0153  1903               	btfsc	3,2
+  2194  0154  295D               	goto	i1l1123
+  2195  0155  0874               	movf	button_reading@i,w
+  2196  0156  3E2C               	addlw	(low (_flagForButtonPress_s| 0))& (0+255)
+  2197  0157  0084               	movwf	4
+  2198  0158  0800               	movf	0,w
+  2199  0159  1D03               	btfss	3,2
+  2200  015A  295D               	goto	i1l1123
+  2201  015B  01F3               	clrf	_button_reading$326
+  2202  015C  0AF3               	incf	_button_reading$326,f
+  2203  015D                     i1l1123:	
+  2204  015D  0873               	movf	_button_reading$326,w
+  2205  015E  00F0               	movwf	??_button_reading
+  2206  015F  0874               	movf	button_reading@i,w
+  2207  0160  3E29               	addlw	(low (_flagForButtonPress| 0))& (0+255)
+  2208  0161  0084               	movwf	4
+  2209  0162  0870               	movf	??_button_reading,w
+  2210  0163  0080               	movwf	0
+  2211                           
+  2212                           ;button.c: 33: counterForButtonPress[i] = 0;
+  2213  0164  0874               	movf	button_reading@i,w
+  2214  0165  00F0               	movwf	??_button_reading
+  2215  0166  0770               	addwf	??_button_reading,w
+  2216  0167  3E20               	addlw	(low (_counterForButtonPress| 0))& (0+255)
+  2217  0168  0084               	movwf	4
+  2218  0169  0180               	clrf	0
+  2219  016A  0A84               	incf	4,f
+  2220  016B  0180               	clrf	0
+  2221                           
+  2222                           ;button.c: 34: flagForButtonPress_s[i] = 0;
+  2223  016C  0874               	movf	button_reading@i,w
+  2224  016D  3E2C               	addlw	(low (_flagForButtonPress_s| 0))& (0+255)
+  2225  016E  0084               	movwf	4
+  2226  016F  0180               	clrf	0
+  2227  0170                     i1l1125:	
+  2228  0170  3001               	movlw	1
+  2229  0171  00F0               	movwf	??_button_reading
+  2230  0172  0870               	movf	??_button_reading,w
+  2231  0173  07F4               	addwf	button_reading@i,f
+  2232  0174  28EC               	goto	L5
+  2233  0175                     __end_of_button_reading:	
+  2234  007E                     btemp	set	126	;btemp
+  2235  007E                     wtemp	set	126
+  2236  007E                     wtemp0	set	126
+  2237  0080                     wtemp1	set	128
+  2238  0082                     wtemp2	set	130
+  2239  0084                     wtemp3	set	132
+  2240  0086                     wtemp4	set	134
+  2241  0088                     wtemp5	set	136
+  2242  007F                     wtemp6	set	127
+  2243  007E                     ttemp	set	126
+  2244  007E                     ttemp0	set	126
+  2245  0081                     ttemp1	set	129
+  2246  0084                     ttemp2	set	132
+  2247  0087                     ttemp3	set	135
+  2248  007F                     ttemp4	set	127
+  2249  007E                     ltemp	set	126
+  2250  007E                     ltemp0	set	126
+  2251  0082                     ltemp1	set	130
+  2252  0086                     ltemp2	set	134
+  2253  0080                     ltemp3	set	128
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        9
+    BSS         27
+    Persistent  5
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     10      14
+    BANK0            80     15      52
+    BANK1            80      0       0
+    BANK2            48      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _ISR in COMMON
+
+    _ISR->_button_reading
+
+Critical Paths under _main in BANK0
+
+    _main->_InitSystem
+    _InitSystem->_SetTimer1_ms
+    _SetTimer1_ms->___awdiv
+
+Critical Paths under _ISR in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _ISR in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _ISR in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 2     2      0    1782
+                                             13 BANK0      2     2      0
+                           _Delay_ms
+                         _InitSystem
+                       _SetTimer1_ms
+                        _WriteEEPROM
+                  _is_button_pressed
+                _is_button_pressed_s
+ ---------------------------------------------------------------------------------
+ (1) _is_button_pressed_s                                  1     1      0      44
+                                              0 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _is_button_pressed                                    1     1      0      44
+                                              0 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _WriteEEPROM                                          2     1      1     150
+                                              0 BANK0      2     1      1
+ ---------------------------------------------------------------------------------
+ (1) _InitSystem                                           2     2      0     759
+                                             11 BANK0      2     2      0
+                         _ReadEEPROM
+                            _RelayOn
+                       _SetTimer1_ms
+                        _init_timer1
+ ---------------------------------------------------------------------------------
+ (2) _init_timer1                                          4     2      2      75
+                                              0 BANK0      4     2      2
+ ---------------------------------------------------------------------------------
+ (1) _SetTimer1_ms                                         2     0      2     640
+                                              9 BANK0      2     0      2
+                            ___awdiv
+ ---------------------------------------------------------------------------------
+ (2) ___awdiv                                              9     5      4     406
+                                              0 BANK0      9     5      4
+ ---------------------------------------------------------------------------------
+ (2) _RelayOn                                              1     1      0      22
+                                              0 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (2) _ReadEEPROM                                           1     1      0      22
+                                              0 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _Delay_ms                                             6     4      2     145
+                                              0 BANK0      6     4      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (4) _ISR                                                  5     5      0     444
+                                              5 COMMON     5     5      0
+                     _button_reading
+                       _start_timer1
+                        _stop_timer1
+                         _timer1_isr
+ ---------------------------------------------------------------------------------
+ (5) _timer1_isr                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (5) _stop_timer1                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (5) _start_timer1                                         0     0      0       0
+ ---------------------------------------------------------------------------------
+ (5) _button_reading                                       5     5      0     444
+                                              0 COMMON     5     5      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 5
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _Delay_ms
+   _InitSystem
+     _ReadEEPROM
+     _RelayOn
+     _SetTimer1_ms
+       ___awdiv
+     _init_timer1
+   _SetTimer1_ms
+     ___awdiv
+   _WriteEEPROM
+   _is_button_pressed
+   _is_button_pressed_s
+
+ _ISR (ROOT)
+   _button_reading
+   _start_timer1
+   _stop_timer1
+   _timer1_isr
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               30      0       0       9        0.0%
+BITBANK2            30      0       0       8        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK1            50      0       0       6        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50      F      34       3       65.0%
+BITBANK0            50      0       0       5        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      A       E       1      100.0%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      42      10        0.0%
+ABS                  0      0      42       4        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA              80      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.36 build -262312587 
+Symbol Table                                                                                   Sat Nov 26 09:11:58 2022
+
+        __size_of_WriteEEPROM 001A         __size_of_start_timer1 0008                             pc 0002  
+                 __CFG_CP$OFF 0000                            l84 0030                            l95 006B  
+                          l97 0081                            l99 0097                  ___awdiv@sign 003D  
+                          fsr 0004                           l102 00A5                           l120 0219  
+                         l128 02EE                           l136 0299                           _GIE 005F  
+                         u505 01AF                  __CFG_CPD$OFF 0000                           u515 01B9  
+                         _ISR 0261                           u475 0197                           u495 01A3  
+                         u815 00AF                           u685 021F                           u795 00A1  
+            ??_button_reading 0070                           fsr0 0004                           indf 0000  
+                        S1331 0313                  __CFG_LVP$OFF 0000                          ?_ISR 0070  
+                        l1013 0181                          l1031 01A2                          l1041 01C3  
+                        l1019 018C                          l1045 01CB                          l1037 01B8  
+                        l1029 0194                          l1231 004A                          l1223 0039  
+                        l1303 00DD                          l1305 00D6                          l1235 0053  
+                        l1227 0040                          l1191 022A                          l1159 02E0  
+                        l1193 0237                          l1169 02D1                          l1291 00CB  
+                        l1285 00C1                          l1277 00B3                          l1297 00D3  
+                        l1299 00D5         _counterForButtonPress 0020                          _PEIE 005E  
+                        i1l79 0277                          _TMR1 000E                          _main 002E  
+          _flagForButtonPress 0029                          _mode 0036                          btemp 007E  
+                _start_timer1 030B                          ltemp 007E                          start 0010  
+                        ttemp 007E                          wtemp 007E                   _stop_timer1 0319  
+                       ??_ISR 0075               __end_of_RelayOn 02F0                         ?_main 0070  
+             __end_of___awdiv 01D0                         _EEADR 009B                 __CFG_WDTE$OFF 0000  
+                       _CMCON 001F               ___awdiv@divisor 0037               ___awdiv@counter 003C  
+        _addressEEPROM_AUTO_0 0033          _addressEEPROM_AUTO_1 004E                         _PORTA 0005  
+                       _PORTB 0006                         u55_25 02C1                         _TRISA 0085  
+                       _TRISB 0086                  ?_init_timer1 0037                __CFG_BOREN$OFF 0000  
+                       pclath 000A                         ltemp0 007E                         ltemp1 0082  
+                       ltemp2 0086                         ltemp3 0080                    _ReadEEPROM 02F0  
+                       ttemp0 007E                         ttemp1 0081                         ttemp2 0084  
+                       ttemp3 0087                         ttemp4 007F                         status 0003  
+                       wtemp0 007E                         wtemp1 0080                         wtemp2 0082  
+                       wtemp3 0084                         wtemp4 0086                         wtemp5 0088  
+                       wtemp6 007F              __end_of_Delay_ms 023E                __CFG_MCLRE$OFF 0000  
+             __initialization 0011                  __end_of_main 00EB                    _InitSystem 01D0  
+                      ??_main 0044           _is_button_pressed_s 02C8             ReadEEPROM@address 0037  
+                      _EEDATA 009A                        _EECON2 009D              ___awdiv@dividend 0039  
+                      i1l1113 0140                        i1l1123 015D                        i1l1115 0146  
+                      i1l1125 0170                        i1l1209 026E                        _TMR1IE 0460  
+                      _TMR1IF 0060                __CFG_PWRTE$OFF 0000                     ??_RelayOn 0037  
+        ?_is_button_pressed_s 0070                     ??___awdiv 003B                 Delay_ms@delay 0037  
+        _flagForButtonPress_s 002C               _buttonInputMask 0049              ___awdiv@quotient 003E  
+                      saved_w 007E                   ?_ReadEEPROM 0070       __end_of__initialization 002C  
+                 RelayOn@flag 0037         ??_is_button_pressed_s 0037                 ?_SetTimer1_ms 0040  
+              __pcstackCOMMON 0070                  __pidataBANK0 02FA                   ?_InitSystem 0070  
+              _OPTION_REGbits 0081                     ?_Delay_ms 0037          __size_of_init_timer1 0023  
+          _MAX_COUNTER_AUTO_0 004F            _MAX_COUNTER_AUTO_1 0051                    __pbssBANK0 0020  
+               ??_WriteEEPROM 0038                ??_SetTimer1_ms 0042                    __pmaintext 002E  
+                ?_stop_timer1 0070              _cleaning_counter 0053            _button_reading$326 0073  
+                  __pintentry 0004           __size_of_ReadEEPROM 000A              init_timer1@count 0037  
+                  ??_Delay_ms 0039           __size_of_InitSystem 0045                       _RelayOn 02E6  
+                     ___awdiv 0175           __end_of_WriteEEPROM 029E            WriteEEPROM@address 0038  
+                     __ptext1 02C8                       __ptext2 02D7                       __ptext3 0284  
+                     __ptext4 01D0                       __ptext5 023E                       __ptext6 029E  
+                     __ptext7 0175                       __ptext8 02E6                       __ptext9 02F0  
+                __size_of_ISR 0023                     _T1CONbits 0010                       clrloop0 0304  
+        end_of_initialization 002C       __size_of_button_reading 008A                     Delay_ms@i 0039  
+                   Delay_ms@j 003B         _debounceButtonBuffer1 007A         _debounceButtonBuffer2 0026  
+                  _timer1_cnt 002F                    _timer1_isr 02B3                     _PORTAbits 0005  
+        __end_of_SetTimer1_ms 02B3                  ??_ReadEEPROM 0037                   _WriteEEPROM 0284  
+            SetTimer1_ms@time 0040                  ??_InitSystem 0042             _is_button_pressed 02D7  
+        __size_of_stop_timer1 0004            ?_is_button_pressed 0070            __end_of_ReadEEPROM 02FA  
+         start_initialization 0011           ??_is_button_pressed 0037                   __end_of_ISR 0284  
+           __size_of_Delay_ms 0029   __end_of_is_button_pressed_s 02D7            __end_of_InitSystem 0215  
+               ?_start_timer1 0070     __end_of_is_button_pressed 02E6                   ?_timer1_isr 0070  
+                 __pdataBANK0 0046                 ??_init_timer1 0039                   __pbssCOMMON 007A  
+                   ___latbits 0000                 __pcstackBANK0 0037                _button_reading 00EB  
+                _buttonBuffer 0046                ??_start_timer1 0070                     __pnvBANK0 004F  
+    is_button_pressed_s@index 0037                      ?_RelayOn 0070               button_reading@i 0074  
+                    ?___awdiv 0037         __size_of_SetTimer1_ms 0015                     __pswtext1 0313  
+                 _flag_timer1 0035        __end_of_button_reading 0175           __size_of_timer1_isr 0015  
+         __end_of_init_timer1 0261             interrupt_function 0004                     _time1_MUL 004C  
+                   clear_ram0 0303                  _SetTimer1_ms 029E                      _PIR1bits 000C  
+  __size_of_is_button_pressed 000F                     _pumpState 007D                      _Delay_ms 0215  
+             ?_button_reading 0070                    _EECON1bits 009C                  ?_WriteEEPROM 0037  
+            __size_of_RelayOn 000A              __size_of___awdiv 005B          __end_of_start_timer1 0313  
+                 _init_timer1 023E                      __ptext10 0215                      __ptext11 0261  
+                    __ptext12 02B3                      __ptext13 0319                      __ptext14 030B  
+                    __ptext15 00EB                 __size_of_main 00BD                 ??_stop_timer1 0070  
+                ??_timer1_isr 0070               _brewing_counter 0034                  _timer1_value 0031  
+                  _INTCONbits 000B        is_button_pressed@index 0037                      intlevel1 0000  
+          __end_of_timer1_isr 02C8               WriteEEPROM@data 0037  __size_of_is_button_pressed_s 000F  
+         __end_of_stop_timer1 031D            __CFG_FOSC$INTOSCIO 0000  
