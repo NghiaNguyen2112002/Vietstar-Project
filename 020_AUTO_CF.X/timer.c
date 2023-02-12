@@ -14,7 +14,7 @@ void TMR1_Init(unsigned int count){
     TMR1 = timer1_value;
 
     T1CONbits.TMR1CS = 0;           //internal clock = 4 Mhz / 4
-
+    
     T1CONbits.T1CKPS0 = 0;
     T1CONbits.T1CKPS1 = 0;
     

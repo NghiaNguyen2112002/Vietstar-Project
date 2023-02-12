@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/E:/PIC/Vietstar%20Coffee/020_AUTO_CF.X/lcd.h</file>
+            <file>file:/E:/PIC/Vietstar%20Coffee/020_AUTO_CF.X/main.c</file>
+            <file>file:/E:/PIC/Vietstar%20Coffee/020_AUTO_CF.X/output.c</file>
+            <file>file:/E:/PIC/Vietstar%20Coffee/020_AUTO_CF.X/timer.h</file>
+            <file>file:/E:/PIC/Vietstar%20Coffee/020_AUTO_CF.X/fsm.c</file>
+            <file>file:/E:/PIC/Vietstar%20Coffee/020_AUTO_CF.X/button.c</file>
+            <file>file:/E:/PIC/Vietstar%20Coffee/020_AUTO_CF.X/main.h</file>
+            <file>file:/E:/PIC/Vietstar%20Coffee/020_AUTO_CF.X/timer.c</file>
+            <file>file:/E:/PIC/Vietstar%20Coffee/020_AUTO_CF.X/interrupt.c</file>
+            <file>file:/E:/PIC/Vietstar%20Coffee/020_AUTO_CF.X/lcd.c</file>
+        </group>
     </open-files>
 </project-private>

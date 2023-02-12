@@ -4668,6 +4668,7 @@ void FSM_ModeControl(void);
 
 extern unsigned char flag_timer1;
 
+void TMR0_Init(unsigned char count);
 void TMR1_Init(unsigned int count);
 
 void TMR1_Start(void);

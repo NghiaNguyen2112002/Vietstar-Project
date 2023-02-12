@@ -4567,6 +4567,7 @@ extern __bank0 __bit __timeout;
 
 extern unsigned char flag_timer1;
 
+void TMR0_Init(unsigned char count);
 void TMR1_Init(unsigned int count);
 
 void TMR1_Start(void);
@@ -4683,9 +4684,8 @@ void LcdPrintStringS(unsigned char x, unsigned char y, const unsigned char *stri
 int current_row, current_col;
 
 unsigned char LcdScreen[2][16] = {
-'0','1','2','3','4','5','6','7','8','9','0','1','2','3','4','5',
-'6','7','8','9','0','1','2','3','4','5','6','7','8','9','0','1',
-};
+    ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',
+    ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '};
 
 void lcd_delay(unsigned char time)
 {

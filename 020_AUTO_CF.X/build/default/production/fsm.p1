@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "5 fsm.c
 [; ;fsm.c: 5: enum OPERATION_MODE mode;
-[c E2655 0 1 2 3 4 5 6 7 .. ]
-[n E2655 OPERATION_MODE INIT MANUAL AUTO ADJUST_TIME INCREASE DECREASE START_AUTO DELETE_ALL  ]
+[c E2657 0 1 2 3 4 5 6 7 .. ]
+[n E2657 OPERATION_MODE INIT MANUAL AUTO ADJUST_TIME INCREASE DECREASE START_AUTO DELETE_ALL  ]
 "52 ./lcd.h
 [; ;./lcd.h: 52: void LcdPrintStringS(unsigned char x, unsigned char y, const unsigned char *string);
 [v _LcdPrintStringS `(v ~T0 @X0 0 ef3`uc`uc`*Cuc ]
@@ -561,7 +561,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _index_lcd `uc ~T0 @X0 1 e ]
 "5
 [; ;fsm.c: 5: enum OPERATION_MODE mode;
-[v _mode `E2655 ~T0 @X0 1 e ]
+[v _mode `E2657 ~T0 @X0 1 e ]
 "7
 [; ;fsm.c: 7: unsigned char flagPressAdjust;
 [v _flagPressAdjust `uc ~T0 @X0 1 e ]
@@ -576,7 +576,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _index_lcd -> -> 0 `i `uc ]
 "11
 [; ;fsm.c: 11:     mode = INIT;
-[e = _mode . `E2655 0 ]
+[e = _mode . `E2657 0 ]
 "12
 [; ;fsm.c: 12:     flagPressAdjust = 0;
 [e = _flagPressAdjust -> -> 0 `i `uc ]
@@ -608,7 +608,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _MTR_Set (1 -> -> 0 `i `uc ]
 "23
 [; ;fsm.c: 23:             mode = MANUAL;
-[e = _mode . `E2655 1 ]
+[e = _mode . `E2657 1 ]
 "24
 [; ;fsm.c: 24:             break;
 [e $U 374  ]
@@ -646,7 +646,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _MTR_Set (1 -> -> 0 `i `uc ]
 "38
 [; ;fsm.c: 38:                 mode = AUTO;
-[e = _mode . `E2655 2 ]
+[e = _mode . `E2657 2 ]
 "39
 [; ;fsm.c: 39:             }
 }
@@ -675,7 +675,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _MTR_Set (1 -> -> 1 `i `uc ]
 "50
 [; ;fsm.c: 50:                 mode = START_AUTO;
-[e = _mode . `E2655 6 ]
+[e = _mode . `E2657 6 ]
 "51
 [; ;fsm.c: 51:             }
 }
@@ -696,7 +696,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _MTR_Set (1 -> -> 0 `i `uc ]
 "58
 [; ;fsm.c: 58:                 mode = MANUAL;
-[e = _mode . `E2655 1 ]
+[e = _mode . `E2657 1 ]
 "59
 [; ;fsm.c: 59:             }
 }
@@ -717,7 +717,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcdPrintFloatS (3 , , -> -> 0 `i `uc -> -> 8 `i `uc __timeAuto ]
 "67
 [; ;fsm.c: 67:                 mode = ADJUST_TIME;
-[e = _mode . `E2655 3 ]
+[e = _mode . `E2657 3 ]
 "68
 [; ;fsm.c: 68:             }
 }
@@ -735,7 +735,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcdPrintStringS (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 12C ]
 "74
 [; ;fsm.c: 74:                 mode = DELETE_ALL;
-[e = _mode . `E2655 7 ]
+[e = _mode . `E2657 7 ]
 "75
 [; ;fsm.c: 75:             }
 }
@@ -758,7 +758,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _flagPressAdjust -> -> 0 `i `uc ]
 "80
 [; ;fsm.c: 80:                 mode = INCREASE;
-[e = _mode . `E2655 4 ]
+[e = _mode . `E2657 4 ]
 "81
 [; ;fsm.c: 81:             }
 }
@@ -773,7 +773,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _flagPressAdjust -> -> 0 `i `uc ]
 "84
 [; ;fsm.c: 84:                 mode = DECREASE;
-[e = _mode . `E2655 5 ]
+[e = _mode . `E2657 5 ]
 "85
 [; ;fsm.c: 85:             }
 }
@@ -803,7 +803,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _MTR_Set (1 -> -> 0 `i `uc ]
 "99
 [; ;fsm.c: 99:                 mode = AUTO;
-[e = _mode . `E2655 2 ]
+[e = _mode . `E2657 2 ]
 "100
 [; ;fsm.c: 100:             }
 }
@@ -857,7 +857,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcdPrintFloatS (3 , , -> -> 0 `i `uc -> -> 8 `i `uc __timeAuto ]
 "115
 [; ;fsm.c: 115:                 mode = ADJUST_TIME;
-[e = _mode . `E2655 3 ]
+[e = _mode . `E2657 3 ]
 "116
 [; ;fsm.c: 116:             }
 }
@@ -910,7 +910,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LcdPrintFloatS (3 , , -> -> 0 `i `uc -> -> 8 `i `uc __timeAuto ]
 "131
 [; ;fsm.c: 131:                 mode = ADJUST_TIME;
-[e = _mode . `E2655 3 ]
+[e = _mode . `E2657 3 ]
 "132
 [; ;fsm.c: 132:             }
 }
@@ -963,7 +963,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _MTR_Set (1 -> -> 0 `i `uc ]
 "154
 [; ;fsm.c: 154:                 mode = AUTO;
-[e = _mode . `E2655 2 ]
+[e = _mode . `E2657 2 ]
 "155
 [; ;fsm.c: 155:             }
 }
@@ -980,7 +980,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "159
 [; ;fsm.c: 159:                 mode = INIT;
-[e = _mode . `E2655 0 ]
+[e = _mode . `E2657 0 ]
 "160
 [; ;fsm.c: 160:             }
 }
@@ -1001,7 +1001,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _EEP_SaveCupTotal ..  ]
 "168
 [; ;fsm.c: 168:                 mode = INIT;
-[e = _mode . `E2655 0 ]
+[e = _mode . `E2657 0 ]
 "169
 [; ;fsm.c: 169:             }
 }
@@ -1015,7 +1015,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 412 ]
 "172
 [; ;fsm.c: 172:             mode = INIT;
-[e = _mode . `E2655 0 ]
+[e = _mode . `E2657 0 ]
 "173
 [; ;fsm.c: 173:             break;
 [e $U 374  ]
@@ -1024,14 +1024,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 374  ]
 [e :U 375 ]
-[e [\ -> _mode `ui , $ -> . `E2655 0 `ui 376
- , $ -> . `E2655 1 `ui 377
- , $ -> . `E2655 2 `ui 381
- , $ -> . `E2655 3 `ui 389
- , $ -> . `E2655 4 `ui 395
- , $ -> . `E2655 5 `ui 400
- , $ -> . `E2655 6 `ui 405
- , $ -> . `E2655 7 `ui 408
+[e [\ -> _mode `ui , $ -> . `E2657 0 `ui 376
+ , $ -> . `E2657 1 `ui 377
+ , $ -> . `E2657 2 `ui 381
+ , $ -> . `E2657 3 `ui 389
+ , $ -> . `E2657 4 `ui 395
+ , $ -> . `E2657 5 `ui 400
+ , $ -> . `E2657 6 `ui 405
+ , $ -> . `E2657 7 `ui 408
  412 ]
 [e :U 374 ]
 "175

@@ -4584,6 +4584,7 @@ void LcdPrintStringS(unsigned char x, unsigned char y, const unsigned char *stri
 
 extern unsigned char flag_timer1;
 
+void TMR0_Init(unsigned char count);
 void TMR1_Init(unsigned int count);
 
 void TMR1_Start(void);
@@ -4687,11 +4688,16 @@ void FSM_ModeControl(void);
 
 void SYS_Init(void);
 
+void Delay_ms(unsigned char time) ;
+
 void main(void) {
     SYS_Init();
-
+    LcdPrintStringS(0,0, "Vietstar  Coffee");
+    DisplayLcdScreen();
+    Delay_ms(2000);
 
     while(1){
+
         FSM_ModeControl();
 
         if(flag_timer1){
@@ -4714,6 +4720,13 @@ void main(void) {
 void SYS_Init(void){
 
     OSCCONbits.IRCF = 0b1101;
+    ANSC0 = 0;
+    ANSC1 = 0;
+    ANSC2 = 0;
+    ANSC3 = 0;
+    ANSC6 = 0;
+    ANSC7 = 0;
+    TRISC = 0x00;
 
     INT_Init();
     TMR1_Init(10000);
@@ -4726,4 +4739,11 @@ void SYS_Init(void){
 
     EEP_ReadAutoTime();
     EEP_ReadCupTotal();
+}
+
+void Delay_ms(unsigned char time)
+{
+    int i,j;
+    for(i=0;i<time;i++)
+        for(j=0;j<1;j++);
 }
